@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'VideoCreationAssistant' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for VideoCreationAssistant
+  pod "FileWatcher"
+  pod 'HotKey'
+  pod 'GRDB.swift'
+  pod 'ImgurSession', :git => 'https://github.com/mileswd/ImgurSession.git', :branch => 'update-podspec'
+  pod 'EMCLoginItem'
+
+end
