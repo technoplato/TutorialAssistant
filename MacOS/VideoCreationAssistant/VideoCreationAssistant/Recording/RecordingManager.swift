@@ -114,7 +114,10 @@ class RecordingManager: ObservableObject {
   }
   
   private func listenForImgurUpload() {
-    ImgurClient.shared.callback = {url in print(url)}
+    ImgurClient.shared.callback = { url in
+      print(url)
+      
+    }
   }
   
   private func listenForScreenshots() {

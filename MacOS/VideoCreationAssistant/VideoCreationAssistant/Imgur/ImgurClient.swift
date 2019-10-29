@@ -215,7 +215,6 @@ class ImgurClient: NSObject, IMGSessionDelegate {
   }
   
   func uploadFailureHandler(dataTask: URLSessionDataTask?, error: Error?) {
-    
     handle(error: error, title: "Imgur Upload Failed")
   }
   

@@ -13,7 +13,7 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   var window: NSWindow!
-
+  
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
