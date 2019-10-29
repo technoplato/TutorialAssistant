@@ -11,9 +11,12 @@ struct DuringRecording: View {
   @EnvironmentObject var recording: RecordingManager
   
   var body: some View {
-    
     return VStack {
       Text(recording.formatted)
+      
+      ForEach(recording.urls, id: \.self) { url in
+        Text(url)
+      }
       
       if (self.recording.state == .ended) {
         Text("Video ended, length is: \(recording.formatted) (\(recording.seconds)) seconds")

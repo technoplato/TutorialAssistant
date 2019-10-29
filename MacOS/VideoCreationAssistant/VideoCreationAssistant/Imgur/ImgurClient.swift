@@ -39,22 +39,22 @@ class ImgurClient: NSObject, IMGSessionDelegate {
   
   /// Prepare ImgurClient for use.
   func setup() {
-//    let foo = "81defd86001a83eea925a397c13bd3fbfa8354f9"
-//    configure(asAnonymous: false)
-//
-//
-//
-//    IMGSession.sharedInstance()
-//      .authenticate(withRefreshToken: foo)
+        let foo = "81defd86001a83eea925a397c13bd3fbfa8354f9"
+        configure(asAnonymous: false)
     
-    if let refreshToken = UserDefaults.standard.string(forKey: refreshTokenKey) {
-      configure(asAnonymous: false)
-
-      IMGSession.sharedInstance()
-        .authenticate(withRefreshToken: refreshToken)
-    } else {
-      configure(asAnonymous: true)
-    }
+    
+    
+        IMGSession.sharedInstance()
+          .authenticate(withRefreshToken: foo)
+    
+//    if let refreshToken = UserDefaults.standard.string(forKey: refreshTokenKey) {
+//      configure(asAnonymous: false)
+//
+//      IMGSession.sharedInstance()
+//        .authenticate(withRefreshToken: refreshToken)
+//    } else {
+//      configure(asAnonymous: true)
+//    }
   }
   
   func handle(error: Error?, title: String) {

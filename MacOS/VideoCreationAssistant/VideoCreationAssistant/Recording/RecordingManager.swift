@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 class Duration: ObservableObject {
   @Published var seconds: Int = -1
@@ -20,33 +21,15 @@ enum RecordingState {
   case posting
 }
 
-protocol Timestamp {
-  var seconds: Int { get }
-  var formatted: String { get }
-  var title: String? {get}
-  var description: String? {get}
+class Timestamp {
+  @Published var seconds = -1
+  @Published var formatted = ""
+  @Published var title = ""
+  @Published var description = ""
 }
 
-struct Screenshot: Timestamp {
-  
-  let seconds: Int
-  var formatted: String
-  var title: String?
-  var description: String?
-  var image: String
-  
-  init(
-    image: String,
-    seconds: Int,
-    formatted: String,
-    title: String?,
-    description: String?) {
-    self.seconds = seconds
-    self.formatted = formatted
-    self.image = image
-    self.title = title
-    self.description = description
-  }
+class Screenshot: Timestamp, ObservableObject {
+  @Published var image: String = ""
 }
 
 class RecordingManager: ObservableObject {
@@ -55,15 +38,20 @@ class RecordingManager: ObservableObject {
   private let recordingWatcher = RecordingWatcher.shared
   private var monitor: ScreenshotMonitor?
   private let timestamps: [Timestamp] = []
-
+  
+  @Published var pendingScreenshot = Screenshot()
+//  @Published var pendingTitle = ""
+//  @Published var pendingDescription = ""
+//  @Published var pendingSeconds = -1
+//  @Published var pendingFormatted = ""
+  
   @Published var state: RecordingState = .listening
   @Published var duration = Duration()
   
   @Published var seconds: Int = -1
   @Published var formatted: String = "00:00:00"
   
-  private var screenshotSeconds = -1
-  private var screenshotUrl: String = ""
+  @Published var urls: [String] = []
   
   init() {
     self.listenForVideoRecordingStart()
@@ -106,17 +94,9 @@ class RecordingManager: ObservableObject {
   
   private func listenToStopwatch() {
     stopwatch.callback =  { tick in
-      
       let (seconds, formatted) = tick
       self.seconds = seconds
       self.formatted = formatted
-    }
-  }
-  
-  private func listenForImgurUpload() {
-    ImgurClient.shared.callback = { url in
-      print(url)
-      
     }
   }
   
@@ -125,13 +105,27 @@ class RecordingManager: ObservableObject {
     monitor?.start()
   }
   
-  private func stopListeningForScreenshots() {
-    monitor = nil
+  func onScreenshot(uri: URL) {
+    // TODO Warn here if old timestamp wouldn't be saved...
+    self.pendingScreenshot.seconds = self.seconds
+    self.pendingScreenshot.formatted = self.formatted
+    ImgurClient.shared.uploadImage(withURL: uri, isScreenshot: true)
   }
   
-  func onScreenshot(uri: URL) {
-    print(uri.absoluteString)
-    ImgurClient.shared.uploadImage(withURL: uri, isScreenshot: true)
+  private func listenForImgurUpload() {
+    ImgurClient.shared.callback = { url in
+      print(url)
+      self.urls.append(url)
+      
+      self.pendingScreenshot.image = url
+      
+      let appDelegate = NSApplication.shared.delegate as! AppDelegate
+      appDelegate.promptScreenshotDetails()
+    }
+  }
+  
+  private func stopListeningForScreenshots() {
+    monitor = nil
   }
   
 }
