@@ -199,7 +199,6 @@ class ImgurClient: NSObject, IMGSessionDelegate {
         return
     }
     
-    print(urlString)
     if (callback != nil) {
       callback!(urlString)
     }

@@ -53,7 +53,7 @@ class RecordingManager: ObservableObject {
   
   private let stopwatch = Stopwatch()
   private let recordingWatcher = RecordingWatcher.shared
-//  private var monitor: ScreenshotMonitor?
+  private var monitor: ScreenshotMonitor?
   private let timestamps: [Timestamp] = []
 
   @Published var state: RecordingState = .listening
@@ -118,12 +118,12 @@ class RecordingManager: ObservableObject {
   }
   
   private func listenForScreenshots() {
-//    monitor = ScreenshotMonitor(callback: onScreenshot)
-//    monitor?.start()
+    monitor = ScreenshotMonitor(callback: onScreenshot)
+    monitor?.start()
   }
   
   private func stopListeningForScreenshots() {
-//    monitor = nil
+    monitor = nil
   }
   
   func onScreenshot(uri: URL) {

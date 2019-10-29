@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		99801989088E6A2961C4032D /* Pods_VideoCreationAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341200FC460B4374F79CCA3C /* Pods_VideoCreationAssistant.framework */; };
 		C4340A4B23678DE9007912A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A4A23678DE9007912A5 /* AppDelegate.swift */; };
-		C4340A4D23678DE9007912A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A4C23678DE9007912A5 /* ContentView.swift */; };
 		C4340A5023678DE9007912A5 /* VideoCreationAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4340A4E23678DE9007912A5 /* VideoCreationAssistant.xcdatamodeld */; };
 		C4340A5223678DEB007912A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4340A5123678DEB007912A5 /* Assets.xcassets */; };
 		C4340A5523678DEB007912A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4340A5423678DEB007912A5 /* Preview Assets.xcassets */; };
@@ -17,7 +16,6 @@
 		C4340A832367906B007912A5 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A632367906A007912A5 /* StopwatchView.swift */; };
 		C4340A842367906B007912A5 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A642367906A007912A5 /* Stopwatch.swift */; };
 		C4340A852367906B007912A5 /* ImgurImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A662367906A007912A5 /* ImgurImageStore.swift */; };
-		C4340A862367906B007912A5 /* NewScreenshotDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A672367906A007912A5 /* NewScreenshotDetector.swift */; };
 		C4340A872367906B007912A5 /* ImgurClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A682367906A007912A5 /* ImgurClient.swift */; };
 		C4340A882367906B007912A5 /* UserNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A692367906A007912A5 /* UserNotificationController.swift */; };
 		C4340A892367906B007912A5 /* FolderContentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A6A2367906A007912A5 /* FolderContentMonitor.swift */; };
@@ -48,7 +46,6 @@
 		8947B5F183411DFD096065E3 /* Pods-VideoCreationAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.release.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCreationAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4340A4A23678DE9007912A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4340A4C23678DE9007912A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C4340A4F23678DE9007912A5 /* VideoCreationAssistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VideoCreationAssistant.xcdatamodel; sourceTree = "<group>"; };
 		C4340A5123678DEB007912A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4340A5423678DEB007912A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -58,7 +55,6 @@
 		C4340A632367906A007912A5 /* StopwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		C4340A642367906A007912A5 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		C4340A662367906A007912A5 /* ImgurImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurImageStore.swift; sourceTree = "<group>"; };
-		C4340A672367906A007912A5 /* NewScreenshotDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewScreenshotDetector.swift; sourceTree = "<group>"; };
 		C4340A682367906A007912A5 /* ImgurClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurClient.swift; sourceTree = "<group>"; };
 		C4340A692367906A007912A5 /* UserNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationController.swift; sourceTree = "<group>"; };
 		C4340A6A2367906A007912A5 /* FolderContentMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderContentMonitor.swift; sourceTree = "<group>"; };
@@ -125,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				C4340A762367906A007912A5 /* Extensions */,
-				C4340A6A2367906A007912A5 /* FolderContentMonitor.swift */,
 				C4340A652367906A007912A5 /* Imgur */,
 				C4340A6B2367906A007912A5 /* Interface */,
 				C4340A792367906A007912A5 /* Monitors */,
@@ -135,7 +130,6 @@
 				C4340A622367906A007912A5 /* Stopwatch */,
 				C4340A692367906A007912A5 /* UserNotificationController.swift */,
 				C4340A4A23678DE9007912A5 /* AppDelegate.swift */,
-				C4340A4C23678DE9007912A5 /* ContentView.swift */,
 				C4340A5123678DEB007912A5 /* Assets.xcassets */,
 				C4340A5623678DEB007912A5 /* Main.storyboard */,
 				C4340A5923678DEB007912A5 /* Info.plist */,
@@ -167,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				C4340A662367906A007912A5 /* ImgurImageStore.swift */,
-				C4340A672367906A007912A5 /* NewScreenshotDetector.swift */,
 				C4340A682367906A007912A5 /* ImgurClient.swift */,
 			);
 			path = Imgur;
@@ -181,6 +174,7 @@
 			);
 			path = Interface;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		C4340A6D2367906A007912A5 /* Menu */ = {
 			isa = PBXGroup;
@@ -208,6 +202,7 @@
 		C4340A792367906A007912A5 /* Monitors */ = {
 			isa = PBXGroup;
 			children = (
+				C4340A6A2367906A007912A5 /* FolderContentMonitor.swift */,
 				C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */,
 			);
 			path = Monitors;
@@ -232,7 +227,6 @@
 				74505A8CBA3C0D6073F16CF9 /* Pods-VideoCreationAssistant.debug.xcconfig */,
 				8947B5F183411DFD096065E3 /* Pods-VideoCreationAssistant.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -352,7 +346,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4340A922367906B007912A5 /* PostingView.swift in Sources */,
-				C4340A4D23678DE9007912A5 /* ContentView.swift in Sources */,
 				C4340A8D2367906B007912A5 /* ImgurMenuController.swift in Sources */,
 				C4340A4B23678DE9007912A5 /* AppDelegate.swift in Sources */,
 				C4340A882367906B007912A5 /* UserNotificationController.swift in Sources */,
@@ -367,7 +360,6 @@
 				C4340A932367906B007912A5 /* NSMenuExtension.swift in Sources */,
 				C4340A912367906B007912A5 /* MenuController.swift in Sources */,
 				C4340A852367906B007912A5 /* ImgurImageStore.swift in Sources */,
-				C4340A862367906B007912A5 /* NewScreenshotDetector.swift in Sources */,
 				C4340A972367906B007912A5 /* BeforeRecording.swift in Sources */,
 				C4340A8B2367906B007912A5 /* AboutMenuController.swift in Sources */,
 				C4340A9B2367906B007912A5 /* DuringRecording.swift in Sources */,
