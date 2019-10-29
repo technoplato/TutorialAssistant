@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     if let button = statusItem.button {
       button.image = NSImage(named: NSImage.Name("StatusBarButtonImage"))
-      button.action = #selector(togglePopover(_:))
+//      button.action = #selector(togglePopover(_:))
     }
     
 //    constructMenu()
@@ -43,9 +43,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func promptScreenshotDetails() {
-    
     if let button = statusItem.button {
       self.showPopover(sender: button)
+    }
+  }
+  
+  func hideScreenshotDetails() {
+    if let button = statusItem.button {
+      self.closePopover(sender: button)
     }
   }
   

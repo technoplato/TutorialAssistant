@@ -14,8 +14,8 @@ struct DuringRecording: View {
     return VStack {
       Text(recording.formatted)
       
-      ForEach(recording.urls, id: \.self) { url in
-        Text(url)
+      ForEach(recording.timestamps, id: \.id) { timestamp in
+        Text("\(timestamp.title) @ \(timestamp.formatted)")
       }
       
       if (self.recording.state == .ended) {

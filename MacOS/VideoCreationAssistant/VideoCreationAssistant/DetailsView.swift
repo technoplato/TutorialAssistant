@@ -36,7 +36,6 @@ struct ImageView: View {
       Image(nsImage: imageLoader.data != nil ? NSImage(data: imageLoader.data!)! : NSImage())
         .resizable()
         .aspectRatio(contentMode: .fit)
-        .frame(width:200, height:200)
     }
   }
 }
@@ -46,12 +45,19 @@ struct DetailsView: View {
   
   var body: some View {
     Form {
-      TextField("Title", text: $recordingManager.pendingScreenshot.title)
-      TextField("Description", text: $recordingManager.pendingScreenshot.description)
-      Text("Formatted Timestamp: \(recordingManager.pendingScreenshot.formatted)")
+      Text("New Screenshot!").font(.headline)
+      Text("Add Details Below").font(.subheadline)
+      Section {
+        TextField("Title", text: $recordingManager.pendingScreenshot.title)
+        TextField("Description", text: $recordingManager.pendingScreenshot.description).lineLimit(5)
+        Text("Formatted Timestamp: \(recordingManager.pendingScreenshot.formatted)")
+      }
       ImageView(withURL: recordingManager.pendingScreenshot.image)
       Spacer()
-    }
+      Button("Save Timestamp") {
+        self.recordingManager.saveScreenshot()
+      }
+    }.frame(minWidth: 500, maxWidth: .infinity, minHeight: 650, maxHeight: .infinity).padding()
     
   }
 }

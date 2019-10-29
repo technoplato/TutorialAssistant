@@ -22,6 +22,7 @@ enum RecordingState {
 }
 
 class Timestamp {
+  @Published var id = UUID()
   @Published var seconds = -1
   @Published var formatted = ""
   @Published var title = ""
@@ -37,13 +38,10 @@ class RecordingManager: ObservableObject {
   private let stopwatch = Stopwatch()
   private let recordingWatcher = RecordingWatcher.shared
   private var monitor: ScreenshotMonitor?
-  private let timestamps: [Timestamp] = []
+  
+  @Published var timestamps: [Timestamp] = []
   
   @Published var pendingScreenshot = Screenshot()
-//  @Published var pendingTitle = ""
-//  @Published var pendingDescription = ""
-//  @Published var pendingSeconds = -1
-//  @Published var pendingFormatted = ""
   
   @Published var state: RecordingState = .listening
   @Published var duration = Duration()
@@ -51,12 +49,17 @@ class RecordingManager: ObservableObject {
   @Published var seconds: Int = -1
   @Published var formatted: String = "00:00:00"
   
-  @Published var urls: [String] = []
-  
   init() {
     self.listenForVideoRecordingStart()
     self.listenToStopwatch()
     self.listenForImgurUpload()
+  }
+  
+  func saveScreenshot() {
+    timestamps.append(pendingScreenshot)
+    pendingScreenshot = Screenshot()
+    let appDelegate = NSApplication.shared.delegate as! AppDelegate
+    appDelegate.hideScreenshotDetails()
   }
   
   func goToPosting() {
@@ -106,26 +109,24 @@ class RecordingManager: ObservableObject {
   }
   
   func onScreenshot(uri: URL) {
-    // TODO Warn here if old timestamp wouldn't be saved...
+    if (self.pendingScreenshot.seconds != -1 ) {
+      // TODO Warn here if old timestamp wouldn't be saved...
+      self.pendingScreenshot = Screenshot()
+    }
     self.pendingScreenshot.seconds = self.seconds
     self.pendingScreenshot.formatted = self.formatted
+    let appDelegate = NSApplication.shared.delegate as! AppDelegate
+    appDelegate.promptScreenshotDetails()
     ImgurClient.shared.uploadImage(withURL: uri, isScreenshot: true)
   }
   
   private func listenForImgurUpload() {
     ImgurClient.shared.callback = { url in
-      print(url)
-      self.urls.append(url)
-      
       self.pendingScreenshot.image = url
-      
-      let appDelegate = NSApplication.shared.delegate as! AppDelegate
-      appDelegate.promptScreenshotDetails()
     }
   }
   
   private func stopListeningForScreenshots() {
     monitor = nil
   }
-  
 }

@@ -9,13 +9,20 @@
 import SwiftUI
 
 struct PostingView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/).frame(maxWidth: .infinity, maxHeight: .infinity).padding()
-    }
+  @EnvironmentObject var recording: RecordingManager
+  
+  var body: some View {
+    return VStack {
+      
+      ForEach(recording.timestamps, id: \.id) { timestamp in
+        Text("\(timestamp.title) @ \(timestamp.formatted)")
+      }
+    }.frame(maxWidth: .infinity, maxHeight: .infinity)
+  }
 }
 
 struct PostingView_Previews: PreviewProvider {
-    static var previews: some View {
-        PostingView()
-    }
+  static var previews: some View {
+    PostingView()
+  }
 }
