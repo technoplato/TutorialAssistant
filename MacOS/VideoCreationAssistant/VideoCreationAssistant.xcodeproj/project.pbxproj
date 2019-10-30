@@ -40,6 +40,7 @@
 		C4340A9B2367906B007912A5 /* DuringRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A812367906B007912A5 /* DuringRecording.swift */; };
 		C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A822367906B007912A5 /* RecordingWatcher.swift */; };
 		C45C3BE9236870460091A324 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C3BE8236870460091A324 /* DetailsView.swift */; };
+		C45EBD1D2368DBAF000564BE /* Devto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45EBD1C2368DBAF000564BE /* Devto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		C4340A812367906B007912A5 /* DuringRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuringRecording.swift; sourceTree = "<group>"; };
 		C4340A822367906B007912A5 /* RecordingWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingWatcher.swift; sourceTree = "<group>"; };
 		C45C3BE8236870460091A324 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		C45EBD1C2368DBAF000564BE /* Devto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		C4340A4923678DE9007912A5 /* VideoCreationAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				C45EBD1B2368DB97000564BE /* Posting */,
 				C4340A762367906A007912A5 /* Extensions */,
 				C4340A652367906A007912A5 /* Imgur */,
 				C4340A6B2367906A007912A5 /* Interface */,
@@ -225,6 +228,14 @@
 				C4340A822367906B007912A5 /* RecordingWatcher.swift */,
 			);
 			path = Recording;
+			sourceTree = "<group>";
+		};
+		C45EBD1B2368DB97000564BE /* Posting */ = {
+			isa = PBXGroup;
+			children = (
+				C45EBD1C2368DBAF000564BE /* Devto.swift */,
+			);
+			path = Posting;
 			sourceTree = "<group>";
 		};
 		FBC3A2E3A145D3775DCE7DCF /* Pods */ = {
@@ -361,6 +372,7 @@
 				C4340A8F2367906B007912A5 /* StatusItemMenuController.swift in Sources */,
 				C4340A842367906B007912A5 /* Stopwatch.swift in Sources */,
 				C4340A8E2367906B007912A5 /* UploadsMenuController.swift in Sources */,
+				C45EBD1D2368DBAF000564BE /* Devto.swift in Sources */,
 				C4340A892367906B007912A5 /* FolderContentMonitor.swift in Sources */,
 				C4340A962367906B007912A5 /* Preferences.swift in Sources */,
 				C4208BCE2367DD6E0033CC9E /* DetailsViewController.swift in Sources */,

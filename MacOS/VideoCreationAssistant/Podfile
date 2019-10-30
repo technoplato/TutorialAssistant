@@ -11,5 +11,6 @@ target 'VideoCreationAssistant' do
   pod 'GRDB.swift'
   pod 'ImgurSession', :git => 'https://github.com/mileswd/ImgurSession.git', :branch => 'update-podspec'
   pod 'EMCLoginItem'
-
+  pod 'Alamofire', '~> 5.0.0-rc.3'
+  
 end
