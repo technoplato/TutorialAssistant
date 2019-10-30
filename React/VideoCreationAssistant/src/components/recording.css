@@ -1,0 +1,29 @@
+.red-dot {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: red;
+    margin-right: 4px;
+}
+
+.time {
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.fade-out {
+    opacity: 0;
+    /*transition: opacity 0.5s;*/
+
+}
+.fade-in {
+    opacity: 1;
+    /*transition: opacity 0.5s;*/
+
+}

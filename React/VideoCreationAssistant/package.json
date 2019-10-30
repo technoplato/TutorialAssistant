@@ -1,0 +1,45 @@
+{
+  "name": "code",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@use-hook/use-cookie": "0.1.4",
+    "formik": "2.0.1-rc.13",
+    "moment": "2.24.0",
+    "react": "^16.9.0",
+    "react-copy-to-clipboard": "5.0.1",
+    "react-dom": "^16.9.0",
+    "react-markdown": "4.2.2",
+    "react-scripts": "3.1.2",
+    "yup": "0.27.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "prettier": "1.18.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true
+  }
+}
