@@ -49,6 +49,12 @@ class RecordingManager: ObservableObject {
   @Published var seconds: Int = -1
   @Published var formatted: String = "00:00:00"
   
+  @Published var title: String = ""
+  @Published var body: String = ""
+  
+  var devtoId: Int = -1
+  var devtoUrl: String = ""
+
   init() {
     self.listenForVideoRecordingStart()
     self.listenToStopwatch()

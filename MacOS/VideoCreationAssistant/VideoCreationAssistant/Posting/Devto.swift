@@ -29,7 +29,7 @@ struct Article: Encodable {
   let series: String?
 }
 
-struct ArticleUpdate: Encodable {
+struct ArticlePartial: Encodable {
   let title: String?
   let published: Bool?
   let body_markdown: String?
@@ -40,34 +40,43 @@ struct ArticleUpdate: Encodable {
 
 struct ArticleResponse: Decodable {
   let id: Int
-  let slug: String
   let url: String
 }
 
 class Devto {
   
-  static func testPost() {
-//    let article = Article(
-//      title: "Test from swift",
-//      published: true,
-//      body_markdown: body,
-//      tags: ["tinkering"],
-//      series: nil
-//    )
-//
-//    AF.request("https://dev.to/api/articles",
-//               method: .post,
-//               parameters: article,
-//               encoder: JSONParameterEncoder.default,
-//               headers: headers).responseDecodable(of: ArticleResponse.self) {response in debugPrint(response)}
+  static func createPost(title: String, callback: @escaping (ArticleResponse) -> Void) {
+    let partial = ArticlePartial(title: title, published: true, body_markdown: "", tags: nil, series: nil)
+    
+        AF.request("https://dev.to/api/articles",
+                   method: .post,
+                   parameters: partial,
+                   encoder: JSONParameterEncoder.default,
+                   headers: headers).responseDecodable(of: ArticleResponse.self) {response in callback(response.value!)}
   }
   
-  static func updatePost() {
-    let article = ArticleUpdate(
+  static func testPost() {
+    let article = Article(
+      title: "Test from swift",
+      published: true,
+      body_markdown: "",
+      tags: [],
+      series: nil
+    )
+
+    AF.request("https://dev.to/api/articles",
+               method: .post,
+               parameters: article,
+               encoder: JSONParameterEncoder.default,
+               headers: headers).responseDecodable(of: ArticleResponse.self) {response in debugPrint(response)}
+  }
+  
+  static func updatePost(id: Int) {
+    let article = ArticlePartial(
       title: "Test update from swift", published: nil, body_markdown: nil, tags: nil, series: nil
     )
     
-    AF.request("https://dev.to/api/articles\(198043)",
+    AF.request("https://dev.to/api/articles\(id)",
       method: .put,
       parameters: article,
       encoder: JSONParameterEncoder.default,

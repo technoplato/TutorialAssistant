@@ -12,11 +12,28 @@ struct PostingView: View {
   @EnvironmentObject var recording: RecordingManager
   
   var body: some View {
-    return VStack {
+    return Form {
+      Text("Post It").font(.title)
+      Text("You have to manually post things right now, but that will be changed soon!")
+        .font(.subheadline)
       
-      ForEach(recording.timestamps, id: \.id) { timestamp in
-        Text("\(timestamp.title) @ \(timestamp.formatted)")
+      Text("Enter a title for the overall video").bold()
+      TextField("Enter title here", text: $recording.title)
+      
+      Text("Click to create Dev.to post").bold()
+      Button("Create Post") {
+        Devto.createPost(title: self.recording.title, body: self.recording.body) { response in
+          print(response)
+          self.recording.devtoId = response.id
+          self.recording.devtoUrl = response.url
+        }
       }
+      
+      if recording.devtoId != -1 {
+        Text("Dev.to URL: \(self.recording.devtoUrl)")
+      }
+      
+      CopyDevtoContent()
     }.frame(maxWidth: .infinity, maxHeight: .infinity)
   }
 }
