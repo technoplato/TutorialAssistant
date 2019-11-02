@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let recordingManager = RecordingManager()
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    Devto.testPost()
+    
     // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
     // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
     let contentView = RecordingView().environment(\.managedObjectContext, persistentContainer.viewContext).environmentObject(recordingManager)
