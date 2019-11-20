@@ -40,8 +40,13 @@
 		C4340A9A2367906B007912A5 /* RecordingEnded.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A802367906B007912A5 /* RecordingEnded.swift */; };
 		C4340A9B2367906B007912A5 /* DuringRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A812367906B007912A5 /* DuringRecording.swift */; };
 		C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A822367906B007912A5 /* RecordingWatcher.swift */; };
+		C43CCE6F2385D74B000007E3 /* ClipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */; };
+		C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE702385E28A000007E3 /* ArrayExtensions.swift */; };
 		C45C3BE9236870460091A324 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C3BE8236870460091A324 /* DetailsView.swift */; };
 		C45EBD1D2368DBAF000564BE /* Devto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45EBD1C2368DBAF000564BE /* Devto.swift */; };
+		C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */; };
+		C46D09A023836BA500AD1A53 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
+		C494E7292385F542004C03E2 /* ClipUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C494E7282385F542004C03E2 /* ClipUploader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +88,13 @@
 		C4340A802367906B007912A5 /* RecordingEnded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingEnded.swift; sourceTree = "<group>"; };
 		C4340A812367906B007912A5 /* DuringRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuringRecording.swift; sourceTree = "<group>"; };
 		C4340A822367906B007912A5 /* RecordingWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingWatcher.swift; sourceTree = "<group>"; };
+		C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractor.swift; sourceTree = "<group>"; };
+		C43CCE702385E28A000007E3 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = SOURCE_ROOT; };
 		C45C3BE8236870460091A324 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		C45EBD1C2368DBAF000564BE /* Devto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devto.swift; sourceTree = "<group>"; };
+		C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePostingView.swift; sourceTree = "<group>"; };
+		C46D099F23836BA500AD1A53 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = SOURCE_ROOT; };
+		C494E7282385F542004C03E2 /* ClipUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipUploader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,12 +138,12 @@
 		C4340A4923678DE9007912A5 /* VideoCreationAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				C46D099E23836B9500AD1A53 /* Utilities */,
 				C45EBD1B2368DB97000564BE /* Posting */,
 				C4340A762367906A007912A5 /* Extensions */,
 				C4340A652367906A007912A5 /* Imgur */,
 				C4340A6B2367906A007912A5 /* Interface */,
 				C4340A792367906A007912A5 /* Monitors */,
-				C4340A752367906A007912A5 /* PostingView.swift */,
 				C4340A7B2367906A007912A5 /* Preferences.swift */,
 				C4340A7C2367906B007912A5 /* Recording */,
 				C4340A622367906A007912A5 /* Stopwatch */,
@@ -148,6 +158,8 @@
 				C4208BCD2367DD6E0033CC9E /* DetailsViewController.swift */,
 				C45C3BE8236870460091A324 /* DetailsView.swift */,
 				C416AB05236B425900296E47 /* CopyDevtoContent.swift */,
+				C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */,
+				C494E7282385F542004C03E2 /* ClipUploader.swift */,
 			);
 			path = VideoCreationAssistant;
 			sourceTree = "<group>";
@@ -207,6 +219,7 @@
 			children = (
 				C4340A772367906A007912A5 /* NSMenuExtension.swift */,
 				C4340A782367906A007912A5 /* IMGImage.swift */,
+				C43CCE702385E28A000007E3 /* ArrayExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,9 +249,19 @@
 		C45EBD1B2368DB97000564BE /* Posting */ = {
 			isa = PBXGroup;
 			children = (
+				C4340A752367906A007912A5 /* PostingView.swift */,
 				C45EBD1C2368DBAF000564BE /* Devto.swift */,
+				C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */,
 			);
 			path = Posting;
+			sourceTree = "<group>";
+		};
+		C46D099E23836B9500AD1A53 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C46D099F23836BA500AD1A53 /* Shell.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FBC3A2E3A145D3775DCE7DCF /* Pods */ = {
@@ -370,6 +393,7 @@
 				C4340A4B23678DE9007912A5 /* AppDelegate.swift in Sources */,
 				C45C3BE9236870460091A324 /* DetailsView.swift in Sources */,
 				C4340A882367906B007912A5 /* UserNotificationController.swift in Sources */,
+				C494E7292385F542004C03E2 /* ClipUploader.swift in Sources */,
 				C416AB06236B425900296E47 /* CopyDevtoContent.swift in Sources */,
 				C4340A8C2367906B007912A5 /* ImgurAlbumMenuController.swift in Sources */,
 				C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */,
@@ -381,9 +405,12 @@
 				C4340A962367906B007912A5 /* Preferences.swift in Sources */,
 				C4208BCE2367DD6E0033CC9E /* DetailsViewController.swift in Sources */,
 				C4340A832367906B007912A5 /* StopwatchView.swift in Sources */,
+				C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */,
 				C4340A932367906B007912A5 /* NSMenuExtension.swift in Sources */,
 				C4340A912367906B007912A5 /* MenuController.swift in Sources */,
+				C46D09A023836BA500AD1A53 /* Shell.swift in Sources */,
 				C4340A852367906B007912A5 /* ImgurImageStore.swift in Sources */,
+				C43CCE6F2385D74B000007E3 /* ClipExtractor.swift in Sources */,
 				C4340A972367906B007912A5 /* BeforeRecording.swift in Sources */,
 				C4340A8B2367906B007912A5 /* AboutMenuController.swift in Sources */,
 				C4340A9B2367906B007912A5 /* DuringRecording.swift in Sources */,
@@ -396,6 +423,7 @@
 				C4340A982367906B007912A5 /* RecordingManager.swift in Sources */,
 				C4340A992367906B007912A5 /* RecordingView.swift in Sources */,
 				C4340A942367906B007912A5 /* IMGImage.swift in Sources */,
+				C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

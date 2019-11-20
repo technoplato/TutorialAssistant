@@ -37,7 +37,6 @@ struct ArticlePartial: Encodable {
   let series: String?
 }
 
-
 struct ArticleResponse: Decodable {
   let id: Int
   let url: String

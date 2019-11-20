@@ -14,11 +14,11 @@ struct BeforeRecording: View {
       Text("I'm waiting for you to start a recording").font(.title)
       Text("Once you start the recording, I'll automatically listen for screenshots and hotkey presses to tag events or start new chapters in your video.")
         .font(.subheadline)
-      Spacer()
-      Text("Keyboard Shortcuts")
-        .font(.title)
-      
-      Text("⌘⇧C - New Chapter")
+//      Spacer()
+//      Text("Keyboard Shortcuts")
+//        .font(.title)
+//      
+//      Text("⌘⇧C - New Chapter")
     }.frame(minWidth: 450, maxWidth: .infinity, minHeight: 270, maxHeight: .infinity).padding()
   }
 }

@@ -19,15 +19,23 @@ extension String {
 
 let quickTimeMovieCreatedPath = "/Users/lustig/Library/Containers/com.apple.QuickTimePlayerX/Data/Library/Autosave Information/Unsaved QuickTime Player Document.qtpxcomposition"
 let quickTimeScreenRecordingCreatedPath = "/Users/lustig/Library/ScreenRecordings/"
-let screenflickPath = "/Users/lustig/Application Support/com.araeliumgroup.screenflick/Movies/Screenflick Movie.sfmovie/Camera.mov"
+let screenflickPath = "/Users/lustig/Library/Application Support/com.araeliumgroup.screenflick/Movies/"
+let screenflickExportPath = "~/Documents".expandingTildeInPath
+
+let recordingPathExtensions = ["mov", "mp4"]
+
+/*
+ * List of currently supported recording software
+ */
+enum RecordingSoftware {
+  case QuickTime
+  case Screenflick
+}
 
 enum VideoEvent {
-  case quickTimeScreenRecordStarted
-  case quickTimeScreenRecordEnded
-  case quickTimeScreenMovieStarted
-  case quickTimeScreenMovieEnded
-  case screenflickStart
-  case screenflickEnd
+  case start(_ path: String, _ software: RecordingSoftware)
+  case end
+  case exported(_ path: String)
 }
 
 typealias VideoEventCallback = (VideoEvent) -> Void
@@ -43,56 +51,47 @@ class RecordingWatcher {
     filewatcher = FileWatcher([
       quickTimeMovieCreatedPath,
       quickTimeScreenRecordingCreatedPath,
-      screenflickPath
+      screenflickPath,
+      screenflickExportPath
     ])
     
     filewatcher.callback = { event in
       
       if (self.videoEventCallback == nil) {
+        print("videoEventCallback is nil, not active...")
         return
       }
       
-      let started = event.fileCreated
+      let dirOperation = event.dirCreated || event.dirRemoved || event.dirRenamed || event.dirModified
+      if (dirOperation) {
+        return
+      }
+      
+      let exported = event.path.starts(with: screenflickExportPath) && event.fileCreated
+      if (exported) {
+        print("Video was exported from Screenflick")
+      }
+      let started = event.fileCreated && !exported
       let ended = event.fileRemoved || event.fileRenamed || event.fileModified
       
-      if (!started && !ended) {
-        return;
-      }
-      
-      let path = event.path
-      
-      let ext = path.suffix(3)
-      if (!["mov"].contains(ext)) {
+      let ext = event.path.suffix(3).lowercased()
+      if (!recordingPathExtensions.contains(ext)) {
         return
       }
       
-      let qtScreen = path.starts(with: quickTimeScreenRecordingCreatedPath)
-      let qtMovie = path.starts(with: quickTimeMovieCreatedPath)
-      let screenflick = path.starts(with: screenflickPath)
+      // TODO: better assignment here. What happens if not Screenflick or QuickTime?
+      var software: RecordingSoftware = .QuickTime
       
-      if (ended) {
-        
-        print(event.fileRemoved)
-        print(event.fileRenamed)
-        print(event.fileModified)
-        
-        if (qtScreen) {
-          self.videoEventCallback!(.quickTimeScreenRecordEnded)
-        } else if (qtMovie) {
-          self.videoEventCallback!(.quickTimeScreenMovieEnded)
-        } else if (screenflick) {
-          self.videoEventCallback!(.screenflickEnd)
-        }
-        
-      } else if (started) {
-        
-        if (qtScreen) {
-          self.videoEventCallback!(.quickTimeScreenRecordStarted)
-        } else if (qtMovie) {
-          self.videoEventCallback!(.quickTimeScreenMovieStarted)
-        } else if (screenflick) {
-          self.videoEventCallback!(.screenflickStart)
-        }
+      if event.path.starts(with: screenflickPath) {
+        software = .Screenflick
+      }
+      
+      if ended {
+        self.videoEventCallback!(.end)
+      } else if started {
+        self.videoEventCallback!(.start(event.path, software))
+      } else if exported {
+        self.videoEventCallback!(.exported(event.path))
       }
     }
     

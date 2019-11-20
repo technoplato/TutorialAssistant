@@ -39,6 +39,9 @@ class RecordingManager: ObservableObject {
   private let recordingWatcher = RecordingWatcher.shared
   private var monitor: ScreenshotMonitor?
   
+  @Published var tmpPath: String = ""
+  @Published var finalPath: String = ""
+  @Published var software: RecordingSoftware = .QuickTime
   @Published var timestamps: [Timestamp] = []
   
   @Published var pendingScreenshot = Screenshot()
@@ -54,7 +57,7 @@ class RecordingManager: ObservableObject {
   
   var devtoId: Int = -1
   var devtoUrl: String = ""
-
+  
   init() {
     self.listenForVideoRecordingStart()
     self.listenToStopwatch()
@@ -74,16 +77,22 @@ class RecordingManager: ObservableObject {
   
   // MARK: Recording Callbacks
   
-  func onRecordingStart() {
+  func onRecordingStart(_ path: String) {
+    self.tmpPath = path
     self.state = .live
     self.stopwatch.start()
     self.listenForScreenshots()
   }
   
   func onRecordingEnd() {
+    print("onRecordingEnd")
     self.state = .ended
     self.stopwatch.stop()
-    self.recordingWatcher.stop()
+//    self.recordingWatcher.stop()
+  }
+  
+  func onRecordingExported(_ path: String) {
+    self.finalPath = path
   }
   
   // MARK: Listeners
@@ -92,11 +101,15 @@ class RecordingManager: ObservableObject {
     recordingWatcher.videoEventCallback = { recordingEvent in
       switch recordingEvent {
         
-      case .quickTimeScreenRecordStarted, .quickTimeScreenMovieStarted, .screenflickStart:
-        self.onRecordingStart()
+      case let .start(path, software):
+        self.software = software
+        self.onRecordingStart(path)
         
-      case .quickTimeScreenRecordEnded, .quickTimeScreenMovieEnded, .screenflickEnd:
+      case .end:
         self.onRecordingEnd()
+        
+      case let .exported(path):
+        self.finalPath = path
       }
     }
   }
