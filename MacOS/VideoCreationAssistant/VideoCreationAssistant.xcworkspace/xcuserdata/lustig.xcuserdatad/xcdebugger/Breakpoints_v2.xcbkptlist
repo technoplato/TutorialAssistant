@@ -14,8 +14,8 @@
             filePath = "VideoCreationAssistant/Recording/RecordingManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "RecordingManager"
             landmarkType = "3">
          </BreakpointContent>
@@ -34,6 +34,54 @@
             endingLineNumber = "69"
             landmarkName = "init()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB3FA67C-F914-46F0-88F6-4D61527CE212"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoCreationAssistant/Timestamp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "clipPath"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AB3FA67C-F914-46F0-88F6-4D61527CE212 - be01ed5faa0e4f59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoCreationAssistant.Timestamp.clipPath.didset : Swift.String"
+                  moduleName = "VideoCreationAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lustig/Development/PROJECTS/Video%20Creation%20Assistant/MacOS/VideoCreationAssistant/VideoCreationAssistant/Timestamp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "450">
+               </Location>
+               <Location
+                  uuid = "AB3FA67C-F914-46F0-88F6-4D61527CE212 - cd15aed78350f619"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoCreationAssistantTests.Timestamp.clipPath.didset : Swift.String"
+                  moduleName = "VideoCreationAssistantTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lustig/Development/PROJECTS/Video%20Creation%20Assistant/MacOS/VideoCreationAssistant/VideoCreationAssistant/Timestamp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "450">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

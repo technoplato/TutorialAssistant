@@ -46,12 +46,38 @@
 		C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */; };
 		C46D09A023836BA500AD1A53 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
 		C494E7292385F542004C03E2 /* ClipUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C494E7282385F542004C03E2 /* ClipUploader.swift */; };
+		C4C90A222388212E008B1603 /* VideoCreationAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A212388212E008B1603 /* VideoCreationAssistantTests.swift */; };
+		C4C90A302388243D008B1603 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A642367906A007912A5 /* Stopwatch.swift */; };
+		C4C90A3123882443008B1603 /* RecordingWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A822367906B007912A5 /* RecordingWatcher.swift */; };
+		C4C90A3323882709008B1603 /* ScreenshotMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */; };
+		C4C90A34238827A5008B1603 /* FolderContentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A6A2367906A007912A5 /* FolderContentMonitor.swift */; };
+		C4C90A36238828AD008B1603 /* ClipExtractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */; };
+		C4C90A3923882907008B1603 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3823882907008B1603 /* Timestamp.swift */; };
+		C4C90A3A23882918008B1603 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3823882907008B1603 /* Timestamp.swift */; };
+		C4C90A3C23882AD1008B1603 /* ObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3B23882AD1008B1603 /* ObjectFactory.swift */; };
+		C4C90A3E23882B9D008B1603 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3D23882B9D008B1603 /* StringExtensions.swift */; };
+		C4C90A3F23882B9D008B1603 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3D23882B9D008B1603 /* StringExtensions.swift */; };
+		C4C90A4023882D8C008B1603 /* ClipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */; };
+		C4C90A4123882E1F008B1603 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
+		F65F97FCE4ABC472CBA62574 /* libPods-VideoCreationAssistantTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB08618A3336047F28EEB0F /* libPods-VideoCreationAssistantTests.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4C90A242388212E008B1603 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4340A3F23678DE9007912A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4340A4623678DE9007912A5;
+			remoteInfo = VideoCreationAssistant;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		341200FC460B4374F79CCA3C /* Pods_VideoCreationAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoCreationAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F369F1439F1BDBB8C2EC4F /* Pods-VideoCreationAssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistantTests.debug.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistantTests/Pods-VideoCreationAssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74505A8CBA3C0D6073F16CF9 /* Pods-VideoCreationAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.debug.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		8947B5F183411DFD096065E3 /* Pods-VideoCreationAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.release.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.release.xcconfig"; sourceTree = "<group>"; };
+		9CB08618A3336047F28EEB0F /* libPods-VideoCreationAssistantTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoCreationAssistantTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C416AB05236B425900296E47 /* CopyDevtoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyDevtoContent.swift; sourceTree = "<group>"; };
 		C4208BCD2367DD6E0033CC9E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCreationAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +119,14 @@
 		C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePostingView.swift; sourceTree = "<group>"; };
 		C46D099F23836BA500AD1A53 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = SOURCE_ROOT; };
 		C494E7282385F542004C03E2 /* ClipUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipUploader.swift; sourceTree = "<group>"; };
+		C4C90A1F2388212E008B1603 /* VideoCreationAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoCreationAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4C90A212388212E008B1603 /* VideoCreationAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCreationAssistantTests.swift; sourceTree = "<group>"; };
+		C4C90A232388212E008B1603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractorTest.swift; sourceTree = "<group>"; };
+		C4C90A3823882907008B1603 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		C4C90A3B23882AD1008B1603 /* ObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
+		C4C90A3D23882B9D008B1603 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		D352DA4008F7D82A4AB2AF2C /* Pods-VideoCreationAssistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistantTests.release.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistantTests/Pods-VideoCreationAssistantTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +138,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4C90A1C2388212E008B1603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F65F97FCE4ABC472CBA62574 /* libPods-VideoCreationAssistantTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -111,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				341200FC460B4374F79CCA3C /* Pods_VideoCreationAssistant.framework */,
+				9CB08618A3336047F28EEB0F /* libPods-VideoCreationAssistantTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				C4340A4923678DE9007912A5 /* VideoCreationAssistant */,
+				C4C90A202388212E008B1603 /* VideoCreationAssistantTests */,
 				C4340A4823678DE9007912A5 /* Products */,
 				FBC3A2E3A145D3775DCE7DCF /* Pods */,
 				735633951A39176880E14395 /* Frameworks */,
@@ -129,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */,
+				C4C90A1F2388212E008B1603 /* VideoCreationAssistantTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +203,7 @@
 				C416AB05236B425900296E47 /* CopyDevtoContent.swift */,
 				C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */,
 				C494E7282385F542004C03E2 /* ClipUploader.swift */,
+				C4C90A3823882907008B1603 /* Timestamp.swift */,
 			);
 			path = VideoCreationAssistant;
 			sourceTree = "<group>";
@@ -217,6 +263,7 @@
 				C4340A772367906A007912A5 /* NSMenuExtension.swift */,
 				C4340A782367906A007912A5 /* IMGImage.swift */,
 				C43CCE702385E28A000007E3 /* ArrayExtensions.swift */,
+				C4C90A3D23882B9D008B1603 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,11 +308,24 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		C4C90A202388212E008B1603 /* VideoCreationAssistantTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4C90A212388212E008B1603 /* VideoCreationAssistantTests.swift */,
+				C4C90A232388212E008B1603 /* Info.plist */,
+				C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */,
+				C4C90A3B23882AD1008B1603 /* ObjectFactory.swift */,
+			);
+			path = VideoCreationAssistantTests;
+			sourceTree = "<group>";
+		};
 		FBC3A2E3A145D3775DCE7DCF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				74505A8CBA3C0D6073F16CF9 /* Pods-VideoCreationAssistant.debug.xcconfig */,
 				8947B5F183411DFD096065E3 /* Pods-VideoCreationAssistant.release.xcconfig */,
+				45F369F1439F1BDBB8C2EC4F /* Pods-VideoCreationAssistantTests.debug.xcconfig */,
+				D352DA4008F7D82A4AB2AF2C /* Pods-VideoCreationAssistantTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -292,18 +352,41 @@
 			productReference = C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C4C90A1E2388212E008B1603 /* VideoCreationAssistantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4C90A262388212E008B1603 /* Build configuration list for PBXNativeTarget "VideoCreationAssistantTests" */;
+			buildPhases = (
+				5B6DAC306503B63F929190E0 /* [CP] Check Pods Manifest.lock */,
+				C4C90A1B2388212E008B1603 /* Sources */,
+				C4C90A1C2388212E008B1603 /* Frameworks */,
+				C4C90A1D2388212E008B1603 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4C90A252388212E008B1603 /* PBXTargetDependency */,
+			);
+			name = VideoCreationAssistantTests;
+			productName = VideoCreationAssistantTests;
+			productReference = C4C90A1F2388212E008B1603 /* VideoCreationAssistantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C4340A3F23678DE9007912A5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = lustig;
 				TargetAttributes = {
 					C4340A4623678DE9007912A5 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					C4C90A1E2388212E008B1603 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = C4340A4623678DE9007912A5;
 					};
 				};
 			};
@@ -321,6 +404,7 @@
 			projectRoot = "";
 			targets = (
 				C4340A4623678DE9007912A5 /* VideoCreationAssistant */,
+				C4C90A1E2388212E008B1603 /* VideoCreationAssistantTests */,
 			);
 		};
 /* End PBXProject section */
@@ -336,9 +420,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4C90A1D2388212E008B1603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5B6DAC306503B63F929190E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoCreationAssistantTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6A7BCE91B7D7B254E6E6621F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +504,7 @@
 				C45C3BE9236870460091A324 /* DetailsView.swift in Sources */,
 				C4340A882367906B007912A5 /* UserNotificationController.swift in Sources */,
 				C494E7292385F542004C03E2 /* ClipUploader.swift in Sources */,
+				C4C90A3923882907008B1603 /* Timestamp.swift in Sources */,
 				C416AB06236B425900296E47 /* CopyDevtoContent.swift in Sources */,
 				C4340A8C2367906B007912A5 /* ImgurAlbumMenuController.swift in Sources */,
 				C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */,
@@ -404,6 +518,7 @@
 				C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */,
 				C4340A932367906B007912A5 /* NSMenuExtension.swift in Sources */,
 				C4340A912367906B007912A5 /* MenuController.swift in Sources */,
+				C4C90A3E23882B9D008B1603 /* StringExtensions.swift in Sources */,
 				C46D09A023836BA500AD1A53 /* Shell.swift in Sources */,
 				C4340A852367906B007912A5 /* ImgurImageStore.swift in Sources */,
 				C43CCE6F2385D74B000007E3 /* ClipExtractor.swift in Sources */,
@@ -423,7 +538,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4C90A1B2388212E008B1603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4C90A3A23882918008B1603 /* Timestamp.swift in Sources */,
+				C4C90A36238828AD008B1603 /* ClipExtractorTest.swift in Sources */,
+				C4C90A34238827A5008B1603 /* FolderContentMonitor.swift in Sources */,
+				C4C90A3F23882B9D008B1603 /* StringExtensions.swift in Sources */,
+				C4C90A3123882443008B1603 /* RecordingWatcher.swift in Sources */,
+				C4C90A3323882709008B1603 /* ScreenshotMonitor.swift in Sources */,
+				C4C90A3C23882AD1008B1603 /* ObjectFactory.swift in Sources */,
+				C4C90A4123882E1F008B1603 /* Shell.swift in Sources */,
+				C4C90A222388212E008B1603 /* VideoCreationAssistantTests.swift in Sources */,
+				C4C90A4023882D8C008B1603 /* ClipExtractor.swift in Sources */,
+				C4C90A302388243D008B1603 /* Stopwatch.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4C90A252388212E008B1603 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4340A4623678DE9007912A5 /* VideoCreationAssistant */;
+			targetProxy = C4C90A242388212E008B1603 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C4340A5623678DEB007912A5 /* Main.storyboard */ = {
@@ -560,7 +701,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"VideoCreationAssistant/Preview Content\"";
 				DEVELOPMENT_TEAM = 4EC72DECN9;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VideoCreationAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -584,7 +725,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"VideoCreationAssistant/Preview Content\"";
 				DEVELOPMENT_TEAM = 4EC72DECN9;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VideoCreationAssistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -595,6 +736,48 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lustig.VideoCreationAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C4C90A272388212E008B1603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45F369F1439F1BDBB8C2EC4F /* Pods-VideoCreationAssistantTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4EC72DECN9;
+				INFOPLIST_FILE = VideoCreationAssistantTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lustig.VideoCreationAssistantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCreationAssistant.app/Contents/MacOS/VideoCreationAssistant";
+			};
+			name = Debug;
+		};
+		C4C90A282388212E008B1603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D352DA4008F7D82A4AB2AF2C /* Pods-VideoCreationAssistantTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4EC72DECN9;
+				INFOPLIST_FILE = VideoCreationAssistantTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lustig.VideoCreationAssistantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCreationAssistant.app/Contents/MacOS/VideoCreationAssistant";
 			};
 			name = Release;
 		};
@@ -615,6 +798,15 @@
 			buildConfigurations = (
 				C4340A5E23678DEB007912A5 /* Debug */,
 				C4340A5F23678DEB007912A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4C90A262388212E008B1603 /* Build configuration list for PBXNativeTarget "VideoCreationAssistantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4C90A272388212E008B1603 /* Debug */,
+				C4C90A282388212E008B1603 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

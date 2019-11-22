@@ -18,17 +18,18 @@ struct ClipExtractor {
     self.timestamps = timestamps
   }
   
-  func extract() -> [(UUID, String)] {
+  func extract() -> [String] {
     return self.timestamps.enumerated().map { (index, ts) in
       var extractClip = "/usr/local/bin/ffmpeg -i \(rawVideoPath) -ss \(ts.seconds)"
       if index < timestamps.count - 1 {
-        extractClip.append(" -to \(self.timestamps[safeIndex: index + 1]!.seconds)")
+        extractClip.append(" -to \(self.timestamps[index + 1].seconds)")
       }
       let ext = rawVideoPath.suffix(3).lowercased()
-      let clipPath = "~/Documents/\(ts.title).\(ext)".expandingTildeInPath
+      let clipPath = "\(ts.fullPath).\(ext)".expandingTildeInPath
+      Shell.run("mkdir -p \(ts.clipPath)")
       extractClip.append(" -c copy \(clipPath)")
       Shell.run(extractClip)
-      return (ts.id, clipPath)
+      return clipPath
     }
   }
 }

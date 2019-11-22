@@ -21,16 +21,6 @@ enum RecordingState {
   case posting
 }
 
-class Timestamp {
-  @Published var id = UUID()
-  @Published var seconds = -1
-  @Published var formatted = ""
-  @Published var title = ""
-  @Published var description = ""
-  @Published var clipPath = ""
-  @Published var youtubeId = ""
-}
-
 class Screenshot: Timestamp, ObservableObject {
   @Published var image: String = ""
 }
