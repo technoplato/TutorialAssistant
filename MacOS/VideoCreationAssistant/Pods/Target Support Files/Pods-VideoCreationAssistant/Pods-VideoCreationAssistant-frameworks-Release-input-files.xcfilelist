@@ -1,8 +1,8 @@
 ${PODS_ROOT}/Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant-frameworks.sh
-${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/EMCLoginItem/EMCLoginItem.framework
-${BUILT_PRODUCTS_DIR}/FileWatcher/FileWatcher.framework
+${BUILT_PRODUCTS_DIR}/AFNetworking-framework/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/Alamofire-framework/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/EMCLoginItem-framework/EMCLoginItem.framework
+${BUILT_PRODUCTS_DIR}/FileWatcher-framework/FileWatcher.framework
 ${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework
-${BUILT_PRODUCTS_DIR}/HotKey/HotKey.framework
-${BUILT_PRODUCTS_DIR}/ImgurSession/ImgurSession.framework
+${BUILT_PRODUCTS_DIR}/HotKey-framework/HotKey.framework
+${BUILT_PRODUCTS_DIR}/ImgurSession-framework/ImgurSession.framework

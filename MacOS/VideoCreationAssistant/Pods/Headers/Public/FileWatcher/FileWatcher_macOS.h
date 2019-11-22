@@ -1,0 +1,1 @@
+../../../FileWatcher/FileWatcher_macOS/FileWatcher_macOS.h

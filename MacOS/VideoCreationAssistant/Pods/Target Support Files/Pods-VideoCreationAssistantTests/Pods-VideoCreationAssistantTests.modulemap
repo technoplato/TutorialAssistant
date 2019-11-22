@@ -1,0 +1,6 @@
+module Pods_VideoCreationAssistantTests {
+  umbrella header "Pods-VideoCreationAssistantTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
