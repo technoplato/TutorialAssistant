@@ -27,6 +27,8 @@ class Timestamp {
   @Published var formatted = ""
   @Published var title = ""
   @Published var description = ""
+  @Published var clipPath = ""
+  @Published var youtubeId = ""
 }
 
 class Screenshot: Timestamp, ObservableObject {

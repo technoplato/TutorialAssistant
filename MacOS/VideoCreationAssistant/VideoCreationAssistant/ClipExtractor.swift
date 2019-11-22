@@ -18,7 +18,7 @@ struct ClipExtractor {
     self.timestamps = timestamps
   }
   
-  func extract() -> [String] {
+  func extract() -> [(UUID, String)] {
     return self.timestamps.enumerated().map { (index, ts) in
       var extractClip = "/usr/local/bin/ffmpeg -i \(rawVideoPath) -ss \(ts.seconds)"
       if index < timestamps.count - 1 {
@@ -28,7 +28,7 @@ struct ClipExtractor {
       let clipPath = "~/Documents/\(ts.title).\(ext)".expandingTildeInPath
       extractClip.append(" -c copy \(clipPath)")
       Shell.run(extractClip)
-      return clipPath
+      return (ts.id, clipPath)
     }
   }
 }

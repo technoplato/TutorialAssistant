@@ -45,10 +45,22 @@ struct YoutubePostingView: View {
       }
       
       Button("Upload Clips") {
-        let file = "~/Documents/newvid.mp4".expandingTildeInPath
-        Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file \(file) --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
+        let ts = Timestamp()
+        ts.clipPath = "~/Documents/test1.mp4".expandingTildeInPath
+        ts.title = "Cool clip 1"
+        ts.description = "Cool description 1"
+        
+        let ts2 = Timestamp()
+        ts.clipPath = "~/Documents/22222.mp4".expandingTildeInPath
+        ts.title = "Cool clip 2"
+        ts.description = "Cool description 2"
+        
+        Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file \(ts.clipPath) --title '\(ts.title)' --description '\(ts.description)' --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
+        Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file \(ts2.clipPath) --title '\(ts2.title)' --description '\(ts2.description)' --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
+//        self.recording.timestamps.forEach { (ts) in
+//          Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file \(ts.clipPath) --title \(ts.title) --description \(ts.description) --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
+//        }
       }
-      
     }
     
     .frame(maxWidth: .infinity, maxHeight: .infinity)

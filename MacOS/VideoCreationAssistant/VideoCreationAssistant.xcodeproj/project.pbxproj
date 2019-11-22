@@ -15,7 +15,6 @@
 		C4340A5223678DEB007912A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4340A5123678DEB007912A5 /* Assets.xcassets */; };
 		C4340A5523678DEB007912A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4340A5423678DEB007912A5 /* Preview Assets.xcassets */; };
 		C4340A5823678DEB007912A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4340A5623678DEB007912A5 /* Main.storyboard */; };
-		C4340A832367906B007912A5 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A632367906A007912A5 /* StopwatchView.swift */; };
 		C4340A842367906B007912A5 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A642367906A007912A5 /* Stopwatch.swift */; };
 		C4340A852367906B007912A5 /* ImgurImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A662367906A007912A5 /* ImgurImageStore.swift */; };
 		C4340A872367906B007912A5 /* ImgurClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A682367906A007912A5 /* ImgurClient.swift */; };
@@ -63,7 +62,6 @@
 		C4340A5723678DEB007912A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4340A5923678DEB007912A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4340A5A23678DEB007912A5 /* VideoCreationAssistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VideoCreationAssistant.entitlements; sourceTree = "<group>"; };
-		C4340A632367906A007912A5 /* StopwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		C4340A642367906A007912A5 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		C4340A662367906A007912A5 /* ImgurImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurImageStore.swift; sourceTree = "<group>"; };
 		C4340A682367906A007912A5 /* ImgurClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurClient.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 		C4340A622367906A007912A5 /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
-				C4340A632367906A007912A5 /* StopwatchView.swift */,
 				C4340A642367906A007912A5 /* Stopwatch.swift */,
 			);
 			path = Stopwatch;
@@ -404,7 +401,6 @@
 				C4340A892367906B007912A5 /* FolderContentMonitor.swift in Sources */,
 				C4340A962367906B007912A5 /* Preferences.swift in Sources */,
 				C4208BCE2367DD6E0033CC9E /* DetailsViewController.swift in Sources */,
-				C4340A832367906B007912A5 /* StopwatchView.swift in Sources */,
 				C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */,
 				C4340A932367906B007912A5 /* NSMenuExtension.swift in Sources */,
 				C4340A912367906B007912A5 /* MenuController.swift in Sources */,
