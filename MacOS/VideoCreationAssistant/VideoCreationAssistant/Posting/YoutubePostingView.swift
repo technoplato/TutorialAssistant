@@ -55,8 +55,8 @@ struct YoutubePostingView: View {
         ts.title = "Cool clip 2"
         ts.description = "Cool description 2"
         
-        Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file \(ts.clipPath) --title '\(ts.title)' --description '\(ts.description)' --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
-        Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file \(ts2.clipPath) --title '\(ts2.title)' --description '\(ts2.description)' --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
+        Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file '\(ts.clipPath)' --title '\(ts.title)' --description '\(ts.description)' --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
+        Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file '\(ts2.clipPath)' --title '\(ts2.title)' --description '\(ts2.description)' --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
 //        self.recording.timestamps.forEach { (ts) in
 //          Shell.p("/usr/local/bin/python3 /Users/lustig/Development/Tools/ffmpeg/videos/upload.py --file \(ts.clipPath) --title \(ts.title) --description \(ts.description) --privacyStatus \(self.privacyStatuses[self.selectedPrivacy])")
 //        }

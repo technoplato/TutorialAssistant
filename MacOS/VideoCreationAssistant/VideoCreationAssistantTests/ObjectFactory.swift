@@ -9,6 +9,7 @@
 import Foundation
 
 struct Factory {
+  
   static func timestamp(start: Int, filePath: String) -> Timestamp {
     return Timestamp(
       seconds: start,

@@ -9,18 +9,13 @@
 import Foundation
 import FileWatcher
 
-extension String {
-  // /Users/lustig/Library/Containers/com.lustig.SwiftUI-Test/Data/Library/Containers/com.apple.QuickTimePlayerX/Data/Library/Autosave Information/Unsaved QuickTime Player Document.qtpxcomposition
-  // Does not work, see above file path
-  var expandingTildeInPath: String {
-    return self.replacingOccurrences(of: "~", with: FileManager.default.homeDirectoryForCurrentUser.path)
-  }
-}
-
 let quickTimeMovieCreatedPath = "/Users/lustig/Library/Containers/com.apple.QuickTimePlayerX/Data/Library/Autosave Information/Unsaved QuickTime Player Document.qtpxcomposition"
 let quickTimeScreenRecordingCreatedPath = "/Users/lustig/Library/ScreenRecordings/"
 let screenflickPath = "/Users/lustig/Library/Application Support/com.araeliumgroup.screenflick/Movies/"
+
 let screenflickExportPath = "~/Documents".expandingTildeInPath
+
+
 
 let recordingPathExtensions = ["mov", "mp4"]
 
@@ -49,10 +44,11 @@ class RecordingWatcher {
   
   private init() {
     filewatcher = FileWatcher([
-      quickTimeMovieCreatedPath,
-      quickTimeScreenRecordingCreatedPath,
-      screenflickPath,
-      screenflickExportPath
+      "/"
+//      quickTimeMovieCreatedPath,
+//      quickTimeScreenRecordingCreatedPath,
+//      screenflickPath,
+//      screenflickExportPath
     ])
     
     filewatcher.callback = { event in
@@ -67,10 +63,12 @@ class RecordingWatcher {
         return
       }
       
+      
       let exported = event.path.starts(with: screenflickExportPath) && event.fileCreated
       if (exported) {
         print("Video was exported from Screenflick")
       }
+      
       let started = event.fileCreated && !exported
       let ended = event.fileRemoved || event.fileRenamed || event.fileModified
       
@@ -78,6 +76,11 @@ class RecordingWatcher {
       if (!recordingPathExtensions.contains(ext)) {
         return
       }
+      
+      
+      print("OUR EVENT DESCRIPTION >>>>>>>> \(event.description)")
+      
+      
       
       // TODO: better assignment here. What happens if not Screenflick or QuickTime?
       var software: RecordingSoftware = .QuickTime
