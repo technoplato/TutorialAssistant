@@ -23,15 +23,31 @@ class ClipExtractorTest: XCTestCase {
     try? FileManager.default.removeItem(atPath: TEMP_VIDEO_CLIP_PATH)
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
+
+  /*
+  "/Users/lustig/Documents/TESTS/TEMP/OOTYDA5xqf XGdLsO1EBO.mp41bCtVLOiVP.mp4")
+  "/Users/lustig/Documents/TESTS/TEMP/OOTYDA5xqf XGdLsO1EBO.mp4")
+
+  */
+
+  func testFileNameWithSpaceIsExtractedProperly() {
+    let titleWithSpace = "\(String.random()) \(String.random()).mp4"
+    let timestamp = Factory.timestamp(start: 0, filePath: "\(TEMP_VIDEO_CLIP_PATH)\(titleWithSpace)")
+    let extractor = ClipExtractor(rawVideoPath: TEST_VIDEO_PATH, timestamps: [timestamp])
+
+    let clips = extractor.extract()
+
+    XCTAssertEqual(clips[0], timestamp.clipPath)
+  }
   
   func testExtractsCorrectNumberOfClips() {
-    
-    let ts = Factory.timestamps(startTimes: [0, 5, 10], filePath: TEMP_VIDEO_CLIP_PATH)
-    let extractor = ClipExtractor(rawVideoPath: TEST_VIDEO_PATH, timestamps: ts)
+    let timestamps = Factory.timestamps(startTimes: [0, 5, 10], filePath: TEMP_VIDEO_CLIP_PATH)
+    let extractor = ClipExtractor(rawVideoPath: TEST_VIDEO_PATH, timestamps: timestamps)
+
     let clips = extractor.extract()
   
-    XCTAssertEqual(clips.count, ts.count)
-    XCTAssertEqual(dirItemCount(path: TEMP_VIDEO_CLIP_PATH), ts.count)
+    XCTAssertEqual(clips.count, timestamps.count)
+    XCTAssertEqual(dirItemCount(path: TEMP_VIDEO_CLIP_PATH), timestamps.count)
   }
   
   private func dirItemCount(path: String) -> Int {

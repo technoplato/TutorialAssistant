@@ -21,10 +21,8 @@ class Timestamp {
       }
     }
   }
+
   @Published var youtubeId: String
-  var fullPath: String {
-    return "\(clipPath)\(title)"
-  }
   
   init(seconds: Int = -1,
        formatted: String = "",

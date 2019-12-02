@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		99801989088E6A2961C4032D /* Pods_VideoCreationAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341200FC460B4374F79CCA3C /* Pods_VideoCreationAssistant.framework */; };
-		C416AB06236B425900296E47 /* CopyDevtoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C416AB05236B425900296E47 /* CopyDevtoContent.swift */; };
-		C4208BCE2367DD6E0033CC9E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4208BCD2367DD6E0033CC9E /* DetailsViewController.swift */; };
+		BEF22831CB89490DB2E7AE7F /* TimestampTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF225CC8D6BD1E5AC404FAB /* TimestampTest.swift */; };
+		BEF22A9137349506D855BFD1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22DBE0B9FB947FB4D9E52 /* Preferences.swift */; };
 		C4340A4B23678DE9007912A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A4A23678DE9007912A5 /* AppDelegate.swift */; };
 		C4340A5023678DE9007912A5 /* VideoCreationAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4340A4E23678DE9007912A5 /* VideoCreationAssistant.xcdatamodeld */; };
 		C4340A5223678DEB007912A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4340A5123678DEB007912A5 /* Assets.xcassets */; };
@@ -32,7 +32,6 @@
 		C4340A932367906B007912A5 /* NSMenuExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A772367906A007912A5 /* NSMenuExtension.swift */; };
 		C4340A942367906B007912A5 /* IMGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A782367906A007912A5 /* IMGImage.swift */; };
 		C4340A952367906B007912A5 /* ScreenshotMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */; };
-		C4340A962367906B007912A5 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7B2367906A007912A5 /* Preferences.swift */; };
 		C4340A972367906B007912A5 /* BeforeRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7D2367906B007912A5 /* BeforeRecording.swift */; };
 		C4340A982367906B007912A5 /* RecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7E2367906B007912A5 /* RecordingManager.swift */; };
 		C4340A992367906B007912A5 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7F2367906B007912A5 /* RecordingView.swift */; };
@@ -78,8 +77,8 @@
 		74505A8CBA3C0D6073F16CF9 /* Pods-VideoCreationAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.debug.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		8947B5F183411DFD096065E3 /* Pods-VideoCreationAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.release.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		9CB08618A3336047F28EEB0F /* libPods-VideoCreationAssistantTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoCreationAssistantTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C416AB05236B425900296E47 /* CopyDevtoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyDevtoContent.swift; sourceTree = "<group>"; };
-		C4208BCD2367DD6E0033CC9E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		BEF225CC8D6BD1E5AC404FAB /* TimestampTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimestampTest.swift; sourceTree = "<group>"; };
+		BEF22DBE0B9FB947FB4D9E52 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCreationAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4340A4A23678DE9007912A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4340A4F23678DE9007912A5 /* VideoCreationAssistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VideoCreationAssistant.xcdatamodel; sourceTree = "<group>"; };
@@ -105,7 +104,6 @@
 		C4340A772367906A007912A5 /* NSMenuExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMenuExtension.swift; sourceTree = "<group>"; };
 		C4340A782367906A007912A5 /* IMGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMGImage.swift; sourceTree = "<group>"; };
 		C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotMonitor.swift; sourceTree = "<group>"; };
-		C4340A7B2367906A007912A5 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		C4340A7D2367906B007912A5 /* BeforeRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeRecording.swift; sourceTree = "<group>"; };
 		C4340A7E2367906B007912A5 /* RecordingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingManager.swift; sourceTree = "<group>"; };
 		C4340A7F2367906B007912A5 /* RecordingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				C4340A652367906A007912A5 /* Imgur */,
 				C4340A6B2367906A007912A5 /* Interface */,
 				C4340A792367906A007912A5 /* Monitors */,
-				C4340A7B2367906A007912A5 /* Preferences.swift */,
 				C4340A7C2367906B007912A5 /* Recording */,
 				C4340A622367906A007912A5 /* Stopwatch */,
 				C4340A692367906A007912A5 /* UserNotificationController.swift */,
@@ -198,9 +195,7 @@
 				C4340A5A23678DEB007912A5 /* VideoCreationAssistant.entitlements */,
 				C4340A4E23678DE9007912A5 /* VideoCreationAssistant.xcdatamodeld */,
 				C4340A5323678DEB007912A5 /* Preview Content */,
-				C4208BCD2367DD6E0033CC9E /* DetailsViewController.swift */,
 				C45C3BE8236870460091A324 /* DetailsView.swift */,
-				C416AB05236B425900296E47 /* CopyDevtoContent.swift */,
 				C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */,
 				C494E7282385F542004C03E2 /* ClipUploader.swift */,
 				C4C90A3823882907008B1603 /* Timestamp.swift */,
@@ -229,6 +224,7 @@
 			children = (
 				C4340A662367906A007912A5 /* ImgurImageStore.swift */,
 				C4340A682367906A007912A5 /* ImgurClient.swift */,
+				BEF22DBE0B9FB947FB4D9E52 /* Preferences.swift */,
 			);
 			path = Imgur;
 			sourceTree = "<group>";
@@ -315,6 +311,7 @@
 				C4C90A232388212E008B1603 /* Info.plist */,
 				C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */,
 				C4C90A3B23882AD1008B1603 /* ObjectFactory.swift */,
+				BEF225CC8D6BD1E5AC404FAB /* TimestampTest.swift */,
 			);
 			path = VideoCreationAssistantTests;
 			sourceTree = "<group>";
@@ -505,7 +502,6 @@
 				C4340A882367906B007912A5 /* UserNotificationController.swift in Sources */,
 				C494E7292385F542004C03E2 /* ClipUploader.swift in Sources */,
 				C4C90A3923882907008B1603 /* Timestamp.swift in Sources */,
-				C416AB06236B425900296E47 /* CopyDevtoContent.swift in Sources */,
 				C4340A8C2367906B007912A5 /* ImgurAlbumMenuController.swift in Sources */,
 				C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */,
 				C4340A8F2367906B007912A5 /* StatusItemMenuController.swift in Sources */,
@@ -513,8 +509,6 @@
 				C4340A8E2367906B007912A5 /* UploadsMenuController.swift in Sources */,
 				C45EBD1D2368DBAF000564BE /* Devto.swift in Sources */,
 				C4340A892367906B007912A5 /* FolderContentMonitor.swift in Sources */,
-				C4340A962367906B007912A5 /* Preferences.swift in Sources */,
-				C4208BCE2367DD6E0033CC9E /* DetailsViewController.swift in Sources */,
 				C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */,
 				C4340A932367906B007912A5 /* NSMenuExtension.swift in Sources */,
 				C4340A912367906B007912A5 /* MenuController.swift in Sources */,
@@ -535,6 +529,7 @@
 				C4340A992367906B007912A5 /* RecordingView.swift in Sources */,
 				C4340A942367906B007912A5 /* IMGImage.swift in Sources */,
 				C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */,
+				BEF22A9137349506D855BFD1 /* Preferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +548,7 @@
 				C4C90A222388212E008B1603 /* VideoCreationAssistantTests.swift in Sources */,
 				C4C90A4023882D8C008B1603 /* ClipExtractor.swift in Sources */,
 				C4C90A302388243D008B1603 /* Stopwatch.swift in Sources */,
+				BEF22831CB89490DB2E7AE7F /* TimestampTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

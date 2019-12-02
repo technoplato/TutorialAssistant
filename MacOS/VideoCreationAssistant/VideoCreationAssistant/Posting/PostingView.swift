@@ -32,8 +32,6 @@ struct PostingView: View {
       if recording.devtoId != -1 {
         Text("Dev.to URL: \(self.recording.devtoUrl)")
       }
-      
-      CopyDevtoContent()
     }.frame(maxWidth: .infinity, maxHeight: .infinity)
   }
 }
