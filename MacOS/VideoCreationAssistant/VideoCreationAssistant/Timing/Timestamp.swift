@@ -10,33 +10,25 @@ import Foundation
 
 class Timestamp {
   @Published var id: UUID
-  @Published var seconds: Int
-  @Published var formatted: String
+  @Published var duration: Duration
   @Published var title: String
   @Published var description: String
-  @Published var clipPath: String {
-    didSet {
-      if clipPath.suffix(1) != "/" {
-        clipPath.append("/")
-      }
-    }
-  }
 
   @Published var youtubeId: String
   
-  init(seconds: Int = -1,
-       formatted: String = "",
+  init(duration: Duration,
        title: String = "",
        description: String = "",
-       clipPath: String = "",
        youtubeId: String = "") {
-    
+
     self.id = UUID()
-    self.seconds = seconds
-    self.formatted = formatted
+    self.duration = duration
     self.title = title
     self.description = description
-    self.clipPath = clipPath
     self.youtubeId = youtubeId
   }
+}
+
+class Screenshot: Timestamp, ObservableObject {
+  @Published var image: String = ""
 }

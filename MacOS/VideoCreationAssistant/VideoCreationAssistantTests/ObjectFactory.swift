@@ -6,24 +6,31 @@
 //  Copyright © 2019 lustig. All rights reserved.
 //
 
-import Foundation
+@testable import VideoCreationAssistant
 
 struct Factory {
-  
-  static func timestamp(start: Int, filePath: String) -> Timestamp {
+
+  static func timestamp(title: String) -> Timestamp {
     return Timestamp(
-      seconds: start,
-      formatted: String.random(),
+        duration: Duration(start: 0),
+        title: title,
+        description: String.random(),
+        youtubeId: String.random()
+    )
+  }
+  
+  static func timestamp(duration: Duration) -> Timestamp {
+    return Timestamp(
+      duration: duration,
       title: String.random(),
       description: String.random(),
-      clipPath: filePath,
       youtubeId: String.random()
     )
   }
   
-  static func timestamps(startTimes: [Int], filePath: String) -> [Timestamp] {
-    return startTimes.map { start in
-      return Factory.timestamp(start: start, filePath: filePath)
+  static func timestamps(durations: [Duration]) -> [Timestamp] {
+    return durations.map { duration in
+      return Factory.timestamp(duration: duration)
     }
   }
 }

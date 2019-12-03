@@ -15,7 +15,11 @@ class Stopwatch: ObservableObject {
   private var timer: Timer?
   var callback: StopwatchCallback?
   
-  private var seconds: Int = 0
+  private var seconds: Int = 0 {
+    didSet {
+      self.stopWatchTime = TimeFormatter.formatDuration(seconds)
+    }
+  }
   private var stopWatchTime = "00:00:00"
   
   func start() {
@@ -40,19 +44,9 @@ class Stopwatch: ObservableObject {
   private func startTimer() {
     self.timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: true, block: {n in
       self.seconds += 1
-      self.stopWatchTime = Stopwatch.convertCountToTimeString(interval: self.seconds)
       if (self.callback != nil) {
         self.callback?((self.seconds, self.stopWatchTime))
       }
     })
-  }
-}
-
-extension Stopwatch {
-  static func convertCountToTimeString(interval: Int) -> String {
-    let seconds = interval % 60
-    let minutes = (interval / 60) % 60
-    let hours = (interval / 3600)
-    return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
   }
 }

@@ -22,11 +22,11 @@ struct PostingView: View {
       
       Text("Click to create Dev.to post").bold()
       Button("Create Post") {
-        Devto.createPost(title: self.recording.title, body: self.recording.body) { response in
-          print(response)
-          self.recording.devtoId = response.id
-          self.recording.devtoUrl = response.url
-        }
+//        Devto.createPost(title: self.recording.title, body: self.recording.body) { response in
+//          print(response)
+//          self.recording.devtoId = response.id
+//          self.recording.devtoUrl = response.url
+//        }
       }
       
       if recording.devtoId != -1 {

@@ -11,25 +11,30 @@ import Foundation
 struct ClipExtractor {
   
   let fullVideoPath: String
+  let clipExtractPath: String
   let timestamps: [Timestamp]
   
-  init(rawVideoPath: String, timestamps: [Timestamp]) {
+  init(rawVideoPath: String, clipExtractPath: String, timestamps: [Timestamp]) {
     self.fullVideoPath = rawVideoPath
+    self.clipExtractPath = clipExtractPath
     self.timestamps = timestamps
   }
-  
+
+  // TODO I now have a duration (which starts when a screenshot is taken and ends when a screenshot is submitted.
+  // Do I want to change how the clips are created?
   func extract() -> [String] {
-    return self.timestamps.enumerated().map { (index, ts) in
-      var extractClip = "/usr/local/bin/ffmpeg -i \(fullVideoPath) -ss \(ts.seconds)"
+    self.timestamps.enumerated().map { (index, ts) in
+      var extractClip = "/usr/local/bin/ffmpeg -i \(fullVideoPath) -ss \(ts.duration.start)"
       if index < timestamps.count - 1 {
-        extractClip.append(" -to \(self.timestamps[index + 1].seconds)")
+        extractClip.append(" -to \(self.timestamps[index + 1].duration.start)")
       }
 
-      let clipPath = "\(ts.clipPath).".expandingTildeInPath
-      Shell.run("mkdir -p \(ts.clipPath)")
-      extractClip.append(" -c copy \(clipPath)")
-      Shell.run(extractClip)
-      return clipPath
+      let clipPath = PathBuilder.build(timestamp: ts, path: clipExtractPath, fullVideoPath: fullVideoPath)
+      try? FileManager.default.createDirectory(atPath: clipExtractPath, withIntermediateDirectories: true)
+      extractClip.append(" -c copy \"\(clipPath)\"")
+      _ = Shell.run(extractClip)
     }
+
+    return Directory.files(path: clipExtractPath)
   }
 }

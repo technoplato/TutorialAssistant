@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
 //    constructMenu()
-    popover.contentViewController = NSHostingController(rootView: DetailsView().environmentObject(recordingManager))
+//    popover.contentViewController = NSHostingController(rootView: DetailsView().environmentObject(recordingManager))
   }
   
   func promptScreenshotDetails() {

@@ -23,6 +23,7 @@ let recordingPathExtensions = ["mov", "mp4"]
  * List of currently supported recording software
  */
 enum RecordingSoftware {
+  case Unknown
   case QuickTime
   case Screenflick
 }
@@ -31,6 +32,7 @@ enum VideoEvent {
   case start(_ path: String, _ software: RecordingSoftware)
   case end
   case exported(_ path: String)
+  case error(_ msg: String)
 }
 
 typealias VideoEventCallback = (VideoEvent) -> Void
@@ -76,20 +78,18 @@ class RecordingWatcher {
       if (!recordingPathExtensions.contains(ext)) {
         return
       }
-      
-      
-      print("OUR EVENT DESCRIPTION >>>>>>>> \(event.description)")
-      
-      
-      
-      // TODO: better assignment here. What happens if not Screenflick or QuickTime?
-      var software: RecordingSoftware = .QuickTime
+
+      var software: RecordingSoftware = .Unknown
       
       if event.path.starts(with: screenflickPath) {
         software = .Screenflick
+      } else if event.path.starts(with: quickTimeMovieCreatedPath) || event.path.starts(with: quickTimeScreenRecordingCreatedPath) {
+        software = .QuickTime
       }
-      
-      if ended {
+
+      if software == .Unknown {
+        self.videoEventCallback!(.error("Unknown software, please go complain to the developer."))
+      } else if ended {
         self.videoEventCallback!(.end)
       } else if started {
         self.videoEventCallback!(.start(event.path, software))

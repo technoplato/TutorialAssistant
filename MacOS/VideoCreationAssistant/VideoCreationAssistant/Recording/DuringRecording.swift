@@ -15,7 +15,7 @@ struct DuringRecording: View {
       Text(recording.formatted)
       
       ForEach(recording.timestamps, id: \.id) { timestamp in
-        Text("\(timestamp.title) @ \(timestamp.formatted)")
+        Text("\(timestamp.title) @ \(timestamp.duration.formattedStart)")
       }
       
       if (self.recording.state == .ended) {

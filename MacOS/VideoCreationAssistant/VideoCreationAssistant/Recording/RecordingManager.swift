@@ -9,11 +9,6 @@
 import Foundation
 import Cocoa
 
-class Duration: ObservableObject {
-  @Published var seconds: Int = -1
-  @Published var formatted: String = ""
-}
-
 enum RecordingState {
   case listening
   case live
@@ -21,8 +16,11 @@ enum RecordingState {
   case posting
 }
 
-class Screenshot: Timestamp, ObservableObject {
+class PendingInfo: ObservableObject {
+  @Published var startTime: Int = -1
   @Published var image: String = ""
+  @Published var title: String = ""
+  @Published var description: String = ""
 }
 
 class RecordingManager: ObservableObject {
@@ -30,35 +28,37 @@ class RecordingManager: ObservableObject {
   private let stopwatch = Stopwatch()
   private let recordingWatcher = RecordingWatcher.shared
   private var monitor: ScreenshotMonitor?
+
+  @Published var state: RecordingState = .listening
+  @Published var software: RecordingSoftware = .Unknown
   
   @Published var tmpPath: String = ""
   @Published var finalPath: String = ""
-  @Published var software: RecordingSoftware = .QuickTime
   @Published var timestamps: [Timestamp] = []
-  
-  @Published var pendingScreenshot = Screenshot()
-  
-  @Published var state: RecordingState = .listening
-  @Published var duration = Duration()
-  
-  @Published var seconds: Int = -1
+
+  @Published var seconds: Int = -1 {
+    didSet {
+      formatted = TimeFormatter.formatDuration(seconds)
+    }
+  }
   @Published var formatted: String = "00:00:00"
+
+  @Published var pending = PendingInfo()
   
   @Published var title: String = ""
-  @Published var body: String = ""
   
   var devtoId: Int = -1
   var devtoUrl: String = ""
-  
+
   init() {
     self.listenForVideoRecordingStart()
     self.listenToStopwatch()
     self.listenForImgurUpload()
   }
   
-  func saveScreenshot() {
-    timestamps.append(pendingScreenshot)
-    pendingScreenshot = Screenshot()
+  func saveScreenshot(_ screenshot: Screenshot) {
+    timestamps.append(screenshot)
+    pending = PendingInfo()
     let appDelegate = NSApplication.shared.delegate as! AppDelegate
     appDelegate.hideScreenshotDetails()
   }
@@ -102,6 +102,9 @@ class RecordingManager: ObservableObject {
         
       case let .exported(path):
         self.finalPath = path
+
+      case let .error(msg):
+        print("An unexpected recording software was used, figure out which one and add support for it.")
       }
     }
   }
@@ -120,12 +123,12 @@ class RecordingManager: ObservableObject {
   }
   
   func onScreenshot(uri: URL) {
-    if (self.pendingScreenshot.seconds != -1 ) {
-      // TODO Warn here if old timestamp wouldn't be saved...
-      self.pendingScreenshot = Screenshot()
+    if (self.pending.startTime != -1 ) {
+      // TODO handle this more intelligently
+      return
     }
-    self.pendingScreenshot.seconds = self.seconds
-    self.pendingScreenshot.formatted = self.formatted
+
+    self.pending.startTime = self.seconds
     let appDelegate = NSApplication.shared.delegate as! AppDelegate
     appDelegate.promptScreenshotDetails()
     ImgurClient.shared.uploadImage(withURL: uri, isScreenshot: true)
@@ -133,7 +136,7 @@ class RecordingManager: ObservableObject {
   
   private func listenForImgurUpload() {
     ImgurClient.shared.callback = { url in
-      self.pendingScreenshot.image = url
+      self.pending.image = url
     }
   }
   
