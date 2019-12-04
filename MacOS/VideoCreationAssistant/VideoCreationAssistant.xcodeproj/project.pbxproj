@@ -40,7 +40,6 @@
 		C4340A972367906B007912A5 /* BeforeRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7D2367906B007912A5 /* BeforeRecording.swift */; };
 		C4340A982367906B007912A5 /* RecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7E2367906B007912A5 /* RecordingManager.swift */; };
 		C4340A992367906B007912A5 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7F2367906B007912A5 /* RecordingView.swift */; };
-		C4340A9A2367906B007912A5 /* RecordingEnded.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A802367906B007912A5 /* RecordingEnded.swift */; };
 		C4340A9B2367906B007912A5 /* DuringRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A812367906B007912A5 /* DuringRecording.swift */; };
 		C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A822367906B007912A5 /* RecordingWatcher.swift */; };
 		C43CCE6F2385D74B000007E3 /* ClipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */; };
@@ -111,7 +110,6 @@
 		C4340A7D2367906B007912A5 /* BeforeRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeRecording.swift; sourceTree = "<group>"; };
 		C4340A7E2367906B007912A5 /* RecordingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingManager.swift; sourceTree = "<group>"; };
 		C4340A7F2367906B007912A5 /* RecordingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
-		C4340A802367906B007912A5 /* RecordingEnded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingEnded.swift; sourceTree = "<group>"; };
 		C4340A812367906B007912A5 /* DuringRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuringRecording.swift; sourceTree = "<group>"; };
 		C4340A822367906B007912A5 /* RecordingWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingWatcher.swift; sourceTree = "<group>"; };
 		C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractor.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				C4340A7D2367906B007912A5 /* BeforeRecording.swift */,
 				C4340A7E2367906B007912A5 /* RecordingManager.swift */,
 				C4340A7F2367906B007912A5 /* RecordingView.swift */,
-				C4340A802367906B007912A5 /* RecordingEnded.swift */,
 				C4340A812367906B007912A5 /* DuringRecording.swift */,
 				C4340A822367906B007912A5 /* RecordingWatcher.swift */,
 			);
@@ -531,7 +528,6 @@
 				C4340A8A2367906B007912A5 /* StatusItemController.swift in Sources */,
 				C4340A5023678DE9007912A5 /* VideoCreationAssistant.xcdatamodeld in Sources */,
 				C4340A952367906B007912A5 /* ScreenshotMonitor.swift in Sources */,
-				C4340A9A2367906B007912A5 /* RecordingEnded.swift in Sources */,
 				C4340A872367906B007912A5 /* ImgurClient.swift in Sources */,
 				C4340A902367906B007912A5 /* PreferencesMenuController.swift in Sources */,
 				C4340A982367906B007912A5 /* RecordingManager.swift in Sources */,

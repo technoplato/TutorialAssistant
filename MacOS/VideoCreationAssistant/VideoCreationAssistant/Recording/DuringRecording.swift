@@ -12,14 +12,14 @@ struct DuringRecording: View {
   
   var body: some View {
     return VStack {
-      Text(recording.formatted)
+      Text(recording.formattedTime)
       
       ForEach(recording.timestamps, id: \.id) { timestamp in
         Text("\(timestamp.title) @ \(timestamp.duration.formattedStart)")
       }
       
       if (self.recording.state == .ended) {
-        Text("Video ended, length is: \(recording.formatted) (\(recording.seconds)) seconds")
+        Text("Video ended, length is: \(recording.formattedTime) (\(recording.seconds)) seconds")
       }
       
       Button("Post It") {

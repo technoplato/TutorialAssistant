@@ -36,7 +36,6 @@ class ClipExtractorTest: XCTestCase {
 
     XCTAssertEqual(clips[0], fullPath)
   }
-
   
   func testExtractsCorrectNumberOfClips() {
     let timestamps = Factory.timestamps(

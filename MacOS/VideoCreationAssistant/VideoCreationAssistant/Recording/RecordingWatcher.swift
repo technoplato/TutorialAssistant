@@ -15,8 +15,6 @@ let screenflickPath = "/Users/lustig/Library/Application Support/com.araeliumgro
 
 let screenflickExportPath = "~/Documents".expandingTildeInPath
 
-
-
 let recordingPathExtensions = ["mov", "mp4"]
 
 /*

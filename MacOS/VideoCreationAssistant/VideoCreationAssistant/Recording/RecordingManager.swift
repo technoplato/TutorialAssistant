@@ -38,10 +38,10 @@ class RecordingManager: ObservableObject {
 
   @Published var seconds: Int = -1 {
     didSet {
-      formatted = TimeFormatter.formatDuration(seconds)
+      formattedTime = TimeFormatter.formatDuration(seconds)
     }
   }
-  @Published var formatted: String = "00:00:00"
+  @Published var formattedTime: String = "00:00:00"
 
   @Published var pending = PendingInfo()
   
@@ -113,7 +113,7 @@ class RecordingManager: ObservableObject {
     stopwatch.callback =  { tick in
       let (seconds, formatted) = tick
       self.seconds = seconds
-      self.formatted = formatted
+      self.formattedTime = formatted
     }
   }
   
