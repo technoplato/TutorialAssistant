@@ -24,14 +24,14 @@ class PendingInfo: ObservableObject {
 }
 
 class RecordingManager: ObservableObject {
-  
+
   private let stopwatch = Stopwatch()
   private let recordingWatcher = RecordingWatcher.shared
   private var monitor: ScreenshotMonitor?
 
   @Published var state: RecordingState = .listening
   @Published var software: RecordingSoftware = .Unknown
-  
+
   @Published var tmpPath: String = ""
   @Published var finalPath: String = ""
   @Published var timestamps: [Timestamp] = []
@@ -44,9 +44,9 @@ class RecordingManager: ObservableObject {
   @Published var formattedTime: String = "00:00:00"
 
   @Published var pending = PendingInfo()
-  
+
   @Published var title: String = ""
-  
+
   var devtoId: Int = -1
   var devtoUrl: String = ""
 
@@ -55,75 +55,77 @@ class RecordingManager: ObservableObject {
     self.listenToStopwatch()
     self.listenForImgurUpload()
   }
-  
+
   func saveScreenshot(_ screenshot: Screenshot) {
     timestamps.append(screenshot)
     pending = PendingInfo()
     let appDelegate = NSApplication.shared.delegate as! AppDelegate
     appDelegate.hideScreenshotDetails()
   }
-  
+
   func goToPosting() {
     state = .posting
   }
-  
+
   // MARK: Recording Callbacks
-  
+
   func onRecordingStart(_ path: String) {
     self.tmpPath = path
     self.state = .live
     self.stopwatch.start()
     self.listenForScreenshots()
   }
-  
+
   func onRecordingEnd() {
     print("onRecordingEnd")
     self.state = .ended
     self.stopwatch.stop()
 //    self.recordingWatcher.stop()
   }
-  
+
   func onRecordingExported(_ path: String) {
     self.finalPath = path
   }
-  
+
   // MARK: Listeners
-  
+
   private func listenForVideoRecordingStart() {
     recordingWatcher.videoEventCallback = { recordingEvent in
       switch recordingEvent {
-        
-      case let .start(path, software):
+
+      case let .started(path, software):
         self.software = software
         self.onRecordingStart(path)
-        
-      case .end:
+
+      case .ended:
         self.onRecordingEnd()
-        
+
       case let .exported(path):
         self.finalPath = path
 
       case let .error(msg):
         print("An unexpected recording software was used, figure out which one and add support for it.")
+      case .ignored:
+        print("Ignored")
       }
     }
   }
-  
+
   private func listenToStopwatch() {
-    stopwatch.callback =  { tick in
+    stopwatch.callback = { tick in
       let (seconds, formatted) = tick
       self.seconds = seconds
       self.formattedTime = formatted
     }
   }
-  
+
   private func listenForScreenshots() {
     monitor = ScreenshotMonitor(callback: onScreenshot)
     monitor?.start()
   }
-  
+
   func onScreenshot(uri: URL) {
-    if (self.pending.startTime != -1 ) {
+    if (self.pending.startTime != -1) {
       // TODO handle this more intelligently
       return
     }
@@ -133,13 +135,13 @@ class RecordingManager: ObservableObject {
     appDelegate.promptScreenshotDetails()
     ImgurClient.shared.uploadImage(withURL: uri, isScreenshot: true)
   }
-  
+
   private func listenForImgurUpload() {
     ImgurClient.shared.callback = { url in
       self.pending.image = url
     }
   }
-  
+
   private func stopListeningForScreenshots() {
     monitor = nil
   }

@@ -27,7 +27,7 @@ public class FileWatcherEvent {
 extension FileWatcherEvent {
     /*general*/
     var fileChange: Bool { return (flags & FSEventStreamEventFlags(kFSEventStreamEventFlagItemIsFile)) != 0 }
-    var dirChange: Bool { return (flags & FSEventStreamEventFlags(kFSEventStreamEventFlagItemIsDir)) != 0 }
+    public var dirChange: Bool { return (flags & FSEventStreamEventFlags(kFSEventStreamEventFlagItemIsDir)) != 0 }
     /*CRUD*/
     var created: Bool { return (flags & FSEventStreamEventFlags(kFSEventStreamEventFlagItemCreated)) != 0 }
     var removed: Bool { return (flags & FSEventStreamEventFlags(kFSEventStreamEventFlagItemRemoved)) != 0 }

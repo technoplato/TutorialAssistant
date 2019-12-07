@@ -21,20 +21,6 @@
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
-		<key>ClipExtractorTest.testExtractsCorrectNumberOfClips.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>19</integer>
-		</dict>
-		<key>ClipExtractorTest.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>20</integer>
-		</dict>
 		<key>All in VideoCreationAssistantTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -45,9 +31,23 @@
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>19</integer>
 		</dict>
 		<key>VideoEventMapperTest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
+		<key>VideoEventMapperTest.testScreenflickStartMapsCorrectly.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>VideoEventMapperTest.testScreenflickEndMapsCorrectly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
