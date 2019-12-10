@@ -1,1 +1,0 @@
-../../../ImgurSession/ImgurSession/Requests/IMGImageRequest.h

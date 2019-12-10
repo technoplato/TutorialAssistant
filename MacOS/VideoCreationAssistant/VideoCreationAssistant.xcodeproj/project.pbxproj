@@ -59,7 +59,7 @@
 		C4C90A3E23882B9D008B1603 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3D23882B9D008B1603 /* StringExtensions.swift */; };
 		C4C90A3F23882B9D008B1603 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3D23882B9D008B1603 /* StringExtensions.swift */; };
 		C4C90A4123882E1F008B1603 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
-		F65F97FCE4ABC472CBA62574 /* libPods-VideoCreationAssistantTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB08618A3336047F28EEB0F /* libPods-VideoCreationAssistantTests.a */; };
+		CB10CFB858C6E44A0CE14E93 /* libPods-VideoCreationAssistantTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1989F9BC1EE60E11B405CCD0 /* libPods-VideoCreationAssistantTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,11 +73,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1989F9BC1EE60E11B405CCD0 /* libPods-VideoCreationAssistantTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoCreationAssistantTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E07D66B9818060112AC305F /* Pods-VideoCreationAssistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistantTests.release.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistantTests/Pods-VideoCreationAssistantTests.release.xcconfig"; sourceTree = "<group>"; };
 		341200FC460B4374F79CCA3C /* Pods_VideoCreationAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoCreationAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45F369F1439F1BDBB8C2EC4F /* Pods-VideoCreationAssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistantTests.debug.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistantTests/Pods-VideoCreationAssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3992BE3783937AA54F580C63 /* Pods-VideoCreationAssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistantTests.debug.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistantTests/Pods-VideoCreationAssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74505A8CBA3C0D6073F16CF9 /* Pods-VideoCreationAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.debug.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		8947B5F183411DFD096065E3 /* Pods-VideoCreationAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.release.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.release.xcconfig"; sourceTree = "<group>"; };
-		9CB08618A3336047F28EEB0F /* libPods-VideoCreationAssistantTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoCreationAssistantTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF2210E47D2E833A2AEA6A5 /* ScreenflickVideoEventMapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenflickVideoEventMapperTest.swift; sourceTree = "<group>"; };
 		BEF222C2844F1439F174A518 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		BEF2259282D5C48FCA334347 /* DirectoryUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryUtilsTest.swift; sourceTree = "<group>"; };
@@ -130,7 +131,6 @@
 		C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractorTest.swift; sourceTree = "<group>"; };
 		C4C90A3B23882AD1008B1603 /* ObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
 		C4C90A3D23882B9D008B1603 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		D352DA4008F7D82A4AB2AF2C /* Pods-VideoCreationAssistantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistantTests.release.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistantTests/Pods-VideoCreationAssistantTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F65F97FCE4ABC472CBA62574 /* libPods-VideoCreationAssistantTests.a in Frameworks */,
+				CB10CFB858C6E44A0CE14E93 /* libPods-VideoCreationAssistantTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				341200FC460B4374F79CCA3C /* Pods_VideoCreationAssistant.framework */,
-				9CB08618A3336047F28EEB0F /* libPods-VideoCreationAssistantTests.a */,
+				1989F9BC1EE60E11B405CCD0 /* libPods-VideoCreationAssistantTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,8 +340,8 @@
 			children = (
 				74505A8CBA3C0D6073F16CF9 /* Pods-VideoCreationAssistant.debug.xcconfig */,
 				8947B5F183411DFD096065E3 /* Pods-VideoCreationAssistant.release.xcconfig */,
-				45F369F1439F1BDBB8C2EC4F /* Pods-VideoCreationAssistantTests.debug.xcconfig */,
-				D352DA4008F7D82A4AB2AF2C /* Pods-VideoCreationAssistantTests.release.xcconfig */,
+				3992BE3783937AA54F580C63 /* Pods-VideoCreationAssistantTests.debug.xcconfig */,
+				1E07D66B9818060112AC305F /* Pods-VideoCreationAssistantTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4C90A262388212E008B1603 /* Build configuration list for PBXNativeTarget "VideoCreationAssistantTests" */;
 			buildPhases = (
-				5B6DAC306503B63F929190E0 /* [CP] Check Pods Manifest.lock */,
+				8710C2C00C5181851B1AF2A3 /* [CP] Check Pods Manifest.lock */,
 				C4C90A1B2388212E008B1603 /* Sources */,
 				C4C90A1C2388212E008B1603 /* Frameworks */,
 				C4C90A1D2388212E008B1603 /* Resources */,
@@ -446,7 +446,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5B6DAC306503B63F929190E0 /* [CP] Check Pods Manifest.lock */ = {
+		6A7BCE91B7D7B254E6E6621F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8710C2C00C5181851B1AF2A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -466,23 +483,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A7BCE91B7D7B254E6E6621F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA907D168F49ABB181498AFE /* [CP] Check Pods Manifest.lock */ = {
@@ -757,7 +757,7 @@
 		};
 		C4C90A272388212E008B1603 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45F369F1439F1BDBB8C2EC4F /* Pods-VideoCreationAssistantTests.debug.xcconfig */;
+			baseConfigurationReference = 3992BE3783937AA54F580C63 /* Pods-VideoCreationAssistantTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -778,7 +778,7 @@
 		};
 		C4C90A282388212E008B1603 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D352DA4008F7D82A4AB2AF2C /* Pods-VideoCreationAssistantTests.release.xcconfig */;
+			baseConfigurationReference = 1E07D66B9818060112AC305F /* Pods-VideoCreationAssistantTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

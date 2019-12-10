@@ -17,8 +17,4 @@ end
 
 target 'VideoCreationAssistantTests' do
   pod "FileWatcher"
-  pod 'HotKey'
-  pod 'ImgurSession', :git => 'https://github.com/mileswd/ImgurSession.git', :branch => 'update-podspec'
-  pod 'EMCLoginItem'
-  pod 'Alamofire', '~> 5.0.0-rc.3'
 end

@@ -7,52 +7,52 @@
 		<key>VideoCreationAssistant.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>0</integer>
 		</dict>
 		<key>VideoCreationAssistantTests.testExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>2</integer>
 		</dict>
-		<key>All in VideoCreationAssistantTests.xcscheme</key>
+		<key>All Tests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>1</integer>
 		</dict>
 		<key>VideoEventMapperTest.testMapperIgnoresDirectoryEvents.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>3</integer>
 		</dict>
 		<key>ScreenflickVideoEventMapperTest.testScreenflickEndMapsCorrectly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>4</integer>
 		</dict>
 		<key>ScreenflickVideoEventMapperTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>5</integer>
 		</dict>
 		<key>ScreenflickVideoEventMapperTest.testScreenflickStartMapsCorrectly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>6</integer>
 		</dict>
 		<key>RecordingSoftwareTest.testScreenflickRequiresExport.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>7</integer>
 		</dict>
 	</dict>
 </dict>
