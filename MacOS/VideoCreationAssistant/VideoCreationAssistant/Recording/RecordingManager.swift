@@ -96,7 +96,7 @@ class RecordingManager: ObservableObject {
       case .ended:
         self.onRecordingEnd()
 
-      case let .exported(path):
+      case let .finalized(path):
         self.finalPath = path
 
       case let .error(msg):

@@ -24,9 +24,12 @@ enum RecordingSoftware {
 }
 
 enum RecordingEvent {
+  // The recording has just begun
   case started(_ path: String, _ software: RecordingSoftware)
+  // The recording has ended
   case ended
-  case exported(_ path: String)
+  // The user has saved a finished video to a location on disk
+  case finalized(_ path: String)
   case ignored
   case error(_ msg: String)
 

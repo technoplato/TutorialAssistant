@@ -29,9 +29,13 @@ struct RecordingEventMapper {
 
   private func shouldIgnore(_ event: FileWatcherEvent) -> Bool {
     let wasDirectoryEvent = event.dirChange
-    let notVideo = !recordingPathExtensions.contains(event.path.suffix(3).lowercased())
+    let notVideo = !isVideo(event.path)
 
     return wasDirectoryEvent || notVideo
+  }
+
+  private func isVideo(_ path: String) -> Bool {
+    recordingPathExtensions.contains(event.path.suffix(3).lowercased())
   }
 
   private func screenflick(_ event: FileWatcherEvent) -> Bool {
