@@ -11,8 +11,9 @@
 		BEF22175CF404FD17410B0B9 /* RecordingEventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF226D58930BC6E8F9A2F77 /* RecordingEventMapper.swift */; };
 		BEF2226C2D6F8A4821E455E9 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2282BA4FF5BD95DF7D452 /* Directory.swift */; };
 		BEF222EC97ABA39109656807 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22F4E451F5296199FF459 /* Timestamp.swift */; };
-		BEF226DB7CD1389F38C34BC7 /* VideoEventMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2210E47D2E833A2AEA6A5 /* VideoEventMapperTest.swift */; };
+		BEF226DB7CD1389F38C34BC7 /* ScreenflickVideoEventMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2210E47D2E833A2AEA6A5 /* ScreenflickVideoEventMapperTest.swift */; };
 		BEF229496EC768F7461228AB /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF222C2844F1439F174A518 /* Duration.swift */; };
+		BEF229E84B00048C5E0CE461 /* RecordingSoftwareTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2299772806759F995DEAB /* RecordingSoftwareTest.swift */; };
 		BEF22A9137349506D855BFD1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22DBE0B9FB947FB4D9E52 /* Preferences.swift */; };
 		BEF22CF328CE7D38BD364A2D /* DirectoryUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2259282D5C48FCA334347 /* DirectoryUtilsTest.swift */; };
 		BEF22D469100A4B54F71728B /* RecordingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF228949CFA5204C745FF05 /* RecordingEvent.swift */; };
@@ -77,12 +78,13 @@
 		74505A8CBA3C0D6073F16CF9 /* Pods-VideoCreationAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.debug.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		8947B5F183411DFD096065E3 /* Pods-VideoCreationAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCreationAssistant.release.xcconfig"; path = "Target Support Files/Pods-VideoCreationAssistant/Pods-VideoCreationAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		9CB08618A3336047F28EEB0F /* libPods-VideoCreationAssistantTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoCreationAssistantTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEF2210E47D2E833A2AEA6A5 /* VideoEventMapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEventMapperTest.swift; sourceTree = "<group>"; };
+		BEF2210E47D2E833A2AEA6A5 /* ScreenflickVideoEventMapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenflickVideoEventMapperTest.swift; sourceTree = "<group>"; };
 		BEF222C2844F1439F174A518 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		BEF2259282D5C48FCA334347 /* DirectoryUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryUtilsTest.swift; sourceTree = "<group>"; };
 		BEF226D58930BC6E8F9A2F77 /* RecordingEventMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingEventMapper.swift; path = VideoCreationAssistant/Recording/RecordingEventMapper.swift; sourceTree = SOURCE_ROOT; };
 		BEF2282BA4FF5BD95DF7D452 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		BEF228949CFA5204C745FF05 /* RecordingEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingEvent.swift; path = VideoCreationAssistant/Recording/RecordingEvent.swift; sourceTree = SOURCE_ROOT; };
+		BEF2299772806759F995DEAB /* RecordingSoftwareTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSoftwareTest.swift; sourceTree = "<group>"; };
 		BEF22AFB4A836A4181F48462 /* PathBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
 		BEF22B61640D3ACC9F15005D /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		BEF22DBE0B9FB947FB4D9E52 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -325,9 +327,10 @@
 				C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */,
 				C4C90A3B23882AD1008B1603 /* ObjectFactory.swift */,
 				BEF2259282D5C48FCA334347 /* DirectoryUtilsTest.swift */,
-				BEF2210E47D2E833A2AEA6A5 /* VideoEventMapperTest.swift */,
+				BEF2210E47D2E833A2AEA6A5 /* ScreenflickVideoEventMapperTest.swift */,
 				BEF228949CFA5204C745FF05 /* RecordingEvent.swift */,
 				BEF226D58930BC6E8F9A2F77 /* RecordingEventMapper.swift */,
+				BEF2299772806759F995DEAB /* RecordingSoftwareTest.swift */,
 			);
 			path = VideoCreationAssistantTests;
 			sourceTree = "<group>";
@@ -564,7 +567,8 @@
 				C4C90A3C23882AD1008B1603 /* ObjectFactory.swift in Sources */,
 				C4C90A4123882E1F008B1603 /* Shell.swift in Sources */,
 				BEF22CF328CE7D38BD364A2D /* DirectoryUtilsTest.swift in Sources */,
-				BEF226DB7CD1389F38C34BC7 /* VideoEventMapperTest.swift in Sources */,
+				BEF226DB7CD1389F38C34BC7 /* ScreenflickVideoEventMapperTest.swift in Sources */,
+				BEF229E84B00048C5E0CE461 /* RecordingSoftwareTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

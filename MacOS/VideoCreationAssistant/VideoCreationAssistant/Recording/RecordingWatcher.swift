@@ -44,9 +44,7 @@ class RecordingWatcher {
       let mapped = self.mapper.map(event)
 
       switch mapped {
-      case .ignored:
-        // Ignored event
-        print("This event is intentionally ignored (\(event.description)")
+      case .ignored: break
       default:
         self.videoEventCallback!(mapped)
       }

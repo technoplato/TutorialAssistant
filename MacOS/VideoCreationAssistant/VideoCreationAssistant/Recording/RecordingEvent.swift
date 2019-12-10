@@ -12,6 +12,15 @@ enum RecordingSoftware {
   case Unknown
 //  case QuickTime
   case Screenflick
+
+  func requiresExport() -> Bool {
+    switch self {
+    case .Screenflick:
+      return true
+    default:
+      return false
+    }
+  }
 }
 
 enum RecordingEvent {

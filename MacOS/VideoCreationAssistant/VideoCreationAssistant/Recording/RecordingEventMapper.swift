@@ -10,11 +10,8 @@ let recordingPathExtensions = ["mov", "mp4"]
 
 struct RecordingEventMapper {
   public func map(_ event: FileWatcherEvent) -> RecordingEvent {
-    if event.dirChange {
-      return .ignored
-    }
 
-    if recordingPathExtensions.contains(event.path.suffix(3).lowercased()) {
+    if shouldIgnore(event) {
       return .ignored
     }
 
@@ -30,18 +27,26 @@ struct RecordingEventMapper {
     return .ignored
   }
 
+  private func shouldIgnore(_ event: FileWatcherEvent) -> Bool {
+    let wasDirectoryEvent = event.dirChange
+    let notVideo = !recordingPathExtensions.contains(event.path.suffix(3).lowercased())
+
+    return wasDirectoryEvent || notVideo
+  }
+
   private func screenflick(_ event: FileWatcherEvent) -> Bool {
     return event.path.starts(with: RecordingEvent.Screenflick.ScreenRecord.path)
   }
 
   private func handleScreenflick(_ event: FileWatcherEvent) -> RecordingEvent {
-    print(event.description)
     if event.fileCreated {
       return .started(RecordingEvent.Screenflick.ScreenRecord.path, .Screenflick)
+    } else if event.fileModified {
+      return .ended
     } else if event.fileRemoved {
-      return .ended
+      return .ignored
     } else if event.fileRenamed {
-      return .ended
+      return .ignored
     }
 
     return .error("Error mapping Screenflick event...")

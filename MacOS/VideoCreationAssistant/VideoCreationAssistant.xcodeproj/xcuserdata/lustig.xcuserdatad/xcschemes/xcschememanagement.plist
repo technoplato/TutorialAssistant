@@ -14,40 +14,40 @@
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
-		<key>ClipExtractorTest.testFileNameWithSpaceIsExtractedProperly.xcscheme</key>
+		<key>All in VideoCreationAssistantTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>VideoEventMapperTest.testMapperIgnoresDirectoryEvents.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
-		<key>All in VideoCreationAssistantTests.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
-		</dict>
-		<key>VideoEventMapperTest.testQuickTimeScreenRecordingEventMapsProperly.xcscheme</key>
+		<key>ScreenflickVideoEventMapperTest.testScreenflickEndMapsCorrectly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
-		<key>VideoEventMapperTest.xcscheme</key>
+		<key>ScreenflickVideoEventMapperTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
-		<key>VideoEventMapperTest.testScreenflickStartMapsCorrectly.xcscheme</key>
+		<key>ScreenflickVideoEventMapperTest.testScreenflickStartMapsCorrectly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
-		<key>VideoEventMapperTest.testScreenflickEndMapsCorrectly.xcscheme</key>
+		<key>RecordingSoftwareTest.testScreenflickRequiresExport.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />

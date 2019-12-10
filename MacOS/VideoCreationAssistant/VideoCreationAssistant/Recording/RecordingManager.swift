@@ -83,10 +83,6 @@ class RecordingManager: ObservableObject {
 //    self.recordingWatcher.stop()
   }
 
-  func onRecordingExported(_ path: String) {
-    self.finalPath = path
-  }
-
   // MARK: Listeners
 
   private func listenForVideoRecordingStart() {
