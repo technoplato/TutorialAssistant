@@ -77,10 +77,9 @@ class RecordingManager: ObservableObject {
   }
 
   func onRecordingEnd() {
-    print("onRecordingEnd")
     self.state = .ended
     self.stopwatch.stop()
-//    self.recordingWatcher.stop()
+    self.stopListeningForScreenshots()
   }
 
   // MARK: Listeners
@@ -101,6 +100,7 @@ class RecordingManager: ObservableObject {
 
       case let .error(msg):
         print("An unexpected recording software was used, figure out which one and add support for it.")
+
       case .ignored:
         print("Ignored")
       }

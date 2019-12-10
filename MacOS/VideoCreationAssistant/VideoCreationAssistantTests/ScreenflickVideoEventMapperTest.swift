@@ -9,7 +9,7 @@ import XCTest
 
 class ScreenflickVideoEventMapperTest: XCTestCase {
 
-  let FAKE_MOVIE_PATH = RecordingEvent.Screenflick.ScreenRecord.path + "/movie.mov"
+  let FAKE_MOVIE_PATH = RecordingEvent.Screenflick.ScreenRecord.path + "movie.mov"
 
   func testScreenflickStartMapsCorrectly() {
     let event = FileWatcherEvent(FSEventStreamEventId(1234), FAKE_MOVIE_PATH,
@@ -21,7 +21,7 @@ class ScreenflickVideoEventMapperTest: XCTestCase {
 
     switch mapped {
     case let .started(path, software):
-      XCTAssertEqual(path, RecordingEvent.Screenflick.ScreenRecord.path)
+      XCTAssertEqual(path, FAKE_MOVIE_PATH)
       XCTAssertEqual(software, RecordingSoftware.Screenflick)
     default:
       XCTFail("Event was type \"\(mapped)\"; was expecting \"started\"")

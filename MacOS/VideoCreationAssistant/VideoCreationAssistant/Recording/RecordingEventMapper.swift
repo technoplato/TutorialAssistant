@@ -13,18 +13,13 @@ struct RecordingEventMapper {
 
     if shouldIgnore(event) {
       return .ignored
-    }
-
-    if screenflick(event) {
+    } else if screenflick(event) {
       return handleScreenflick(event)
+    } else if isVideo(event.path) {
+      return .finalized(event.path)
+    } else {
+      return .ignored
     }
-
-
-    // started
-    // ended
-    // exported
-    // error
-    return .ignored
   }
 
   private func shouldIgnore(_ event: FileWatcherEvent) -> Bool {
@@ -35,7 +30,7 @@ struct RecordingEventMapper {
   }
 
   private func isVideo(_ path: String) -> Bool {
-    recordingPathExtensions.contains(event.path.suffix(3).lowercased())
+    recordingPathExtensions.contains(path.suffix(3).lowercased())
   }
 
   private func screenflick(_ event: FileWatcherEvent) -> Bool {
@@ -44,7 +39,7 @@ struct RecordingEventMapper {
 
   private func handleScreenflick(_ event: FileWatcherEvent) -> RecordingEvent {
     if event.fileCreated {
-      return .started(RecordingEvent.Screenflick.ScreenRecord.path, .Screenflick)
+      return .started(event.path, .Screenflick)
     } else if event.fileModified {
       return .ended
     } else if event.fileRemoved {
