@@ -34,7 +34,7 @@ class ClipExtractorTest: XCTestCase {
 
     let clips = extractor.extract()
 
-    XCTAssertEqual(clips[0], fullPath)
+    XCTAssertEqual(clips[0].path, fullPath)
   }
   
   func testExtractsCorrectNumberOfClips() {

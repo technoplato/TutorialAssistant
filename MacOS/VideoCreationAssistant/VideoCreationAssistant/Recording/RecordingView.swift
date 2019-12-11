@@ -17,12 +17,13 @@ struct RecordingView: View {
   }
   
   private func content() -> AnyView {
-//    return AnyView(YoutubePostingView())
     switch (recording.state) {
     case .listening:
       return AnyView(BeforeRecording())
     case .live, .ended:
       return AnyView(DuringRecording())
+    case .extracting:
+      return AnyView(ClipExtractorView())
     case .posting:
       return AnyView(YoutubePostingView())
     }

@@ -24,7 +24,7 @@ struct DuringRecording: View {
       
       Button("Post It") {
         self.recording.goToPosting()
-      }.disabled(self.recording.state != .ended)
+      }.disabled(self.recording.finalPath == "")
     }.frame(maxWidth: .infinity, maxHeight: .infinity)
   }
 }

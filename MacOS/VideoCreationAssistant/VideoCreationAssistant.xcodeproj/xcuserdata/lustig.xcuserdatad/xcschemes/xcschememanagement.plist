@@ -26,28 +26,28 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>RecordingSoftwareTest.testScreenflickRequiresExport.xcscheme</key>
+		<key>ScreenflickVideoEventMapperTest.testScreenflickStartMapsCorrectly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>14</integer>
 		</dict>
-		<key>VideoFinalizedTest.testVideoFinalizedMapsCorrectly.xcscheme</key>
+		<key>ClipExtractorTest.testFileNameWithSpaceIsExtractedProperly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>VideoFinalizedTest.xcscheme</key>
+		<key>YouTubePosterText.testVideosPostToYouTubeAndReturnUrls.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>ScreenflickVideoEventMapperTest.testScreenflickStartMapsCorrectly.xcscheme</key>
+		<key>YouTubePosterText.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />

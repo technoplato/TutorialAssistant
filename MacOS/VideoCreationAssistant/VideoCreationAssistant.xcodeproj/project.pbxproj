@@ -10,16 +10,21 @@
 		99801989088E6A2961C4032D /* Pods_VideoCreationAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341200FC460B4374F79CCA3C /* Pods_VideoCreationAssistant.framework */; };
 		BEF2226C2D6F8A4821E455E9 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2282BA4FF5BD95DF7D452 /* Directory.swift */; };
 		BEF222EC97ABA39109656807 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22F4E451F5296199FF459 /* Timestamp.swift */; };
+		BEF223B23DE20D7038FD9C63 /* Devto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22B7DB9265419C57BDBB0 /* Devto.swift */; };
 		BEF2256FDC4FA08A32A39A2E /* VideoFinalizedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22344C377A5FDC7ABF4F2 /* VideoFinalizedTest.swift */; };
 		BEF225D2B34F1E9BD0FEFEB5 /* RecordingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF227D6FDE2E2B403707616 /* RecordingEvent.swift */; };
 		BEF226DB7CD1389F38C34BC7 /* ScreenflickVideoEventMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2210E47D2E833A2AEA6A5 /* ScreenflickVideoEventMapperTest.swift */; };
+		BEF2270E6C3F9010CA5C27EC /* YouTubePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF223B8A96F0EFBF55DFCC3 /* YouTubePoster.swift */; };
 		BEF2274C46AD250B990B078D /* RecordingEventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22EF577F76C9185FBFBA8 /* RecordingEventMapper.swift */; };
+		BEF228CA5011117F85BCD339 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF229BC761F0D025B6867E2 /* RecordingView.swift */; };
 		BEF229496EC768F7461228AB /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF222C2844F1439F174A518 /* Duration.swift */; };
 		BEF229E84B00048C5E0CE461 /* RecordingSoftwareTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2299772806759F995DEAB /* RecordingSoftwareTest.swift */; };
 		BEF22A9137349506D855BFD1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22DBE0B9FB947FB4D9E52 /* Preferences.swift */; };
 		BEF22CF328CE7D38BD364A2D /* DirectoryUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2259282D5C48FCA334347 /* DirectoryUtilsTest.swift */; };
 		BEF22D9CE7A978666E7F2300 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22B61640D3ACC9F15005D /* TimeFormatter.swift */; };
 		BEF22DEB4A5692ADE0F8B07B /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22AFB4A836A4181F48462 /* PathBuilder.swift */; };
+		BEF22E6F58B79B6CE59AC66B /* YouTubePosterViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22DF96C75D43A3E29E5B9 /* YouTubePosterViewTest.swift */; };
+		BEF22EA1D9335B3FDBA97F1F /* ClipExtractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22E068E30D31FAD28E340 /* ClipExtractorView.swift */; };
 		C4340A4B23678DE9007912A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A4A23678DE9007912A5 /* AppDelegate.swift */; };
 		C4340A5023678DE9007912A5 /* VideoCreationAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4340A4E23678DE9007912A5 /* VideoCreationAssistant.xcdatamodeld */; };
 		C4340A5223678DEB007912A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4340A5123678DEB007912A5 /* Assets.xcassets */; };
@@ -44,13 +49,11 @@
 		C4340A952367906B007912A5 /* ScreenshotMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */; };
 		C4340A972367906B007912A5 /* BeforeRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7D2367906B007912A5 /* BeforeRecording.swift */; };
 		C4340A982367906B007912A5 /* RecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7E2367906B007912A5 /* RecordingManager.swift */; };
-		C4340A992367906B007912A5 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7F2367906B007912A5 /* RecordingView.swift */; };
 		C4340A9B2367906B007912A5 /* DuringRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A812367906B007912A5 /* DuringRecording.swift */; };
 		C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A822367906B007912A5 /* RecordingWatcher.swift */; };
 		C43CCE6F2385D74B000007E3 /* ClipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */; };
 		C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE702385E28A000007E3 /* ArrayExtensions.swift */; };
 		C45C3BE9236870460091A324 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C3BE8236870460091A324 /* DetailsView.swift */; };
-		C45EBD1D2368DBAF000564BE /* Devto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45EBD1C2368DBAF000564BE /* Devto.swift */; };
 		C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */; };
 		C46D09A023836BA500AD1A53 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
 		C4C90A3323882709008B1603 /* ScreenshotMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */; };
@@ -83,13 +86,18 @@
 		BEF2210E47D2E833A2AEA6A5 /* ScreenflickVideoEventMapperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenflickVideoEventMapperTest.swift; sourceTree = "<group>"; };
 		BEF222C2844F1439F174A518 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		BEF22344C377A5FDC7ABF4F2 /* VideoFinalizedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFinalizedTest.swift; sourceTree = "<group>"; };
+		BEF223B8A96F0EFBF55DFCC3 /* YouTubePoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePoster.swift; sourceTree = "<group>"; };
 		BEF2259282D5C48FCA334347 /* DirectoryUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryUtilsTest.swift; sourceTree = "<group>"; };
 		BEF227D6FDE2E2B403707616 /* RecordingEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingEvent.swift; sourceTree = "<group>"; };
 		BEF2282BA4FF5BD95DF7D452 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		BEF2299772806759F995DEAB /* RecordingSoftwareTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSoftwareTest.swift; sourceTree = "<group>"; };
+		BEF229BC761F0D025B6867E2 /* RecordingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 		BEF22AFB4A836A4181F48462 /* PathBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
 		BEF22B61640D3ACC9F15005D /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		BEF22B7DB9265419C57BDBB0 /* Devto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Devto.swift; sourceTree = "<group>"; };
 		BEF22DBE0B9FB947FB4D9E52 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		BEF22DF96C75D43A3E29E5B9 /* YouTubePosterViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePosterViewTest.swift; sourceTree = "<group>"; };
+		BEF22E068E30D31FAD28E340 /* ClipExtractorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClipExtractorView.swift; sourceTree = "<group>"; };
 		BEF22EF577F76C9185FBFBA8 /* RecordingEventMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingEventMapper.swift; sourceTree = "<group>"; };
 		BEF22F4E451F5296199FF459 /* Timestamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCreationAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,13 +127,11 @@
 		C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotMonitor.swift; sourceTree = "<group>"; };
 		C4340A7D2367906B007912A5 /* BeforeRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeRecording.swift; sourceTree = "<group>"; };
 		C4340A7E2367906B007912A5 /* RecordingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingManager.swift; sourceTree = "<group>"; };
-		C4340A7F2367906B007912A5 /* RecordingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 		C4340A812367906B007912A5 /* DuringRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuringRecording.swift; sourceTree = "<group>"; };
 		C4340A822367906B007912A5 /* RecordingWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingWatcher.swift; sourceTree = "<group>"; };
 		C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractor.swift; sourceTree = "<group>"; };
 		C43CCE702385E28A000007E3 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = SOURCE_ROOT; };
 		C45C3BE8236870460091A324 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
-		C45EBD1C2368DBAF000564BE /* Devto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devto.swift; sourceTree = "<group>"; };
 		C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePostingView.swift; sourceTree = "<group>"; };
 		C46D099F23836BA500AD1A53 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = SOURCE_ROOT; };
 		C4C90A1F2388212E008B1603 /* VideoCreationAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoCreationAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +180,30 @@
 			path = Timing;
 			sourceTree = "<group>";
 		};
+		BEF224D201AF514C5BF17203 /* Clips */ = {
+			isa = PBXGroup;
+			children = (
+				BEF22E068E30D31FAD28E340 /* ClipExtractorView.swift */,
+			);
+			path = Clips;
+			sourceTree = "<group>";
+		};
+		BEF22BEE00C590685A8F94FE /* YouTube */ = {
+			isa = PBXGroup;
+			children = (
+				BEF223B8A96F0EFBF55DFCC3 /* YouTubePoster.swift */,
+			);
+			path = YouTube;
+			sourceTree = "<group>";
+		};
+		BEF22ECAC8653D4825D614FA /* Devto */ = {
+			isa = PBXGroup;
+			children = (
+				BEF22B7DB9265419C57BDBB0 /* Devto.swift */,
+			);
+			path = Devto;
+			sourceTree = "<group>";
+		};
 		C4340A3E23678DE9007912A5 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +247,7 @@
 				C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */,
 				BEF2213E459DFB94C47AAD7D /* Timing */,
 				BEF22AFB4A836A4181F48462 /* PathBuilder.swift */,
+				BEF224D201AF514C5BF17203 /* Clips */,
 			);
 			path = VideoCreationAssistant;
 			sourceTree = "<group>";
@@ -296,11 +327,11 @@
 			children = (
 				C4340A7D2367906B007912A5 /* BeforeRecording.swift */,
 				C4340A7E2367906B007912A5 /* RecordingManager.swift */,
-				C4340A7F2367906B007912A5 /* RecordingView.swift */,
 				C4340A812367906B007912A5 /* DuringRecording.swift */,
 				C4340A822367906B007912A5 /* RecordingWatcher.swift */,
 				BEF22EF577F76C9185FBFBA8 /* RecordingEventMapper.swift */,
 				BEF227D6FDE2E2B403707616 /* RecordingEvent.swift */,
+				BEF229BC761F0D025B6867E2 /* RecordingView.swift */,
 			);
 			path = Recording;
 			sourceTree = "<group>";
@@ -309,8 +340,9 @@
 			isa = PBXGroup;
 			children = (
 				C4340A752367906A007912A5 /* PostingView.swift */,
-				C45EBD1C2368DBAF000564BE /* Devto.swift */,
 				C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */,
+				BEF22ECAC8653D4825D614FA /* Devto */,
+				BEF22BEE00C590685A8F94FE /* YouTube */,
 			);
 			path = Posting;
 			sourceTree = "<group>";
@@ -334,6 +366,7 @@
 				BEF2210E47D2E833A2AEA6A5 /* ScreenflickVideoEventMapperTest.swift */,
 				BEF2299772806759F995DEAB /* RecordingSoftwareTest.swift */,
 				BEF22344C377A5FDC7ABF4F2 /* VideoFinalizedTest.swift */,
+				BEF22DF96C75D43A3E29E5B9 /* YouTubePosterViewTest.swift */,
 			);
 			path = VideoCreationAssistantTests;
 			sourceTree = "<group>";
@@ -527,7 +560,6 @@
 				C4340A8F2367906B007912A5 /* StatusItemMenuController.swift in Sources */,
 				C4340A842367906B007912A5 /* Stopwatch.swift in Sources */,
 				C4340A8E2367906B007912A5 /* UploadsMenuController.swift in Sources */,
-				C45EBD1D2368DBAF000564BE /* Devto.swift in Sources */,
 				C4340A892367906B007912A5 /* FolderContentMonitor.swift in Sources */,
 				C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */,
 				C4340A932367906B007912A5 /* NSMenuExtension.swift in Sources */,
@@ -545,7 +577,6 @@
 				C4340A872367906B007912A5 /* ImgurClient.swift in Sources */,
 				C4340A902367906B007912A5 /* PreferencesMenuController.swift in Sources */,
 				C4340A982367906B007912A5 /* RecordingManager.swift in Sources */,
-				C4340A992367906B007912A5 /* RecordingView.swift in Sources */,
 				C4340A942367906B007912A5 /* IMGImage.swift in Sources */,
 				C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */,
 				BEF22A9137349506D855BFD1 /* Preferences.swift in Sources */,
@@ -556,6 +587,10 @@
 				BEF22DEB4A5692ADE0F8B07B /* PathBuilder.swift in Sources */,
 				BEF2274C46AD250B990B078D /* RecordingEventMapper.swift in Sources */,
 				BEF225D2B34F1E9BD0FEFEB5 /* RecordingEvent.swift in Sources */,
+				BEF22EA1D9335B3FDBA97F1F /* ClipExtractorView.swift in Sources */,
+				BEF223B23DE20D7038FD9C63 /* Devto.swift in Sources */,
+				BEF228CA5011117F85BCD339 /* RecordingView.swift in Sources */,
+				BEF2270E6C3F9010CA5C27EC /* YouTubePoster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +608,7 @@
 				BEF226DB7CD1389F38C34BC7 /* ScreenflickVideoEventMapperTest.swift in Sources */,
 				BEF229E84B00048C5E0CE461 /* RecordingSoftwareTest.swift in Sources */,
 				BEF2256FDC4FA08A32A39A2E /* VideoFinalizedTest.swift in Sources */,
+				BEF22E6F58B79B6CE59AC66B /* YouTubePosterViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

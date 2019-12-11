@@ -28,6 +28,21 @@ class Shell {
     
     return output
   }
+
+  static func appleScript(path: String) -> String {
+    let task = Process()
+    task.launchPath = "/usr/bin/env"
+    task.arguments = ["/usr/bin/osascript", path]
+
+    let pipe = Pipe()
+    task.standardOutput = pipe
+    task.launch()
+
+    let data = pipe.fileHandleForReading.readDataToEndOfFile()
+    let output: String = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
+
+    return output
+  }
   
 }
 

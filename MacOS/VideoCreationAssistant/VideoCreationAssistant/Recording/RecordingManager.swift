@@ -13,6 +13,7 @@ enum RecordingState {
   case listening
   case live
   case ended
+  case extracting
   case posting
 }
 
@@ -25,6 +26,8 @@ class PendingInfo: ObservableObject {
 
 class RecordingManager: ObservableObject {
 
+  let id = UUID()
+
   private let stopwatch = Stopwatch()
   private let recordingWatcher = RecordingWatcher.shared
   private var monitor: ScreenshotMonitor?
@@ -35,6 +38,7 @@ class RecordingManager: ObservableObject {
   @Published var tmpPath: String = ""
   @Published var finalPath: String = ""
   @Published var timestamps: [Timestamp] = []
+  @Published var clipPaths: [(String, UUID)] = []
 
   @Published var seconds: Int = -1 {
     didSet {

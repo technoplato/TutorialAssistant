@@ -13,15 +13,9 @@ struct PostingView: View {
   
   var body: some View {
     return Form {
-      Text("Post It").font(.title)
-      Text("You have to manually post things right now, but that will be changed soon!")
-        .font(.subheadline)
-      
-      Text("Enter a title for the overall video").bold()
-      TextField("Enter title here", text: $recording.title)
-      
-      Text("Click to create Dev.to post").bold()
-      Button("Create Post") {
+      Text("Post Your Clips").font(.title)
+
+      Button("Click to clips to Dev.to") {
 //        Devto.createPost(title: self.recording.title, body: self.recording.body) { response in
 //          print(response)
 //          self.recording.devtoId = response.id

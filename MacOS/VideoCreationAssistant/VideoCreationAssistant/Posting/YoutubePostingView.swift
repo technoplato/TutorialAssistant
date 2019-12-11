@@ -29,14 +29,6 @@ struct YoutubePostingView: View {
         TextField("Name Your Video for YouTube", text: $recording.title)
       }
 
-      Button("Extract Clips") {
-        self.clips = ClipExtractor(
-          rawVideoPath: self.recording.finalPath,
-          clipExtractPath: "~/Desktop/you/better/move/this".expandingTildeInPath,
-          timestamps: self.recording.timestamps
-        ).extract()
-      }
-
       Section {
         Picker(selection: $selectedPrivacy, label: Text("Privacy Status")) {
           ForEach(0..<privacyStatuses.count) {

@@ -22,8 +22,8 @@ struct ClipExtractor {
 
   // TODO I now have a duration (which starts when a screenshot is taken and ends when a screenshot is submitted.
   // Do I want to change how the clips are created?
-  func extract() -> [String] {
-    self.timestamps.enumerated().map { (index, ts) in
+  func extract() -> [(path: String, id: UUID)] {
+    return self.timestamps.enumerated().map { (index, ts) in
       var extractClip = "/usr/local/bin/ffmpeg -i \(fullVideoPath) -ss \(ts.duration.start)"
       if index < timestamps.count - 1 {
         extractClip.append(" -to \(self.timestamps[index + 1].duration.start)")
@@ -33,8 +33,8 @@ struct ClipExtractor {
       try? FileManager.default.createDirectory(atPath: clipExtractPath, withIntermediateDirectories: true)
       extractClip.append(" -c copy \"\(clipPath)\"")
       _ = Shell.run(extractClip)
-    }
 
-    return Directory.files(path: clipExtractPath)
+      return (path: clipPath, id: ts.id)
+    }
   }
 }
