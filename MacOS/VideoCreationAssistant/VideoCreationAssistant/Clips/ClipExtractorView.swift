@@ -14,7 +14,7 @@ struct ClipExtractorView: View {
       Button("Extract Clips") {
         self.recording.clipPaths = ClipExtractor(
           rawVideoPath: self.recording.finalPath,
-          clipExtractPath: "~/Desktop/\(self.recording.id)/CLIPS".expandingTildeInPath,
+          clipExtractPath: self.recording.clipExtractPath,
           timestamps: self.recording.timestamps
         ).extract()
       }

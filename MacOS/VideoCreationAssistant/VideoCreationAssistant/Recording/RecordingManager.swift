@@ -27,6 +27,7 @@ class PendingInfo: ObservableObject {
 class RecordingManager: ObservableObject {
 
   let id = UUID()
+  let clipExtractPath: String
 
   private let stopwatch = Stopwatch()
   private let recordingWatcher = RecordingWatcher.shared
@@ -38,7 +39,11 @@ class RecordingManager: ObservableObject {
   @Published var tmpPath: String = ""
   @Published var finalPath: String = ""
   @Published var timestamps: [Timestamp] = []
-  @Published var clipPaths: [(String, String)] = []
+
+  // ID => Clip Path dict
+  @Published var clipPaths: [String: String] = [:]
+  // ID => YouTube IDs
+  @Published var youtubeIds: [String: String] = [:]
 
   @Published var seconds: Int = -1 {
     didSet {
@@ -55,6 +60,7 @@ class RecordingManager: ObservableObject {
   var devtoUrl: String = ""
 
   init() {
+    clipExtractPath = "~/Desktop/Clipper/\(id)/CLIPS".expandingTildeInPath
     self.listenForVideoRecordingStart()
     self.listenToStopwatch()
     self.listenForImgurUpload()

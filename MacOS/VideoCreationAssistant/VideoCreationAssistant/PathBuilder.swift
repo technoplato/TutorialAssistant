@@ -6,6 +6,6 @@
 struct PathBuilder {
 
   static func build(timestamp: Timestamp, path: String, fullVideoPath: String) -> String {
-    "\(path)/\(timestamp.title).\(fullVideoPath.suffix(3))"
+    "\(path)/\(timestamp.id).\(fullVideoPath.suffix(3))"
   }
 }

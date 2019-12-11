@@ -19,35 +19,35 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>ClipExtractorTest.testFileNameWithSpaceIsExtractedProperly.xcscheme</key>
+		<key>YouTubePosterText.testVideosPostToYouTubeAndReturnUrls.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
-		<key>YouTubePosterText.testVideosPostToYouTubeAndReturnUrls.xcscheme</key>
+		<key>TimestampCreationTest.testTimestampIdIsAlphaNumeric.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
-		<key>YouTubePosterText.xcscheme</key>
+		<key>StringExtensionsTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>TimestampCreationTest.testTimestampIdIsAlphaNumeric.xcscheme</key>
+		<key>ClipExtractorTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>StringExtensionsTest.xcscheme</key>
+		<key>YouTubePosterText.testRegex.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />

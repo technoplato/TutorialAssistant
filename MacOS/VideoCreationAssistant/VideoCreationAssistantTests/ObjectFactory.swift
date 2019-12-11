@@ -11,26 +11,24 @@
 struct Factory {
 
   static func timestamp(title: String) -> Timestamp {
-    return Timestamp(
+    Timestamp(
         duration: Duration(start: 0),
         title: title,
-        description: String.random(),
-        youtubeId: String.random()
+        description: String.random()
     )
   }
   
   static func timestamp(duration: Duration) -> Timestamp {
-    return Timestamp(
+    Timestamp(
       duration: duration,
       title: String.random(),
-      description: String.random(),
-      youtubeId: String.random()
+      description: String.random()
     )
   }
   
   static func timestamps(durations: [Duration]) -> [Timestamp] {
-    return durations.map { duration in
-      return Factory.timestamp(duration: duration)
+    durations.map { duration in
+      Factory.timestamp(duration: duration)
     }
   }
 }

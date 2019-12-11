@@ -5,17 +5,28 @@
 
 import Foundation
 
+enum YouTubeUrlParsingError: Error {
+  case parsingError
+}
+
 class YouTubePoster {
   static func post(completion: @escaping (([String]?, String?) -> Void)) {
 
-    let result = Shell.appleScript(path: "/Users/lustig/Desktop/youtube.scpt")
-    let youtubeUrls = result.split(separator: ",").map {
+    let json = Shell.appleScript(path: "/Users/lustig/Desktop/youtube.scpt")
+    print(json)
+    let youtubeIds: [String] = try! json.split(separator: ",").map {
       $0.lowercased()
     }.filter {
       $0.contains("yout")
+    }.map {
+      guard let id: Substring = $0.split(separator: "/").last else {
+        throw YouTubeUrlParsingError.parsingError
+      }
+
+      return id.lowercased()
     }
 
-    completion(youtubeUrls, nil)
+    completion(youtubeIds, nil)
   }
 }
 
