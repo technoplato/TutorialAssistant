@@ -15,6 +15,10 @@ extension String {
   }
   
   var expandingTildeInPath: String {
-    return self.replacingOccurrences(of: "~", with: FileManager.default.homeDirectoryForCurrentUser.path)
+    self.replacingOccurrences(of: "~", with: FileManager.default.homeDirectoryForCurrentUser.path)
+  }
+
+  var isAlphanumeric: Bool {
+    !isEmpty && range(of: "^[:alnum:]+$", options: .regularExpression) != nil
   }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 class Timestamp {
-  @Published var id: UUID
+  @Published var id: String
   @Published var duration: Duration
   @Published var title: String
   @Published var description: String
@@ -21,7 +21,9 @@ class Timestamp {
        description: String = "",
        youtubeId: String = "") {
 
-    self.id = UUID()
+    var id = UUID().uuidString
+    id.removeAll(where: { $0 == "-" })
+    self.id = id
     self.duration = duration
     self.title = title
     self.description = description

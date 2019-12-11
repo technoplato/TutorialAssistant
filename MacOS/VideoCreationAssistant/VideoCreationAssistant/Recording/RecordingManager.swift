@@ -38,7 +38,7 @@ class RecordingManager: ObservableObject {
   @Published var tmpPath: String = ""
   @Published var finalPath: String = ""
   @Published var timestamps: [Timestamp] = []
-  @Published var clipPaths: [(String, UUID)] = []
+  @Published var clipPaths: [(String, String)] = []
 
   @Published var seconds: Int = -1 {
     didSet {

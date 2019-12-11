@@ -15,10 +15,12 @@
 		BEF225D2B34F1E9BD0FEFEB5 /* RecordingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF227D6FDE2E2B403707616 /* RecordingEvent.swift */; };
 		BEF226DB7CD1389F38C34BC7 /* ScreenflickVideoEventMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2210E47D2E833A2AEA6A5 /* ScreenflickVideoEventMapperTest.swift */; };
 		BEF2270E6C3F9010CA5C27EC /* YouTubePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF223B8A96F0EFBF55DFCC3 /* YouTubePoster.swift */; };
+		BEF22745357B72C967ED6444 /* TimestampCreationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2246F1524928762D4F36E /* TimestampCreationTest.swift */; };
 		BEF2274C46AD250B990B078D /* RecordingEventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22EF577F76C9185FBFBA8 /* RecordingEventMapper.swift */; };
 		BEF228CA5011117F85BCD339 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF229BC761F0D025B6867E2 /* RecordingView.swift */; };
 		BEF229496EC768F7461228AB /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF222C2844F1439F174A518 /* Duration.swift */; };
 		BEF229E84B00048C5E0CE461 /* RecordingSoftwareTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2299772806759F995DEAB /* RecordingSoftwareTest.swift */; };
+		BEF22A28C02561B742389B02 /* StringExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF224EBCD6BF993B42A9A58 /* StringExtensionsTest.swift */; };
 		BEF22A9137349506D855BFD1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22DBE0B9FB947FB4D9E52 /* Preferences.swift */; };
 		BEF22CF328CE7D38BD364A2D /* DirectoryUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2259282D5C48FCA334347 /* DirectoryUtilsTest.swift */; };
 		BEF22D9CE7A978666E7F2300 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22B61640D3ACC9F15005D /* TimeFormatter.swift */; };
@@ -87,6 +89,8 @@
 		BEF222C2844F1439F174A518 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		BEF22344C377A5FDC7ABF4F2 /* VideoFinalizedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFinalizedTest.swift; sourceTree = "<group>"; };
 		BEF223B8A96F0EFBF55DFCC3 /* YouTubePoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePoster.swift; sourceTree = "<group>"; };
+		BEF2246F1524928762D4F36E /* TimestampCreationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimestampCreationTest.swift; sourceTree = "<group>"; };
+		BEF224EBCD6BF993B42A9A58 /* StringExtensionsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionsTest.swift; sourceTree = "<group>"; };
 		BEF2259282D5C48FCA334347 /* DirectoryUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryUtilsTest.swift; sourceTree = "<group>"; };
 		BEF227D6FDE2E2B403707616 /* RecordingEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingEvent.swift; sourceTree = "<group>"; };
 		BEF2282BA4FF5BD95DF7D452 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 				BEF2299772806759F995DEAB /* RecordingSoftwareTest.swift */,
 				BEF22344C377A5FDC7ABF4F2 /* VideoFinalizedTest.swift */,
 				BEF22DF96C75D43A3E29E5B9 /* YouTubePosterViewTest.swift */,
+				BEF2246F1524928762D4F36E /* TimestampCreationTest.swift */,
+				BEF224EBCD6BF993B42A9A58 /* StringExtensionsTest.swift */,
 			);
 			path = VideoCreationAssistantTests;
 			sourceTree = "<group>";
@@ -609,6 +615,8 @@
 				BEF229E84B00048C5E0CE461 /* RecordingSoftwareTest.swift in Sources */,
 				BEF2256FDC4FA08A32A39A2E /* VideoFinalizedTest.swift in Sources */,
 				BEF22E6F58B79B6CE59AC66B /* YouTubePosterViewTest.swift in Sources */,
+				BEF22745357B72C967ED6444 /* TimestampCreationTest.swift in Sources */,
+				BEF22A28C02561B742389B02 /* StringExtensionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
