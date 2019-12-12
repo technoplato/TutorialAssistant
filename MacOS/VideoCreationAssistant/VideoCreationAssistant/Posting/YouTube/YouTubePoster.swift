@@ -9,24 +9,20 @@ enum YouTubeUrlParsingError: Error {
   case parsingError
 }
 
-class YouTubePoster {
-  static func post(completion: @escaping (([String]?, String?) -> Void)) {
+struct YouTubePoster {
 
-    let json = Shell.appleScript(path: "/Users/lustig/Desktop/youtube.scpt")
-    print(json)
-    let youtubeIds: [String] = try! json.split(separator: ",").map {
-      $0.lowercased()
-    }.filter {
-      $0.contains("yout")
-    }.map {
-      guard let id: Substring = $0.split(separator: "/").last else {
-        throw YouTubeUrlParsingError.parsingError
-      }
+  let parser = ApplescriptYouTubeResultsParser()
 
-      return id.lowercased()
+  func post(completion: @escaping (([String: String]?, String?) -> Void)) {
+
+    // TODO use string interpolation to create Applescript
+    let results = Shell.appleScript(path: "/Users/lustig/Desktop/youtube.scpt")
+    do {
+      let dict = try parser.parse(applescriptResults: results)
+      completion(dict, nil)
+    } catch {
+      completion(nil, "Something went wrong with parsing...")
     }
-
-    completion(youtubeIds, nil)
   }
 }
 

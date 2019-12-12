@@ -33,21 +33,21 @@
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
-		<key>StringExtensionsTest.xcscheme</key>
+		<key>ClipExtractorTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>ClipExtractorTest.xcscheme</key>
+		<key>YouTubePosterText.testRegex.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>YouTubePosterText.testRegex.xcscheme</key>
+		<key>YouTubePosterText.testCreateAppleScript.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
