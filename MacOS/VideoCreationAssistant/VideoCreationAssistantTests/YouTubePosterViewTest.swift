@@ -36,7 +36,7 @@ class YouTubePosterText: XCTestCase {
 //    wait(for: [expectation], timeout: 15)
 //  }
 
-
+// TODO - move this regex to a dedicated YouTube / AppleScript parser thing
   func testRegex() {
     var idDict = [String: String]()
 
@@ -60,6 +60,10 @@ class YouTubePosterText: XCTestCase {
       let url = inputString[urlRange!].lowercased()
 
       idDict[id] = url
+    }
+
+    func testYouTubeUpdatesUpdatesVideo() {
+      // TODO
     }
 
 //    inputString.ranges(of: "title:([\\w\\d\\s]*), youtubeUrl:(https://youtu.be/[\\w\\d]+),", options: .regularExpression).forEach {
