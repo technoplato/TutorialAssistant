@@ -46,12 +46,12 @@ class Devto {
   
   static func createPost(title: String, body: String, callback: @escaping (ArticleResponse) -> Void) {
     let partial = ArticlePartial(title: title, published: true, body_markdown: body, tags: nil, series: nil)
-    
-        AF.request("https://dev.to/api/articles",
-                   method: .post,
-                   parameters: partial,
-                   encoder: JSONParameterEncoder.default,
-                   headers: headers).responseDecodable(of: ArticleResponse.self) {response in callback(response.value!)}
+//
+//        Alamofire.request("https://dev.to/api/articles",
+//                   method: .post,
+//                   parameters: partial,
+//                   encoder: JSONParameterEncoder.default,
+//                   headers: headers).responseDecodable(of: ArticleResponse.self) {response in callback(response.value!)}
   }
   
 //  static func updatePost(id: Int) {

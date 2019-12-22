@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import OAuth2
 import SwiftUI
 
 @NSApplicationMain
@@ -16,8 +17,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
   let popover = NSPopover()
   let recordingManager = RecordingManager()
-
+  var oa: OA?
+  
   func applicationDidFinishLaunching(_ aNotification: Notification) {
+    NSAppleEventManager.shared().setEventHandler(
+      self,
+      andSelector: #selector(AppDelegate.handleURLEvent(_:withReply:)),
+      forEventClass: AEEventClass(kInternetEventClass),
+      andEventID: AEEventID(kAEGetURL)
+    )
+    self.oa = OA()
+    self.oa!.test()
     
     // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
     // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
@@ -36,12 +46,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     if let button = statusItem.button {
       button.image = NSImage(named: NSImage.Name("StatusBarButtonImage"))
+      button.action = #selector(grabPasteboardCode(_:))
 //      button.action = #selector(togglePopover(_:))
     }
     
 //    constructMenu()
 //    popover.contentViewController = NSHostingController(rootView: DetailsView().environmentObject(recordingManager))
   }
+  
+  @objc func grabPasteboardCode(_ sender: Any?) {
+    let pboard = NSPasteboard.general
+    if let pasted = pboard.string(forType: NSPasteboard.PasteboardType.string) {
+      self.oa!.exchangeCodeForToken(pasted)
+    }
+  }
+
+  
+  /** Gets called when the App launches/opens via URL. */
+  @objc func handleURLEvent(_ event: NSAppleEventDescriptor, withReply reply: NSAppleEventDescriptor) {
+    print("handleURLEvent")
+    if let urlString = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue {
+      print(urlString)
+      if let url = URL(string: urlString), "videocreationassistant" == url.scheme && "oauth" == url.host {
+
+        oa!.oauth2.handleRedirectURL(url)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "OAuth2AppDidReceiveCallback"), object: url)
+      }
+    }
+    else {
+      NSLog("No valid URL to handle")
+    }
+  }
+  
   
   func promptScreenshotDetails() {
     if let button = statusItem.button {

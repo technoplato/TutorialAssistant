@@ -12,7 +12,7 @@ PODS:
   - AFNetworking/Reachability (3.1.0)
   - AFNetworking/Security (3.1.0)
   - AFNetworking/Serialization (3.1.0)
-  - Alamofire (5.0.0-rc.3)
+  - Alamofire (4.9.1)
   - EMCLoginItem (1.0.2)
   - FileWatcher (0.2.1)
   - GRDB.swift (4.6.2):
@@ -23,7 +23,7 @@ PODS:
     - AFNetworking (= 3.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0-rc.3)
+  - Alamofire (~> 4.9.1)
   - EMCLoginItem
   - FileWatcher
   - GRDB.swift
@@ -51,13 +51,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   EMCLoginItem: 19d3c7eca477c9019ea0cd58e44d0ccd34a7a6a3
   FileWatcher: c7d30f1dc6e3c12025d940d90804ecc997960f81
   GRDB.swift: 258520e10b49ff55307cbb0bec701af0742ae621
   HotKey: ad59450195936c10992438c4210f673de5aee43e
   ImgurSession: e11a605652cfe8aebfb6a9a4ea5b752654f14e2f
 
-PODFILE CHECKSUM: cf6eab827738af25ee655fca69ebd3c01d5b4e6c
+PODFILE CHECKSUM: 0bc77c4dbb8ab829ec305c35865412909c47f0ca
 
 COCOAPODS: 1.8.3
