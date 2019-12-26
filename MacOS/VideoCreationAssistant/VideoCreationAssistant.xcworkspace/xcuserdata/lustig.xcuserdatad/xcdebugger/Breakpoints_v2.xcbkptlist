@@ -53,16 +53,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D7C2AF72-1824-4BD6-B955-03A30657B314"
+            uuid = "7CD1C95F-5735-4039-854C-2B5EEC7AAEE3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VideoCreationAssistant/OA.swift"
+            filePath = "VideoCreationAssistant/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "test()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "applicationDidFinishLaunching(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
