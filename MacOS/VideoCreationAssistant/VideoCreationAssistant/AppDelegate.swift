@@ -65,10 +65,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   /** Gets called when the App launches/opens via URL. */
   @objc func handleURLEvent(_ event: NSAppleEventDescriptor, withReply reply: NSAppleEventDescriptor) {
     print("handleURLEvent")
+  
     if let urlString = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue {
       print(urlString)
-      if let url = URL(string: urlString), "videocreationassistant" == url.scheme && "oauth" == url.host {
-
+      if let url = URL(string: urlString), "com.lustig.videocreationassistant" == url.scheme {
+        print(url.host)
+        print("Sucmotherrfuckingcess")
         oa!.oauth2.handleRedirectURL(url)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "OAuth2AppDidReceiveCallback"), object: url)
       }

@@ -2,25 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.944530683864-thoiu5shliggtre4rckvcppsn8obte9n</string>
+				<string>com.lustig.VideoCreationAssistant</string>
 			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLIconFile</key>
-			<array>
-				<string>videocreationassistant</string>
-			</array>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>videocreationassistant</string>
+			<string>com.lustig.VideoCreationAssistant</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -51,6 +41,8 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>com.apple.security.temporary-exception.apple-events</key>
 	<array>
 		<string>com.apple.systemevents</string>
