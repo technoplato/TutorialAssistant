@@ -13,7 +13,6 @@ import Alamofire
 class OAuth {
   
   let oauth2: OAuth2CodeGrant
-  var loader: OAuth2DataLoader?
   
   init() {
     self.oauth2 = OAuth2CodeGrant(settings: [
@@ -23,7 +22,7 @@ class OAuth {
       "redirect_uris": ["com.lustig.videocreationassistant:/oauth"],
       "scope": "https://www.googleapis.com/auth/youtube",
       "response_type": "code"
-      ])
+    ])
     
     oauth2.logger = OAuth2DebugLogger(.trace)
     let retrier = OAuthRetrier(oauth2: oauth2)
@@ -33,12 +32,12 @@ class OAuth {
   
   func createYouTubePlaylist(title: String, description: String = "", callback: @escaping ((YouTubePlaylist) -> Void)) {
     let url = URL(string: "https://www.googleapis.com/youtube/v3/playlists?part=id,snippet")!
-
+    
     let params = [
-        "title": title,
-        "description": description
+      "title": title,
+      "description": description
     ]
-
+    
     Alamofire.request(
       url.absoluteString,
       method: .post,
@@ -48,9 +47,37 @@ class OAuth {
           let playlist =  try! JSONDecoder().decode(YouTubePlaylist.self, from: data)
           
           callback(playlist)
-          
         }
     }
+  }
+  
+  func addVideosToYouTubePlaylist(playlistId: String, videos: [String], callback: @escaping ((Any)) -> Void) {
+    let url = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet")!
+    var count = 0
+    videos.forEach { video in
+
+      print(video)
+      
+      let params = [
+        "playlistId": playlistId,
+        "resourceId": [
+          "kind": "youtube#video",
+          "videoId": video
+        ]
+      ] as [String : Any]
+      
+      Alamofire.request(
+          url.absoluteString,
+          method: .post,
+          parameters: ["snippet": params],
+          encoding: JSONEncoding.default).responseJSON { response in
+        count += 1
+        print(response)
+        print("Count: \(count)")
+      }
+    }
+    
+    
   }
 }
 

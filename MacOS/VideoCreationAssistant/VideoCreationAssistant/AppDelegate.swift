@@ -27,19 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       andEventID: AEEventID(kAEGetURL)
     )
     
-    let awesomeSuperCool = "PL3z1TiLmRFcyh9bMesOtNhyzXsg4dHhzM"
-    
-    self.oa = OAuth()
-//    self.oa!.createYouTubePlaylist(title: "Awesome super cool title") { playlist in
-//      print(playlist)
-//    }
-    
-    let videos = ["", ""]
-    
-    self.oa!.addVideosToYouTubePlaylist(playlistId: awesomeSuperCool, videos: videos) { result in
-      print(result)
-    }
-    
     // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
     // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
     let contentView = RecordingView().environment(\.managedObjectContext, persistentContainer.viewContext).environmentObject(recordingManager)

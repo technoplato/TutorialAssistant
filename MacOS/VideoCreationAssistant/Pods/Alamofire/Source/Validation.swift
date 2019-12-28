@@ -222,7 +222,7 @@ extension DataRequest {
         let contentTypes = { [unowned self] in
             self.acceptableContentTypes
         }
-        return validate(statusCode: acceptableStatusCodes).validate(contentType: contentTypes())
+    return validate(statusCode: acceptableStatusCodes).validate(contentType: contentTypes())
     }
 }
 
