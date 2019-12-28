@@ -34,10 +34,6 @@ class YouTubePosterText: XCTestCase {
     XCTAssertEqual("https://youtu.be/SHrYN0KLtfM", idDict["2019 09 27 12 38 23"])
   }
 
-  func testYouTubeUpdatesUpdatesVideo() {
-    // TODO
-  }
-
   func testCreateAppleScript() {
 
     print(FileManager.default.homeDirectoryForCurrentUser.absoluteURL.description)

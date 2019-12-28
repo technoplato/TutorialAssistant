@@ -58,6 +58,8 @@
 		C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A822367906B007912A5 /* RecordingWatcher.swift */; };
 		C43CCE6F2385D74B000007E3 /* ClipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */; };
 		C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE702385E28A000007E3 /* ArrayExtensions.swift */; };
+		C4531C1823B521DA00ACBF99 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = C4E09AC023A40BE900A0D379 /* OAuth2 */; };
+		C4531C1A23B533AE00ACBF99 /* OA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4531C1923B533AE00ACBF99 /* OA.swift */; };
 		C45C3BE9236870460091A324 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C3BE8236870460091A324 /* DetailsView.swift */; };
 		C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */; };
 		C46D09A023836BA500AD1A53 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
@@ -68,7 +70,6 @@
 		C4C90A3E23882B9D008B1603 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3D23882B9D008B1603 /* StringExtensions.swift */; };
 		C4C90A3F23882B9D008B1603 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A3D23882B9D008B1603 /* StringExtensions.swift */; };
 		C4C90A4123882E1F008B1603 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
-		C4E09AC323A40C4500A0D379 /* OA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E09AC223A40C4500A0D379 /* OA.swift */; };
 		CB10CFB858C6E44A0CE14E93 /* libPods-VideoCreationAssistantTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1989F9BC1EE60E11B405CCD0 /* libPods-VideoCreationAssistantTests.a */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +143,7 @@
 		C4340A822367906B007912A5 /* RecordingWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingWatcher.swift; sourceTree = "<group>"; };
 		C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractor.swift; sourceTree = "<group>"; };
 		C43CCE702385E28A000007E3 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = SOURCE_ROOT; };
+		C4531C1923B533AE00ACBF99 /* OA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OA.swift; path = VideoCreationAssistant/OA.swift; sourceTree = SOURCE_ROOT; };
 		C45C3BE8236870460091A324 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePostingView.swift; sourceTree = "<group>"; };
 		C46D099F23836BA500AD1A53 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = SOURCE_ROOT; };
@@ -150,7 +152,6 @@
 		C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractorTest.swift; sourceTree = "<group>"; };
 		C4C90A3B23882AD1008B1603 /* ObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
 		C4C90A3D23882B9D008B1603 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		C4E09AC223A40C4500A0D379 /* OA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99801989088E6A2961C4032D /* Pods_VideoCreationAssistant.framework in Frameworks */,
+				C4531C1823B521DA00ACBF99 /* OAuth2 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +262,8 @@
 				C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */,
 				BEF2213E459DFB94C47AAD7D /* Timing */,
 				BEF22AFB4A836A4181F48462 /* PathBuilder.swift */,
+				C4531C1923B533AE00ACBF99 /* OA.swift */,
 				BEF224D201AF514C5BF17203 /* Clips */,
-				C4E09AC223A40C4500A0D379 /* OA.swift */,
 				BEF22D84D47FE16E10B5CD36 /* OAuthRetrier.swift */,
 			);
 			path = VideoCreationAssistant;
@@ -419,7 +421,7 @@
 			);
 			name = VideoCreationAssistant;
 			packageProductDependencies = (
-				C4E09AC023A40BE900A0D379 /* XCSwiftPackageProductDependency */,
+				C4E09AC023A40BE900A0D379 /* OAuth2 */,
 			);
 			productName = VideoCreationAssistant;
 			productReference = C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */;
@@ -473,7 +475,7 @@
 			);
 			mainGroup = C4340A3E23678DE9007912A5;
 			packageReferences = (
-				C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */,
+				C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */,
 			);
 			productRefGroup = C4340A4823678DE9007912A5 /* Products */;
 			projectDirPath = "";
@@ -613,11 +615,11 @@
 				BEF225D2B34F1E9BD0FEFEB5 /* RecordingEvent.swift in Sources */,
 				BEF22EA1D9335B3FDBA97F1F /* ClipExtractorView.swift in Sources */,
 				BEF223B23DE20D7038FD9C63 /* Devto.swift in Sources */,
+				C4531C1A23B533AE00ACBF99 /* OA.swift in Sources */,
 				BEF228CA5011117F85BCD339 /* RecordingView.swift in Sources */,
 				BEF2270E6C3F9010CA5C27EC /* YouTubePoster.swift in Sources */,
 				BEF22626337B0E0DABEFB559 /* ApplescriptYouTubeResultsParser.swift in Sources */,
 				BEF22F6E872EB7AF7B2810F8 /* YouTubeUploadTemplate.swift in Sources */,
-				C4E09AC323A40C4500A0D379 /* OA.swift in Sources */,
 				BEF2213DCB700F26762E7E61 /* OAuthRetrier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,7 +902,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */ = {
+		C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/p2/OAuth2.git";
 			requirement = {
@@ -911,9 +913,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C4E09AC023A40BE900A0D379 /* XCSwiftPackageProductDependency */ = {
+		C4E09AC023A40BE900A0D379 /* OAuth2 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */;
+			package = C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */;
 			productName = OAuth2;
 		};
 /* End XCSwiftPackageProductDependency section */
