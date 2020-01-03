@@ -53,16 +53,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9ADA5439-06EE-45E2-995A-33B035A7D23B"
-            shouldBeEnabled = "Yes"
+            uuid = "7B306020-88B3-45ED-9F27-E520D517B76E"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoCreationAssistantTests/YouTubePosterTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "testAddVideosToYouTubePlaylist()"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "testParsesApplescriptResultsProperly()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

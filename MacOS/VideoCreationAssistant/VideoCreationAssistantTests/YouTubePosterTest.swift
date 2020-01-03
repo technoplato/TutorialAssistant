@@ -34,25 +34,21 @@ class YouTubePosterText: XCTestCase {
     XCTAssertEqual("https://youtu.be/SHrYN0KLtfM", idDict["2019 09 27 12 38 23"])
   }
   
+  
   func testAddVideosToYouTubePlaylist() {
-    let expectation = XCTestExpectation(description: "Adds videos to YouTube playlist")
-
-    
-    let awesomeSuperCool = "PL3z1TiLmRFcyh9bMesOtNhyzXsg4dHhzM"
     
     let oa = OAuth()
-
+    let expectation = XCTestExpectation(description: "Adds videos to YouTube playlist")
+    
+    let awesomeSuperCool = "PL3z1TiLmRFcyh9bMesOtNhyzXsg4dHhzM"
     let videos = ["eGKKYjn82VE", "bnks9RAIh3U"]
     
     oa.addVideosToYouTubePlaylist(playlistId: awesomeSuperCool, videos: videos) { result in
-      print(result)
-      
-//      XCTAssert(result)
-//      XCTAssertNotNil(result)
+      XCTAssertTrue(result)
       expectation.fulfill()
     }
     
-    wait(for: [expectation], timeout: 5)
+    wait(for: [expectation], timeout: 55)
   }
   
   func testCreateAppleScript() {

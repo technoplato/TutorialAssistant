@@ -12,9 +12,13 @@ target 'VideoCreationAssistant' do
   pod 'ImgurSession', :git => 'https://github.com/mileswd/ImgurSession.git', :branch => 'update-podspec'
   pod 'EMCLoginItem'
   pod 'Alamofire', '~> 4.9.1'
-  
+  pod "PromiseKit", '~> 6.8'
+  pod 'PromiseKit/Alamofire'
+
 end
 
 target 'VideoCreationAssistantTests' do
   pod "FileWatcher"
+  pod 'RxBlocking', '~> 5'
+  pod 'RxTest', '~> 5'
 end

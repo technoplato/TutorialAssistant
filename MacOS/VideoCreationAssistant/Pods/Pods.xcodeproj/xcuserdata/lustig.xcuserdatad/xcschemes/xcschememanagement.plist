@@ -9,46 +9,26 @@
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>16</integer>
-		</dict>
-		<key>AFNetworking.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>10</integer>
 		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>18</integer>
-		</dict>
-		<key>Alamofire.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>11</integer>
 		</dict>
 		<key>EMCLoginItem.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>20</integer>
-		</dict>
-		<key>EMCLoginItem.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>12</integer>
 		</dict>
 		<key>FileWatcher-framework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
-			<key>orderHint</key>
-			<integer>22</integer>
-		</dict>
-		<key>FileWatcher-framework.xcscheme_^#shared#^_</key>
-		<dict>
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
@@ -57,62 +37,70 @@
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>23</integer>
-		</dict>
-		<key>FileWatcher-library.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>14</integer>
 		</dict>
 		<key>GRDB.swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>15</integer>
 		</dict>
 		<key>HotKey.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>24</integer>
-		</dict>
-		<key>HotKey.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>16</integer>
 		</dict>
 		<key>ImgurSession.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>25</integer>
-		</dict>
-		<key>ImgurSession.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>17</integer>
 		</dict>
 		<key>Pods-VideoCreationAssistant.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>18</integer>
 		</dict>
 		<key>Pods-VideoCreationAssistantTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>19</integer>
 		</dict>
-		<key>Pods-VideoCreationAssistantTests.xcscheme_^#shared#^_</key>
+		<key>PromiseKit.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
+		<key>RxBlocking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
 			<key>orderHint</key>
 			<integer>21</integer>
+		</dict>
+		<key>RxSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
+		<key>RxTest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>23</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

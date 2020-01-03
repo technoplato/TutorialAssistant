@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
   let popover = NSPopover()
   let recordingManager = RecordingManager()
-  var oa: OAuth?
+  let oa = OAuth()
   
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     NSAppleEventManager.shared().setEventHandler(
@@ -59,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     if let urlString = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue {
       print(urlString)
       if let url = URL(string: urlString), "com.lustig.videocreationassistant" == url.scheme {
-        oa!.oauth2.handleRedirectURL(url)
+        oa.oauth2.handleRedirectURL(url)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "OAuth2AppDidReceiveCallback"), object: url)
       }
     }
