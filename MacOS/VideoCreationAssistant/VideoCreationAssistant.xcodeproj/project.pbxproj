@@ -11,6 +11,7 @@
 		BEF2213DCB700F26762E7E61 /* OAuthRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22D84D47FE16E10B5CD36 /* OAuthRetrier.swift */; };
 		BEF2226C2D6F8A4821E455E9 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF2282BA4FF5BD95DF7D452 /* Directory.swift */; };
 		BEF222EC97ABA39109656807 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22F4E451F5296199FF459 /* Timestamp.swift */; };
+		BEF2239B63DA33EF11F0FE6C /* UglyHacksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22F738AE959F2E22755A6 /* UglyHacksTest.swift */; };
 		BEF223B23DE20D7038FD9C63 /* Devto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22B7DB9265419C57BDBB0 /* Devto.swift */; };
 		BEF2256FDC4FA08A32A39A2E /* VideoFinalizedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF22344C377A5FDC7ABF4F2 /* VideoFinalizedTest.swift */; };
 		BEF225D2B34F1E9BD0FEFEB5 /* RecordingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF227D6FDE2E2B403707616 /* RecordingEvent.swift */; };
@@ -58,7 +59,6 @@
 		C4340A9C2367906B007912A5 /* RecordingWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A822367906B007912A5 /* RecordingWatcher.swift */; };
 		C43CCE6F2385D74B000007E3 /* ClipExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE6E2385D74B000007E3 /* ClipExtractor.swift */; };
 		C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE702385E28A000007E3 /* ArrayExtensions.swift */; };
-		C4531C1823B521DA00ACBF99 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = C4E09AC023A40BE900A0D379 /* OAuth2 */; };
 		C4531C1A23B533AE00ACBF99 /* OA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4531C1923B533AE00ACBF99 /* OA.swift */; };
 		C45C3BE9236870460091A324 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C3BE8236870460091A324 /* DetailsView.swift */; };
 		C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */; };
@@ -111,6 +111,7 @@
 		BEF22E068E30D31FAD28E340 /* ClipExtractorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClipExtractorView.swift; sourceTree = "<group>"; };
 		BEF22EF577F76C9185FBFBA8 /* RecordingEventMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingEventMapper.swift; sourceTree = "<group>"; };
 		BEF22F4E451F5296199FF459 /* Timestamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		BEF22F738AE959F2E22755A6 /* UglyHacksTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UglyHacksTest.swift; sourceTree = "<group>"; };
 		BEF22F8F511CABE0A9E68927 /* ApplescriptYouTubeResultsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplescriptYouTubeResultsParser.swift; sourceTree = "<group>"; };
 		C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCreationAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4340A4A23678DE9007912A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				99801989088E6A2961C4032D /* Pods_VideoCreationAssistant.framework in Frameworks */,
-				C4531C1823B521DA00ACBF99 /* OAuth2 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +387,7 @@
 				BEF2246F1524928762D4F36E /* TimestampCreationTest.swift */,
 				BEF224EBCD6BF993B42A9A58 /* StringExtensionsTest.swift */,
 				BEF225B5B374284F23EFE937 /* YouTubeUploadTemplate.swift */,
+				BEF22F738AE959F2E22755A6 /* UglyHacksTest.swift */,
 			);
 			path = VideoCreationAssistantTests;
 			sourceTree = "<group>";
@@ -421,7 +422,7 @@
 			);
 			name = VideoCreationAssistant;
 			packageProductDependencies = (
-				C4E09AC023A40BE900A0D379 /* OAuth2 */,
+				C4E09AC023A40BE900A0D379 /* XCSwiftPackageProductDependency */,
 			);
 			productName = VideoCreationAssistant;
 			productReference = C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */;
@@ -475,7 +476,7 @@
 			);
 			mainGroup = C4340A3E23678DE9007912A5;
 			packageReferences = (
-				C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */,
+				C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */,
 			);
 			productRefGroup = C4340A4823678DE9007912A5 /* Products */;
 			projectDirPath = "";
@@ -641,6 +642,7 @@
 				BEF22E6F58B79B6CE59AC66B /* YouTubePosterTest.swift in Sources */,
 				BEF22745357B72C967ED6444 /* TimestampCreationTest.swift in Sources */,
 				BEF22A28C02561B742389B02 /* StringExtensionsTest.swift in Sources */,
+				BEF2239B63DA33EF11F0FE6C /* UglyHacksTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,7 +904,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */ = {
+		C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/p2/OAuth2.git";
 			requirement = {
@@ -913,9 +915,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C4E09AC023A40BE900A0D379 /* OAuth2 */ = {
+		C4E09AC023A40BE900A0D379 /* XCSwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */;
+			package = C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */;
 			productName = OAuth2;
 		};
 /* End XCSwiftPackageProductDependency section */

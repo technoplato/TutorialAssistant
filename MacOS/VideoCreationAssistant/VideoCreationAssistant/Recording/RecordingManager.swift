@@ -108,7 +108,7 @@ class RecordingManager: ObservableObject {
       case let .finalized(path):
         self.finalPath = path
 
-      case let .error(msg):
+      case .error:
         print("An unexpected recording software was used, figure out which one and add support for it.")
 
       case .ignored:

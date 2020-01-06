@@ -38,17 +38,18 @@ class YouTubePosterText: XCTestCase {
   func testAddVideosToYouTubePlaylist() {
     
     let oa = OAuth()
+    print(oa.oauth2.accessToken)
     let expectation = XCTestExpectation(description: "Adds videos to YouTube playlist")
-    
+
     let awesomeSuperCool = "PL3z1TiLmRFcyh9bMesOtNhyzXsg4dHhzM"
-    let videos = ["eGKKYjn82VE", "bnks9RAIh3U"]
-    
+    let videos = ["bnks9RAIh3U", "eGKKYjn82VE", "ymWfNPDO2_8"]
+//    eGKKYjn82VE -- cool clip
     oa.addVideosToYouTubePlaylist(playlistId: awesomeSuperCool, videos: videos) { result in
       XCTAssertTrue(result)
       expectation.fulfill()
     }
     
-    wait(for: [expectation], timeout: 55)
+    wait(for: [expectation], timeout: 200)
   }
   
   func testCreateAppleScript() {
