@@ -21,21 +21,6 @@ PODS:
   - HotKey (0.1.2)
   - ImgurSession (1.3):
     - AFNetworking (= 3.1.0)
-  - PromiseKit (6.12.0):
-    - PromiseKit/CorePromise (= 6.12.0)
-    - PromiseKit/Foundation (= 6.12.0)
-    - PromiseKit/UIKit (= 6.12.0)
-  - PromiseKit/Alamofire (6.12.0):
-    - Alamofire (~> 4.0)
-    - PromiseKit/CorePromise
-  - PromiseKit/CorePromise (6.12.0)
-  - PromiseKit/Foundation (6.12.0):
-    - PromiseKit/CorePromise
-  - RxBlocking (5.0.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.1)
-  - RxTest (5.0.1):
-    - RxSwift (~> 5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
@@ -44,10 +29,6 @@ DEPENDENCIES:
   - GRDB.swift
   - HotKey
   - ImgurSession (from `https://github.com/mileswd/ImgurSession.git`, branch `update-podspec`)
-  - PromiseKit (~> 6.8)
-  - PromiseKit/Alamofire
-  - RxBlocking (~> 5)
-  - RxTest (~> 5)
 
 SPEC REPOS:
   trunk:
@@ -57,10 +38,6 @@ SPEC REPOS:
     - FileWatcher
     - GRDB.swift
     - HotKey
-    - PromiseKit
-    - RxBlocking
-    - RxSwift
-    - RxTest
 
 EXTERNAL SOURCES:
   ImgurSession:
@@ -80,11 +57,7 @@ SPEC CHECKSUMS:
   GRDB.swift: 258520e10b49ff55307cbb0bec701af0742ae621
   HotKey: ad59450195936c10992438c4210f673de5aee43e
   ImgurSession: e11a605652cfe8aebfb6a9a4ea5b752654f14e2f
-  PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
-  RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
-  RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
 
-PODFILE CHECKSUM: 3e19871fa48d9e63c010d7fc64610f5b3056f3f4
+PODFILE CHECKSUM: 4c8d7a570b847c3335de9808d405e8fd6ff45540
 
 COCOAPODS: 1.8.3

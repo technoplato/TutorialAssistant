@@ -6,4 +6,3 @@ ${BUILT_PRODUCTS_DIR}/FileWatcher-framework/FileWatcher.framework
 ${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework
 ${BUILT_PRODUCTS_DIR}/HotKey/HotKey.framework
 ${BUILT_PRODUCTS_DIR}/ImgurSession/ImgurSession.framework
-${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework

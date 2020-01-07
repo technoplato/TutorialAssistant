@@ -59,33 +59,40 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>YouTubePosterText.testAddVideosToYouTubePlaylist.xcscheme</key>
+		<key>UglyHacksTest.testPythonScriptRuns.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>YouTubePosterText.testParsesApplescriptResultsProperly.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>24</integer>
-		</dict>
-		<key>UglyHacksTest.testPythonScriptRuns.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>25</integer>
-		</dict>
 		<key>UglyHacksTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>10</integer>
+		</dict>
+		<key>UglyHacksTest.testDispatchGroup.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>UglyHacksTest.testPythonAddsYouTubeVideosToPlaylist.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>UglyHacksTest.testDistpatchSemaphore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

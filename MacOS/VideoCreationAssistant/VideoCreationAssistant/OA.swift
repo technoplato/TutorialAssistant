@@ -9,13 +9,12 @@
 import Foundation
 import OAuth2
 import Alamofire
-import PromiseKit
 
 
 class OAuth {
-
+  
   let oauth2: OAuth2CodeGrant
-
+  
   init() {
     self.oauth2 = OAuth2CodeGrant(settings: [
       "client_id": "944530683864-es7ba0hoi4btp0jofdo2n61ta49i6h75.apps.googleusercontent.com",
@@ -25,219 +24,103 @@ class OAuth {
       "scope": "https://www.googleapis.com/auth/youtube",
       "response_type": "code"
     ])
-
-
+    
+    
     oauth2.logger = OAuth2DebugLogger(.trace)
     let retrier = OAuthRetrier(oauth2: oauth2)
     Alamofire.SessionManager.default.retrier = retrier
     Alamofire.SessionManager.default.adapter = retrier
   }
-
-
+  
+  
   struct Snippet: Codable {
     let title: String
   }
-
+  
   struct YouTubePlaylistItem: Codable {
     let id: String
     let etag: String
     let snippet: Snippet
   }
-
+  
   struct YouTubePlaylist: Codable {
     let kind: String
     let items: [YouTubePlaylistItem]
   }
-
-  func foo() {
-    print("foo")
-    let url = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet&playlistId=PL3z1TiLmRFcyh9bMesOtNhyzXsg4dHhzM")!
-
-
-//              oauth2.authorize { (json, error) in
-//                print(json)
-//              }
-
-    let first = Alamofire
-      .request(url)
-      .responseDecodable(YouTubePlaylist.self)
-    let second = Alamofire
-      .request(url)
-      .responseDecodable(YouTubePlaylist.self)
-
-    firstly {
-      when(fulfilled: first, second)
-    }.done { one, two in
-      //…
-      print(one)
-      print(two)
-    }.catch { error in
-      //…
-      print(error)
-    }
-
-
-//      Alamofire.request(url).response { response in
-//        print(response)
-//        if let data = response.data {
-//          let playlist =  try! JSONDecoder().decode(YouTubePlaylist.self, from: data)
-//
-//          debugPrint("fuck \(playlist.items.first!.snippet.title)")
-//          
-//        }
-//      }
-  }
-
-
-  // MARK: Rx
-
+  
   func createYouTubePlaylist(title: String, description: String = "", callback: @escaping ((YouTubePlaylist) -> Void)) {
-
-
-    //    let url = URL(string: "https://www.googleapis.com/youtube/v3/playlists?part=id,snippet")!
-    //
-    //    let params = [
-    //      "title": title,
-    //      "description": description
-    //    ]
-    //
-    //    Alamofire.request(
-    //      url.absoluteString,
-    //      method: .post,
-    //      parameters: ["snippet": params],
-    //      encoding: JSONEncoding.default).validate().responseJSON { response in
-    //        if let data = response.data {
-    //          let playlist =  try! JSONDecoder().decode(YouTubePlaylist.self, from: data)
-    //
-    //          callback(playlist)
-    //        }
+    //    oauth2.authorize { (json, error) in
+    //      print(json)
+    //      print(error)
     //    }
+    //
+    //    return
+    
+    let url = URL(string: "https://www.googleapis.com/youtube/v3/playlists?part=id,snippet")!
+    
+    let snippet = ["snippet":  [
+      "title": title,
+      "description": description
+      ]]
+    
+    Alamofire.request(
+      url.absoluteString,
+      method: .post,
+      parameters: snippet,
+      encoding: JSONEncoding.default).validate().responseJSON { response in
+        if let data = response.data {
+          let playlist =  try! JSONDecoder().decode(YouTubePlaylist.self, from: data)
+          
+          callback(playlist)
+        }
+    }
   }
-
+  
   func addVideosToYouTubePlaylist(playlistId: String, videos: [String], callback: @escaping ((Bool)) -> Void) {
-//    oauth2.authorize { (json, error) in
-//      print(json)
-//      print(error)
-
+    //    oauth2.authorize { (json, error) in
+    //      print(json)
+    //      print(error)
+    //    }
+    //
+    //    return
+    
     let url = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet")!
-
-    let requests: [DataRequest] = videos.map { id in
-      let snippet = ["snippet": [
+    
+    let paramsArray = videos.map { id in
+      ["snippet": [
         "playlistId": playlistId,
         "resourceId": [
           "kind": "youtube#video",
           "videoId": id
         ]
-      ]]
-
-      return Alamofire
-        .request(url, method: .post, parameters: snippet, encoding: JSONEncoding.default)
-        .validate()
+        ]]
     }
-
-    let chain = Chain(requests: requests)
-    chain.start { success in
-      if success {
-        print("hooray")
-      } else {
-        print("boo")
+    
+    let dispatchQueue = DispatchQueue.global(qos: .background)
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    dispatchQueue.async {
+      paramsArray.forEach { params in
+        Alamofire
+          .request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
+          .validate()
+          .responseJSON { response in
+            if let data = response.data {
+              let item =  try! JSONDecoder().decode(YouTubePlaylistItem.self, from: data)
+              print(item)
+            } else {
+              callback(false)
+            }
+            
+            // Signal that one request has completed so the next can fire off
+            // (Required because YouTube API appears picky about simulataneous requests)
+            semaphore.signal()
+        }
+        
+        semaphore.wait()
       }
+      
+      callback(true)
     }
-
-//    let addVideoRequests: [Promise<YouTubePlaylistItem>] = videos.map { id in
-//      print(id)
-//      let snippet = ["snippet": [
-//        "playlistId": playlistId,
-//        "resourceId": [
-//          "kind": "youtube#video",
-//          "videoId": id
-//        ]
-//      ]]
-//
-//      return Alamofire
-//        .request(url, method: .post, parameters: snippet, encoding: JSONEncoding.default)
-//        .validate()
-//        .responseDecodable(YouTubePlaylistItem.self)
-//    }
-
-//
-//    let snippet = ["snippet": [
-//      "playlistId": playlistId,
-//      "resourceId": [
-//        "kind": "youtube#video",
-//        "videoId": videos[0]
-//      ]
-//    ]]
-//
-//    Alamofire
-//      .request(url, method: .post, parameters: snippet, encoding: JSONEncoding.default)
-//      .validate()
-//      .response {_ in
-//
-//        let snippet = ["snippet": [
-//          "playlistId": playlistId,
-//          "resourceId": [
-//            "kind": "youtube#video",
-//            "videoId": videos[1]
-//          ]
-//        ]]
-//
-//        Alamofire
-//          .request(url, method: .post, parameters: snippet, encoding: JSONEncoding.default)
-//          .validate()
-//          .response {_ in
-//
-//            let snippet = ["snippet": [
-//              "playlistId": playlistId,
-//              "resourceId": [
-//                "kind": "youtube#video",
-//                "videoId": videos[2]
-//              ]
-//            ]]
-//
-//            Alamofire
-//              .request(url, method: .post, parameters: snippet, encoding: JSONEncoding.default)
-//              .validate()
-//              .response {_ in
-//                print("done with three")
-//                callback(true)
-//              }
-//
-//          }
-//      }
-
-
-
-  }
-
-
-}
-
-class Chain {
-  private var requests: [DataRequest]
-
-  init(requests: [DataRequest]) {
-    self.requests = requests
-    SessionManager.default.startRequestsImmediately = false
-
-  }
-
-  func start(completion: ((Bool) -> Void)) {
-//    if let request = requests.first {
-//      request.responseJSON() { response in
-//        print(response)
-//        if response.error != nil {
-//          completion(false)
-//          return
-//        } else {
-//          self.requests.removeFirst()
-//          self.start(completion: completion)
-//        }
-//        request.resume()
-//      }
-//    } else {
-//      completion(true)
-//      return
-//    }
   }
 }

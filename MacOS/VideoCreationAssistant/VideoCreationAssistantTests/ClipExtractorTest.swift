@@ -21,21 +21,6 @@ class ClipExtractorTest: XCTestCase {
   override func tearDown() {
     try? FileManager.default.removeItem(atPath: TEMP_VIDEO_CLIP_PATH)
   }
-
-//  func testFileNameWithSpaceIsExtractedProperly() {
-//    let titleWithSpace = "\(String.random()) \(String.random())"
-//    let timestamp = Factory.timestamp(title: titleWithSpace)
-//    let fullPath = "\(TEMP_VIDEO_CLIP_PATH)/\(timestamp.title).\(TEST_VIDEO_PATH.suffix(3))"
-//
-//    let extractor = ClipExtractor(
-//      rawVideoPath: TEST_VIDEO_PATH,
-//      clipExtractPath: TEMP_VIDEO_CLIP_PATH,
-//      timestamps: [timestamp])
-//
-//    let clips = extractor.extract()
-//
-//    XCTAssertEqual(clips[timestamp.id], fullPath)
-//  }
   
   func testExtractsCorrectNumberOfClips() {
     let timestamps = Factory.timestamps(
