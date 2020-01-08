@@ -17,7 +17,12 @@ class OAuth {
   
   init() {
     self.oauth2 = OAuth2CodeGrant(settings: [
-      "client_id": "944530683864-es7ba0hoi4btp0jofdo2n61ta49i6h75.apps.googleusercontent.com",
+      /* Tutorial Creation Project */
+      //    "client_id": "944530683864-es7ba0hoi4btp0jofdo2n61ta49i6h75.apps.googleusercontent.com",
+      /* Bloquery */
+      //      "client_id": "1073579080466-msaos1roo5lliennsdm4csbbthkbpird.apps.googleusercontent.com",
+      /* Test Voice Recognition */
+      "client_id": "514229664941-q953s79p8lhap6fm20a028tq7t92phc5.apps.googleusercontent.com",
       "authorize_uri": "https://accounts.google.com/o/oauth2/v2/auth",
       "token_uri": "https://www.googleapis.com/oauth2/v3/token",
       "redirect_uris": ["com.lustig.videocreationassistant:/oauth"],
@@ -25,6 +30,7 @@ class OAuth {
       "response_type": "code"
     ])
     
+    //        self.oauth2.forgetTokens()
     
     oauth2.logger = OAuth2DebugLogger(.trace)
     let retrier = OAuthRetrier(oauth2: oauth2)
@@ -43,9 +49,59 @@ class OAuth {
     let snippet: Snippet
   }
   
+  struct YouTubeVideo: Codable {
+    let id: String
+    let etag: String
+    let snippet: Snippet
+  }
+  
   struct YouTubePlaylist: Codable {
     let kind: String
     let items: [YouTubePlaylistItem]
+  }
+  
+  let CATEGORY_SCIENCE_AND_TECHNOLOGY = "28"
+  
+  /**
+   Information About Video Updates:
+   https://developers.google.com/youtube/v3/docs/videos/update
+   https://developers.google.com/youtube/v3/docs/videos#resource
+   */
+  func updateYouTubeVideoMetadata(videoId: String, title: String, callback: @escaping ((YouTubeVideo?) -> Void)) {
+    //        oauth2.authorize { (json, error) in
+    //          print(json)
+    //          print(error)
+    //        }
+    //
+    //        return
+    
+    let url = URL(string: "https://www.googleapis.com/youtube/v3/videos?part=id,snippet")!
+    let params = [
+      "id": videoId,
+      "snippet": [
+        "title": title,
+        "categoryId": CATEGORY_SCIENCE_AND_TECHNOLOGY
+      ]
+      ] as [String : Any]
+    
+    Alamofire.request(
+      url.absoluteString,
+      method: .put,
+      parameters: params,
+      encoding: JSONEncoding.default).responseJSON { response in
+        print(response)
+        if let data = response.data {
+          do {
+            let video = try JSONDecoder().decode(YouTubeVideo.self, from: data)
+            print(video)
+            callback(video)
+          } catch {
+            callback(nil)
+          }
+        } else {
+          callback(nil)
+        }
+    }
   }
   
   func createYouTubePlaylist(title: String, description: String = "", callback: @escaping ((YouTubePlaylist) -> Void)) {

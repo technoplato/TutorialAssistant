@@ -60,8 +60,8 @@
             filePath = "VideoCreationAssistantTests/YouTubePosterTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "testParsesApplescriptResultsProperly()"
             landmarkType = "7">
          </BreakpointContent>
@@ -76,8 +76,8 @@
             filePath = "VideoCreationAssistant/OA.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "addVideosToYouTubePlaylist(playlistId:videos:callback:)"
             landmarkType = "7">
          </BreakpointContent>

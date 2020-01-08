@@ -44,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     if let button = statusItem.button {
       button.image = NSImage(named: NSImage.Name("StatusBarButtonImage"))
-//      button.action = #selector(togglePopover(_:))
+      button.action = #selector(togglePopover(_:))
     }
     
 //    constructMenu()
@@ -98,10 +98,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   @objc func togglePopover(_ sender: Any?) {
-    if popover.isShown {
-      closePopover(sender: sender)
-    } else {
-      showPopover(sender: sender)
+
+    self.oa.oauth2.authorize { (json, error) in
+      print(json)
+      print(error)
     }
   }
   
