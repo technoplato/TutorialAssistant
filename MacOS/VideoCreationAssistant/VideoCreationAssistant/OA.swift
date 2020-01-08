@@ -101,12 +101,6 @@ class OAuth {
   }
   
   func createYouTubePlaylist(title: String, description: String = "", callback: @escaping ((YouTubePlaylist) -> Void)) {
-    //    oauth2.authorize { (json, error) in
-    //      print(json)
-    //      print(error)
-    //    }
-    //
-    //    return
     
     let url = URL(string: "https://www.googleapis.com/youtube/v3/playlists?part=id,snippet")!
     
