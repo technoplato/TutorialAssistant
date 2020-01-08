@@ -38,7 +38,15 @@ class YouTubePosterText: XCTestCase {
       expectation.fulfill()
     }
     
-    wait(for: [expectation], timeout: 55)
+    wait(for: [expectation], timeout: 25)
+  }
+  
+  
+  
+  func testUpdatesMultipleYouTubeVideoMetadata() {
+    let updates = [
+      
+    ]
   }
   
   func testVideosPostToYouTubeAndReturnUrls() {

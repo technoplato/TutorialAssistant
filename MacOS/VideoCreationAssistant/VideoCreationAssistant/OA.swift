@@ -68,12 +68,6 @@ class OAuth {
    https://developers.google.com/youtube/v3/docs/videos#resource
    */
   func updateYouTubeVideoMetadata(videoId: String, title: String, callback: @escaping ((YouTubeVideo?) -> Void)) {
-    //        oauth2.authorize { (json, error) in
-    //          print(json)
-    //          print(error)
-    //        }
-    //
-    //        return
     
     let url = URL(string: "https://www.googleapis.com/youtube/v3/videos?part=id,snippet")!
     let params = [
@@ -88,7 +82,9 @@ class OAuth {
       url.absoluteString,
       method: .put,
       parameters: params,
-      encoding: JSONEncoding.default).responseJSON { response in
+      encoding: JSONEncoding.default)
+      .validate()
+      .responseJSON { response in
         print(response)
         if let data = response.data {
           do {
