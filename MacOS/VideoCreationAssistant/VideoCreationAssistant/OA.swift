@@ -26,6 +26,7 @@ struct YouTubeMetadata: Codable {
 
 struct Snippet: Codable {
   let title: String
+  let description: String
 }
 
 struct YouTubePlaylistItem: Codable {
@@ -81,16 +82,13 @@ class OAuth {
     
     dispatchQueue.async {
       updates.forEach { update in
-        self.updateYouTubeVideoMetadata(videoId: update.id, title: update.title) { video in
-          print(video)
+        self.updateYouTubeVideo(update) { video in
           if let video = video {
             updatedVideos.append(video)
           } else {
             // TODO better errors
-//            callback([])
+            callback([])
           }
-          
-          
           
           semaphore.signal()
         }
@@ -106,13 +104,14 @@ class OAuth {
    https://developers.google.com/youtube/v3/docs/videos/update
    https://developers.google.com/youtube/v3/docs/videos#resource
    */
-  func updateYouTubeVideoMetadata(videoId: String, title: String, callback: @escaping ((YouTubeVideo?) -> Void)) {
+  func updateYouTubeVideo(_ update: YouTubeMetadata, callback: @escaping ((YouTubeVideo?) -> Void)) {
     
     let url = URL(string: "https://www.googleapis.com/youtube/v3/videos?part=id,snippet")!
     let params = [
-      "id": videoId,
+      "id": update.id,
       "snippet": [
-        "title": title,
+        "title": update.title,
+        "description": update.description,
         "categoryId": CATEGORY_SCIENCE_AND_TECHNOLOGY
       ]
       ] as [String : Any]
