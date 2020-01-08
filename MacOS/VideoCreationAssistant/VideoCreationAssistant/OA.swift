@@ -11,6 +11,40 @@ import OAuth2
 import Alamofire
 
 
+// TODO Organize and slim down how many of these we need
+struct YouTubeMetadata: Codable {
+  let id: String
+  let title: String
+  let description: String
+  
+  init(id: String, title: String, description: String) {
+    self.id = id
+    self.title = title
+    self.description = description
+  }
+}
+
+struct Snippet: Codable {
+  let title: String
+}
+
+struct YouTubePlaylistItem: Codable {
+  let id: String
+  let etag: String
+  let snippet: Snippet
+}
+
+struct YouTubeVideo: Codable {
+  let id: String
+  let etag: String
+  let snippet: Snippet
+}
+
+struct YouTubePlaylist: Codable {
+  let kind: String
+  let items: [YouTubePlaylistItem]
+}
+
 class OAuth {
   
   let oauth2: OAuth2CodeGrant
@@ -32,35 +66,40 @@ class OAuth {
     
     //        self.oauth2.forgetTokens()
     
-    oauth2.logger = OAuth2DebugLogger(.trace)
+//    oauth2.logger = OAuth2DebugLogger(.trace)
     let retrier = OAuthRetrier(oauth2: oauth2)
     Alamofire.SessionManager.default.retrier = retrier
     Alamofire.SessionManager.default.adapter = retrier
   }
   
-  
-  struct Snippet: Codable {
-    let title: String
-  }
-  
-  struct YouTubePlaylistItem: Codable {
-    let id: String
-    let etag: String
-    let snippet: Snippet
-  }
-  
-  struct YouTubeVideo: Codable {
-    let id: String
-    let etag: String
-    let snippet: Snippet
-  }
-  
-  struct YouTubePlaylist: Codable {
-    let kind: String
-    let items: [YouTubePlaylistItem]
-  }
-  
   let CATEGORY_SCIENCE_AND_TECHNOLOGY = "28"
+  
+  func updateYouTubeVideos(_ updates: [YouTubeMetadata], callback: @escaping (([YouTubeVideo]) -> Void)) {
+    var updatedVideos = [YouTubeVideo]()
+    let dispatchQueue = DispatchQueue.global(qos: .background)
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    dispatchQueue.async {
+      updates.forEach { update in
+        self.updateYouTubeVideoMetadata(videoId: update.id, title: update.title) { video in
+          print(video)
+          if let video = video {
+            updatedVideos.append(video)
+          } else {
+            // TODO better errors
+//            callback([])
+          }
+          
+          
+          
+          semaphore.signal()
+        }
+        semaphore.wait()
+      }
+      
+      callback(updatedVideos)
+    }
+  }
   
   /**
    Information About Video Updates:
@@ -85,11 +124,9 @@ class OAuth {
       encoding: JSONEncoding.default)
       .validate()
       .responseJSON { response in
-        print(response)
         if let data = response.data {
           do {
             let video = try JSONDecoder().decode(YouTubeVideo.self, from: data)
-            print(video)
             callback(video)
           } catch {
             callback(nil)
@@ -123,12 +160,6 @@ class OAuth {
   }
   
   func addVideosToYouTubePlaylist(playlistId: String, videos: [String], callback: @escaping ((Bool)) -> Void) {
-    //    oauth2.authorize { (json, error) in
-    //      print(json)
-    //      print(error)
-    //    }
-    //
-    //    return
     
     let url = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet")!
     
