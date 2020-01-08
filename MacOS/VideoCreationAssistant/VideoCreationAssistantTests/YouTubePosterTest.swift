@@ -76,15 +76,17 @@ class YouTubePosterText: XCTestCase {
   
   func testCreateAppleScript() {
     
-    print(FileManager.default.homeDirectoryForCurrentUser.absoluteURL.description)
+    Shell.p("pwd")
     
-    let filename = getDocumentsDirectory().appendingPathComponent("template.scpt")
-    
-    do {
-      try "poop".write(to: filename, atomically: true, encoding: String.Encoding.utf8)
-    } catch {
-      // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
-    }
+//    print(FileManager.default.homeDirectoryForCurrentUser.absoluteURL.description)
+//
+//    let filename = getDocumentsDirectory().appendingPathComponent("template.scpt")
+//
+//    do {
+//      try "poop".write(to: filename, atomically: true, encoding: String.Encoding.utf8)
+//    } catch {
+//      // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
+//    }
   }
   
   func getDocumentsDirectory() -> URL {
