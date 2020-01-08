@@ -26,22 +26,6 @@ class YouTubePosterText: XCTestCase {
     wait(for: [expectation], timeout: 5)
   }
   
-  func testUpdateYouTubeVideoMetadata() {
-//    let youtubeVideoId = "ymWfNPDO2_8"
-//    let newTitle = "test new title\(Date().description)"
-//    let oa = OAuth()
-//
-//    let expectation = XCTestExpectation(description: "Updates YouTube title")
-//
-//    oa.updateYouTubeVideo(videoId: youtubeVideoId, title: newTitle) { video in
-//      XCTAssertEqual(newTitle, video?.snippet.title)
-//      expectation.fulfill()
-//    }
-//
-//    wait(for: [expectation], timeout: 25)
-  }
-
-  
   func testUpdatesMultipleYouTubeVideoMetadata() {
     let sut = OAuth()
     let expectation = XCTestExpectation(description: "Updates multiple YouTube video metadata")
