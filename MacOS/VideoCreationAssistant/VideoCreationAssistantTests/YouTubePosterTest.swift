@@ -84,8 +84,8 @@ class YouTubePosterText: XCTestCase {
     let idDict: [String: String] = try! sut.parse(applescriptResults: inputString)
     
     XCTAssertEqual(idDict.count, 2)
-    XCTAssertEqual("https://youtu.be/x4XcSh7lqkU", idDict["2019 09 27 12 36 15"])
-    XCTAssertEqual("https://youtu.be/SHrYN0KLtfM", idDict["2019 09 27 12 38 23"])
+    XCTAssertEqual("x4XcSh7lqkU", idDict["2019 09 27 12 36 15"])
+    XCTAssertEqual("SHrYN0KLtfM", idDict["2019 09 27 12 38 23"])
   }
   
   func testYouTubeUploadScriptCreatedAtomically() {

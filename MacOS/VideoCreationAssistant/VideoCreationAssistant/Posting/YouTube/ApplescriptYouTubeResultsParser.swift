@@ -24,9 +24,16 @@ struct ApplescriptYouTubeResultsParser {
       let urlRange = Range(match.range(at: 2), in: results)
 
       let id = results[idRange!].description
-      let url = results[urlRange!].description
+      let youtubeUrl = results[urlRange!].description
+      
+      var path = URLComponents(string: youtubeUrl)!.path
+      path.removeAll { c -> Bool in
+        c == "/"
+      }
+      
+      let youtubeId = path
 
-      idDict[id] = url
+      idDict[id] = youtubeId
     }
 
     return idDict
