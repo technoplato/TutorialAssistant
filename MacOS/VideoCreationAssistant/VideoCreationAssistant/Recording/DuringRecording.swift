@@ -22,8 +22,8 @@ struct DuringRecording: View {
         Text("Video ended, length is: \(recording.formattedTime) (\(recording.seconds)) seconds")
       }
       
-      Button("Post It") {
-        self.recording.goToPosting()
+      Button("Create Clips") {
+        self.recording.goToExtracting()
       }.disabled(self.recording.finalPath == "")
     }.frame(maxWidth: .infinity, maxHeight: .infinity)
   }

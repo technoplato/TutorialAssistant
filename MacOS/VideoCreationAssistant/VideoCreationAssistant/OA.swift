@@ -16,15 +16,14 @@ struct YouTubeMetadata: Codable {
   let id: String
   let title: String
   let description: String
-  
-  init(id: String, title: String, description: String) {
-    self.id = id
-    self.title = title
-    self.description = description
-  }
 }
 
-struct Snippet: Codable {
+struct VideoSnippet: Codable {
+  let title: String
+  let description: String
+}
+
+struct PlaylistSnippet: Codable {
   let title: String
   let description: String
 }
@@ -32,21 +31,28 @@ struct Snippet: Codable {
 struct YouTubePlaylistItem: Codable {
   let id: String
   let etag: String
-  let snippet: Snippet
+  let snippet: VideoSnippet
 }
 
 struct YouTubeVideo: Codable {
   let id: String
   let etag: String
-  let snippet: Snippet
+  let snippet: VideoSnippet
 }
 
 struct YouTubePlaylist: Codable {
   let kind: String
+  let id: String
   let items: [YouTubePlaylistItem]
+  let snippet: PlaylistSnippet
 }
 
-class OAuth {
+struct CreateYouTubePlaylistResponse: Codable {
+  let id: String
+  let snippet: PlaylistSnippet
+}
+
+class YouTube {
   
   let oauth2: OAuth2CodeGrant
   
@@ -136,7 +142,7 @@ class OAuth {
     }
   }
   
-  func createYouTubePlaylist(title: String, description: String = "", callback: @escaping ((YouTubePlaylist) -> Void)) {
+  func createPlaylist(title: String, description: String = "", callback: @escaping ((CreateYouTubePlaylistResponse) -> Void)) {
     
     let url = URL(string: "https://www.googleapis.com/youtube/v3/playlists?part=id,snippet")!
     
@@ -151,14 +157,14 @@ class OAuth {
       parameters: snippet,
       encoding: JSONEncoding.default).validate().responseJSON { response in
         if let data = response.data {
-          let playlist =  try! JSONDecoder().decode(YouTubePlaylist.self, from: data)
+          let playlist =  try! JSONDecoder().decode(CreateYouTubePlaylistResponse.self, from: data)
           
           callback(playlist)
         }
     }
   }
   
-  func addVideosToYouTubePlaylist(playlistId: String, videos: [String], callback: @escaping ((Bool)) -> Void) {
+  func addVideosToPlaylist(playlistId: String, videos: [String], callback: @escaping ((Bool)) -> Void) {
     
     let url = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?part=id,snippet")!
     

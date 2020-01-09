@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
   let popover = NSPopover()
   let recordingManager = RecordingManager()
-  let oa = OAuth()
+  let oa = YouTube()
   
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     NSAppleEventManager.shared().setEventHandler(

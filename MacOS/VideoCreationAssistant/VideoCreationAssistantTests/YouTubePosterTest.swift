@@ -9,25 +9,38 @@ import Foundation
 
 class YouTubePosterText: XCTestCase {
   
-  func testAddVideosToYouTubePlaylist() {
+  func testCreatePlaylist() {
+    let expectation = XCTestExpectation(description: "Creates YouTube playlist")
+    let youtube = YouTube()
+    let playlistTitle = "new playlist title \(Date().description)"
     
-    let oa = OAuth()
-    
-    let expectation = XCTestExpectation(description: "Adds videos to YouTube playlist")
-    
-    let awesomeSuperCool = "PL3z1TiLmRFcyh9bMesOtNhyzXsg4dHhzM"
-    let videos = ["bnks9RAIh3U", "eGKKYjn82VE", "ymWfNPDO2_8"]
-    
-    oa.addVideosToYouTubePlaylist(playlistId: awesomeSuperCool, videos: videos) { result in
-      XCTAssertTrue(result)
+    youtube.createPlaylist(title: playlistTitle) { playlist in
+      XCTAssertEqual(playlistTitle, playlist.snippet.title)
       expectation.fulfill()
     }
     
     wait(for: [expectation], timeout: 5)
   }
   
+  func testAddVideosToYouTubePlaylist() {
+    
+    let oa = YouTube()
+    
+    let expectation = XCTestExpectation(description: "Adds videos to YouTube playlist")
+    
+    let awesomeSuperCool = "PL3z1TiLmRFcyh9bMesOtNhyzXsg4dHhzM"
+    let videos = ["bnks9RAIh3U", "eGKKYjn82VE", "ymWfNPDO2_8"]
+    
+    oa.addVideosToPlaylist(playlistId: awesomeSuperCool, videos: videos) { result in
+      XCTAssertTrue(result)
+      expectation.fulfill()
+    }
+    
+    wait(for: [expectation], timeout: 15)
+  }
+  
   func testUpdatesMultipleYouTubeVideoMetadata() {
-    let sut = OAuth()
+    let sut = YouTube()
     let expectation = XCTestExpectation(description: "Updates multiple YouTube video metadata")
     let newTitle = "test new title\(Date().description)"
     let newDescription = "test new description\(Date().description)"
@@ -52,7 +65,8 @@ class YouTubePosterText: XCTestCase {
   func testVideosPostToYouTubeAndReturnUrls() {
     let expectation = XCTestExpectation(description: "Uploads clips to YouTube")
     
-    YouTubePoster().post() { (result: [String: String]?, error: String?) in
+    YouTubePoster(clipsPath: "~/Desktop".expandingTildeInPath + "/Videos").post() { (result: [String: String]?, error: String?) in
+      print("errror:", error)
       XCTAssertNil(error)
       XCTAssertNotNil(result)
       XCTAssertEqual(result!.count, 2)
@@ -74,23 +88,22 @@ class YouTubePosterText: XCTestCase {
     XCTAssertEqual("https://youtu.be/SHrYN0KLtfM", idDict["2019 09 27 12 38 23"])
   }
   
-  func testCreateAppleScript() {
+  func testYouTubeUploadScriptCreatedAtomically() {
+    let fm = FileManager.default
+    let scriptPath = FileManager.desktopURL.appendingPathComponent("youtube-upload-template.scpt")
+    var withoutFileColonSlashSlash = scriptPath.absoluteString
+    withoutFileColonSlashSlash.removeFirst(7)
     
-    Shell.p("pwd")
+    do {
+      try YouTubeUploadTemplate().fill(clipDir: "/Users/lustig/Desktop/Videos").write(to: scriptPath, atomically: true, encoding: String.Encoding.utf8)
+      
+      print(fm.displayName(atPath: scriptPath.absoluteString))
+    } catch {
+      print("error")
+    }
     
-//    print(FileManager.default.homeDirectoryForCurrentUser.absoluteURL.description)
-//
-//    let filename = getDocumentsDirectory().appendingPathComponent("template.scpt")
-//
-//    do {
-//      try "poop".write(to: filename, atomically: true, encoding: String.Encoding.utf8)
-//    } catch {
-//      // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
-//    }
-  }
-  
-  func getDocumentsDirectory() -> URL {
-    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    return paths[0]
+    print(scriptPath.absoluteString)
+    XCTAssertNotNil(fm.displayName(atPath: scriptPath.absoluteString))
+    XCTAssertTrue(fm.fileExists(atPath: withoutFileColonSlashSlash))
   }
 }

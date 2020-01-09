@@ -37,22 +37,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7B306020-88B3-45ED-9F27-E520D517B76E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoCreationAssistantTests/YouTubePosterTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "testCreateAppleScript()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "19BB020E-4A3A-4B48-9201-C6DCE26F06D9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -60,9 +44,9 @@
             filePath = "VideoCreationAssistant/OA.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "addVideosToYouTubePlaylist(playlistId:videos:callback:)"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "createPlaylist(title:description:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

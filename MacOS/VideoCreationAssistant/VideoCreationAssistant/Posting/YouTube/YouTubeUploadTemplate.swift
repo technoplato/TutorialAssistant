@@ -1,10 +1,10 @@
 
-struct YouTubeUploadScriptBuilder {
+struct YouTubeUploadTemplate {
   
   static let DEFAULT_BROWSER = "Safari Technology Preview"
 
-  func build(clipDir: String,
-                    youtubeClassicUploadUrl: String = "https://www.youtube.com/upload?redirect_to_creator=true&fr=4&ar=1578513042030&nv=1",
+  func fill(clipDir: String,
+                    youtubeClassicUploadUrl: String = "https://www.youtube.com/upload?redirect_to_creator=true&fr=4&ar=1578587067049&nv=1",
                     browser: String = DEFAULT_BROWSER) -> String {
     return """
     activate application "\(browser)"

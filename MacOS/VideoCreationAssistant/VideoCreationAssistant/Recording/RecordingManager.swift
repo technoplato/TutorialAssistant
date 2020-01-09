@@ -42,8 +42,8 @@ class RecordingManager: ObservableObject {
 
   // ID => Clip Path dict
   @Published var clipPaths: [String: String] = [:]
-  // ID => YouTube IDs
-  @Published var youtubeIds: [String: String] = [:]
+  // ID => YouTube URLs
+  @Published var youtubeURLs: [String: String] = [:]
 
   @Published var seconds: Int = -1 {
     didSet {
@@ -73,6 +73,10 @@ class RecordingManager: ObservableObject {
     appDelegate.hideScreenshotDetails()
   }
 
+  func goToExtracting() {
+    state = .extracting
+  }
+  
   func goToPosting() {
     state = .posting
   }

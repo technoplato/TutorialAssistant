@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension FileManager {
+  static var desktopURL: URL {
+    FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0]
+  }
+}
