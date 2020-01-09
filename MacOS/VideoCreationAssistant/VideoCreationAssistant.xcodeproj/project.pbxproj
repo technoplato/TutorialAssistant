@@ -61,8 +61,11 @@
 		C43CCE712385E28A000007E3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43CCE702385E28A000007E3 /* ArrayExtensions.swift */; };
 		C4531C1A23B533AE00ACBF99 /* OA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4531C1923B533AE00ACBF99 /* OA.swift */; };
 		C45C3BE9236870460091A324 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C3BE8236870460091A324 /* DetailsView.swift */; };
+		C46B8FF123C65DCD009D7639 /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = C4E09AC023A40BE900A0D379 /* OAuth2 */; };
 		C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */; };
 		C46D09A023836BA500AD1A53 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
+		C479CDBC23C672050020EEA6 /* YouTubeUploadScriptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479CDBB23C672050020EEA6 /* YouTubeUploadScriptBuilder.swift */; };
+		C479CDBE23C784CA0020EEA6 /* FileManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479CDBD23C784CA0020EEA6 /* FileManager+.swift */; };
 		C4C90A3323882709008B1603 /* ScreenshotMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */; };
 		C4C90A34238827A5008B1603 /* FolderContentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A6A2367906A007912A5 /* FolderContentMonitor.swift */; };
 		C4C90A36238828AD008B1603 /* ClipExtractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */; };
@@ -148,6 +151,8 @@
 		C45C3BE8236870460091A324 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		C46D099C23836B4400AD1A53 /* YoutubePostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePostingView.swift; sourceTree = "<group>"; };
 		C46D099F23836BA500AD1A53 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = SOURCE_ROOT; };
+		C479CDBB23C672050020EEA6 /* YouTubeUploadScriptBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeUploadScriptBuilder.swift; sourceTree = "<group>"; };
+		C479CDBD23C784CA0020EEA6 /* FileManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+.swift"; sourceTree = "<group>"; };
 		C4C90A1F2388212E008B1603 /* VideoCreationAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoCreationAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C90A232388212E008B1603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractorTest.swift; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99801989088E6A2961C4032D /* Pods_VideoCreationAssistant.framework in Frameworks */,
+				C46B8FF123C65DCD009D7639 /* OAuth2 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +211,10 @@
 		BEF22BEE00C590685A8F94FE /* YouTube */ = {
 			isa = PBXGroup;
 			children = (
+				BEF225B5B374284F23EFE937 /* YouTubeUploadTemplate.swift */,
 				BEF223B8A96F0EFBF55DFCC3 /* YouTubePoster.swift */,
 				BEF22F8F511CABE0A9E68927 /* ApplescriptYouTubeResultsParser.swift */,
+				C479CDBB23C672050020EEA6 /* YouTubeUploadScriptBuilder.swift */,
 			);
 			path = YouTube;
 			sourceTree = "<group>";
@@ -326,6 +334,7 @@
 				C4340A782367906A007912A5 /* IMGImage.swift */,
 				C43CCE702385E28A000007E3 /* ArrayExtensions.swift */,
 				C4C90A3D23882B9D008B1603 /* StringExtensions.swift */,
+				C479CDBD23C784CA0020EEA6 /* FileManager+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,7 +395,6 @@
 				BEF22DF96C75D43A3E29E5B9 /* YouTubePosterTest.swift */,
 				BEF2246F1524928762D4F36E /* TimestampCreationTest.swift */,
 				BEF224EBCD6BF993B42A9A58 /* StringExtensionsTest.swift */,
-				BEF225B5B374284F23EFE937 /* YouTubeUploadTemplate.swift */,
 				BEF22F738AE959F2E22755A6 /* UglyHacksTest.swift */,
 			);
 			path = VideoCreationAssistantTests;
@@ -422,7 +430,7 @@
 			);
 			name = VideoCreationAssistant;
 			packageProductDependencies = (
-				C4E09AC023A40BE900A0D379 /* XCSwiftPackageProductDependency */,
+				C4E09AC023A40BE900A0D379 /* OAuth2 */,
 			);
 			productName = VideoCreationAssistant;
 			productReference = C4340A4723678DE9007912A5 /* VideoCreationAssistant.app */;
@@ -476,7 +484,7 @@
 			);
 			mainGroup = C4340A3E23678DE9007912A5;
 			packageReferences = (
-				C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */,
+				C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */,
 			);
 			productRefGroup = C4340A4823678DE9007912A5 /* Products */;
 			projectDirPath = "";
@@ -579,6 +587,7 @@
 			files = (
 				C4340A922367906B007912A5 /* PostingView.swift in Sources */,
 				C4340A8D2367906B007912A5 /* ImgurMenuController.swift in Sources */,
+				C479CDBC23C672050020EEA6 /* YouTubeUploadScriptBuilder.swift in Sources */,
 				C4340A4B23678DE9007912A5 /* AppDelegate.swift in Sources */,
 				C45C3BE9236870460091A324 /* DetailsView.swift in Sources */,
 				C4340A882367906B007912A5 /* UserNotificationController.swift in Sources */,
@@ -603,6 +612,7 @@
 				C4340A952367906B007912A5 /* ScreenshotMonitor.swift in Sources */,
 				C4340A872367906B007912A5 /* ImgurClient.swift in Sources */,
 				C4340A902367906B007912A5 /* PreferencesMenuController.swift in Sources */,
+				C479CDBE23C784CA0020EEA6 /* FileManager+.swift in Sources */,
 				C4340A982367906B007912A5 /* RecordingManager.swift in Sources */,
 				C4340A942367906B007912A5 /* IMGImage.swift in Sources */,
 				C46D099D23836B4400AD1A53 /* YoutubePostingView.swift in Sources */,
@@ -904,7 +914,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */ = {
+		C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/p2/OAuth2.git";
 			requirement = {
@@ -915,9 +925,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C4E09AC023A40BE900A0D379 /* XCSwiftPackageProductDependency */ = {
+		C4E09AC023A40BE900A0D379 /* OAuth2 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference */;
+			package = C4E09ABF23A40BE900A0D379 /* XCRemoteSwiftPackageReference "OAuth2" */;
 			productName = OAuth2;
 		};
 /* End XCSwiftPackageProductDependency section */
