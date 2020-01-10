@@ -42,8 +42,8 @@ class RecordingManager: ObservableObject {
 
   // ID => Clip Path dict
   @Published var clipPaths: [String: String] = [:]
-  // ID => YouTube URLs
-  @Published var youtubeURLs: [String: String] = [:]
+  // ID => YouTube IDs
+  @Published var videoToYouTubeIdDictionary: [String: String] = [:]
 
   @Published var seconds: Int = -1 {
     didSet {
@@ -51,17 +51,16 @@ class RecordingManager: ObservableObject {
     }
   }
   @Published var formattedTime: String = "00:00:00"
-
   @Published var pending = PendingInfo()
-
   @Published var title: String = ""
+  @Published var playlistId: String = ""
 
   var devtoId: Int = -1
   var devtoUrl: String = ""
 
   init() {
     clipExtractPath = "~/Desktop/Clipper/\(id)/CLIPS".expandingTildeInPath
-    self.listenForVideoRecordingStart()
+    self.listenForRecordingEvents()
     self.listenToStopwatch()
     self.listenForImgurUpload()
   }
@@ -95,10 +94,15 @@ class RecordingManager: ObservableObject {
     self.stopwatch.stop()
     self.stopListeningForScreenshots()
   }
+  
+  func onRecordingFinalized(_ path: String) {
+    self.finalPath = path
+    stopListeningForVideoEvents()
+  }
 
   // MARK: Listeners
 
-  private func listenForVideoRecordingStart() {
+  private func listenForRecordingEvents() {
     recordingWatcher.videoEventCallback = { recordingEvent in
       switch recordingEvent {
 
@@ -110,7 +114,7 @@ class RecordingManager: ObservableObject {
         self.onRecordingEnd()
 
       case let .finalized(path):
-        self.finalPath = path
+        self.onRecordingFinalized(path)
 
       case .error:
         print("An unexpected recording software was used, figure out which one and add support for it.")
@@ -119,6 +123,10 @@ class RecordingManager: ObservableObject {
         print("Ignored")
       }
     }
+  }
+  
+  private func stopListeningForVideoEvents() {
+    recordingWatcher.videoEventCallback = nil
   }
 
   private func listenToStopwatch() {

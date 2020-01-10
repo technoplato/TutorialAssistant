@@ -66,6 +66,7 @@
 		C46D09A023836BA500AD1A53 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D099F23836BA500AD1A53 /* Shell.swift */; };
 		C479CDBC23C672050020EEA6 /* YouTubeUploadScriptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479CDBB23C672050020EEA6 /* YouTubeUploadScriptBuilder.swift */; };
 		C479CDBE23C784CA0020EEA6 /* FileManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479CDBD23C784CA0020EEA6 /* FileManager+.swift */; };
+		C479CDC023C7D8F70020EEA6 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479CDBF23C7D8F70020EEA6 /* IntegrationTests.swift */; };
 		C4C90A3323882709008B1603 /* ScreenshotMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A7A2367906A007912A5 /* ScreenshotMonitor.swift */; };
 		C4C90A34238827A5008B1603 /* FolderContentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4340A6A2367906A007912A5 /* FolderContentMonitor.swift */; };
 		C4C90A36238828AD008B1603 /* ClipExtractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */; };
@@ -153,6 +154,7 @@
 		C46D099F23836BA500AD1A53 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = SOURCE_ROOT; };
 		C479CDBB23C672050020EEA6 /* YouTubeUploadScriptBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeUploadScriptBuilder.swift; sourceTree = "<group>"; };
 		C479CDBD23C784CA0020EEA6 /* FileManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+.swift"; sourceTree = "<group>"; };
+		C479CDBF23C7D8F70020EEA6 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		C4C90A1F2388212E008B1603 /* VideoCreationAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoCreationAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C90A232388212E008B1603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C90A35238828AD008B1603 /* ClipExtractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractorTest.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				BEF2246F1524928762D4F36E /* TimestampCreationTest.swift */,
 				BEF224EBCD6BF993B42A9A58 /* StringExtensionsTest.swift */,
 				BEF22F738AE959F2E22755A6 /* UglyHacksTest.swift */,
+				C479CDBF23C7D8F70020EEA6 /* IntegrationTests.swift */,
 			);
 			path = VideoCreationAssistantTests;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				BEF226DB7CD1389F38C34BC7 /* ScreenflickVideoEventMapperTest.swift in Sources */,
 				BEF229E84B00048C5E0CE461 /* RecordingSoftwareTest.swift in Sources */,
 				BEF2256FDC4FA08A32A39A2E /* VideoFinalizedTest.swift in Sources */,
+				C479CDC023C7D8F70020EEA6 /* IntegrationTests.swift in Sources */,
 				BEF22E6F58B79B6CE59AC66B /* YouTubePosterTest.swift in Sources */,
 				BEF22745357B72C967ED6444 /* TimestampCreationTest.swift in Sources */,
 				BEF22A28C02561B742389B02 /* StringExtensionsTest.swift in Sources */,

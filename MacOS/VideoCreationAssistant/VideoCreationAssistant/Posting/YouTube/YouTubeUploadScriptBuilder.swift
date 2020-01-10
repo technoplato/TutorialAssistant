@@ -9,7 +9,6 @@
 import Foundation
 
 struct YouTubeUploadScriptBuilder {
-  
   func build(clipDir: String) -> String {
     let scriptPath = FileManager.desktopURL.appendingPathComponent("youtube-upload-template.scpt")
     try! YouTubeUploadTemplate().fill(clipDir: clipDir).write(to: scriptPath, atomically: true, encoding: String.Encoding.utf8)
@@ -18,4 +17,3 @@ struct YouTubeUploadScriptBuilder {
     return wihthoutFileColonSlashSlash
   }
 }
-

@@ -17,9 +17,9 @@ struct YouTubePoster {
   init(clipsPath: String) {
     self.clipsPath = clipsPath
   }
-
+  
   /**
-    Uploads videos to YouTube and returns a dicitonary of IDs mapped to YouTube URLs
+    Uploads videos to YouTube and returns a dicitonary of video IDs mapped to YouTube IDs
    */
   func post(completion: @escaping (([String: String]?, String?) -> Void)) {
     do {
@@ -32,4 +32,3 @@ struct YouTubePoster {
     }
   }
 }
-

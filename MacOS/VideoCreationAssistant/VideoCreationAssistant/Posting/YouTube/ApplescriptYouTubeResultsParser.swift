@@ -9,6 +9,9 @@ struct ApplescriptYouTubeResultsParser {
 
   private let pattern: String = "title:([\\w\\d\\s]*), youtubeUrl:(https://youtu.be/[\\w\\d]+),"
 
+  /**
+   Returns dictionary of video IDs to YouTube IDs
+   */
   func parse(applescriptResults results: String) throws -> [String:String] {
     var idDict = [String: String]()
     let regex = try NSRegularExpression(pattern: pattern, options: [])

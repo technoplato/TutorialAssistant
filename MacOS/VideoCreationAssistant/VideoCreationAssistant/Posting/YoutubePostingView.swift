@@ -17,6 +17,7 @@ struct YoutubePostingView: View {
   @State var clips: [String] = []
   @State var selectedPrivacy = 0
   @State var error = ""
+  @State var loading = false
 
   var body: some View {
 
@@ -34,18 +35,30 @@ struct YoutubePostingView: View {
         }
       }
 
-      Button("Upload Clips") {
-        YouTubePoster(clipsPath: self.recording.clipExtractPath).post() { idsToURls, error  in
+      Button(self.loading ? "Uploading Clips, Please Don't Leave Page" : "Upload Clips") {
+        self.loading = true
+        YouTubePoster(clipsPath: self.recording.clipExtractPath).post() { videoIdToYouTubeIdDictionary, error  in
           if let error = error {
             self.error = error
+            return
           }
           
-          self.recording.youtubeURLs = idsToURls!
+          self.recording.videoToYouTubeIdDictionary = videoIdToYouTubeIdDictionary!
           self.youtube.createPlaylist(title: self.recording.title) { playlist in
+            self.recording.playlistId = playlist.id
             
+            let videoIds = videoIdToYouTubeIdDictionary!.map({ (_, youtubeId) -> String in
+              return youtubeId
+            })
+            
+            self.youtube.addVideosToPlaylist(playlistId: playlist.id, videos: videoIds) { success in
+              self.loading = false
+              self.error = ""
+              print("success", success)
+            }
           }
         }
-      }
+      }.disabled(loading)
       
       if self.error != "" {
         Text(error)
